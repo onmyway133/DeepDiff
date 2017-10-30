@@ -1,0 +1,16 @@
+PODS:
+  - DeepDiff (0.1.0)
+
+DEPENDENCIES:
+  - DeepDiff (from `../../`)
+
+EXTERNAL SOURCES:
+  DeepDiff:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  DeepDiff: de4457639d46d82d6c280129a12c6e6d91c81d1c
+
+PODFILE CHECKSUM: 1fac0c2de118d5f9a4ae307f6d5e5387d07613bf
+
+COCOAPODS: 1.3.1
