@@ -13,7 +13,7 @@ class DiffTests: XCTestCase {
     let old = Array("sitting")
     let new = Array("kitten")
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 2)
+    XCTAssertEqual(changes.count, 3)
   }
 }
 

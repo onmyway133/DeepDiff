@@ -10,10 +10,12 @@ class Differ {
     var previousRow = Row<T>()
     previousRow.seed(with: new)
     var currentRow = Row<T>()
-    currentRow.empty(count: previousRow.slots.count)
 
     old.enumerated().forEach { indexInOld, oldItem in
+      // reset current row
+      currentRow.empty(count: previousRow.slots.count)
 
+      // the first slot is .delete
       currentRow.slots[0] = [.delete(item: oldItem, index: indexInOld)]
 
       new.enumerated().forEach { indexInNew, newItem in
@@ -30,8 +32,8 @@ class Differ {
         }
       }
 
+      // set previousRow
       previousRow = currentRow
-      currentRow.empty(count: previousRow.slots.count)
     }
 
     return currentRow.lastSlot()
@@ -63,6 +65,7 @@ struct Row<T> {
     slots[slotIndex] = previousRow.slots[slotIndex - 1]
   }
 
+  /// Choose the min
   mutating func updateWithMin(previousRow: Row, indexInNew: Int, newItem: T, indexInOld: Int, oldItem: T) {
     let slotIndex = convert(indexInNew: indexInNew)
     let deleteSlot = previousRow.slots[slotIndex]
