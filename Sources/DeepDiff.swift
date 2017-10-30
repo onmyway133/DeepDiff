@@ -13,14 +13,14 @@ public func diff<T: Equatable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
     return []
   case (true, false):
     // all .insert
-    return new.enumerated().map({ index, item in
+    return new.enumerated().map { index, item in
       return .insert(Insert(item: item, index: index))
-    })
+    }
   case (false, true):
     // all .delete
-    return old.enumerated().map({ index, item in
+    return old.enumerated().map { index, item in
       return .delete(Delete(item: item, index: index))
-    })
+    }
   case (false, false):
     // diff
     return Differ().diff(old: old, new: new)
