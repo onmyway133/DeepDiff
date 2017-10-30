@@ -10,29 +10,40 @@ class Differ {
     var previousRow = Row<T>()
     previousRow.seed(with: new)
     var currentRow = Row<T>()
-    currentRow.allocate(count: previousRow.slots.count)
+    currentRow.empty(count: previousRow.slots.count)
 
-    new.enumerated().forEach { indexInNew, newItem in
-      old.enumerated().forEach { indexInOld, oldItem in
+    old.enumerated().forEach { indexInOld, oldItem in
+
+      currentRow.slots[0] = [.delete(item: oldItem, index: indexInOld)]
+
+      new.enumerated().forEach { indexInNew, newItem in
         if old[indexInOld] == new[indexInNew] {
           currentRow.update(indexInNew: indexInNew, previousRow: previousRow)
         } else {
-          currentRow.updateWithMin(indexInNew: indexInNew, previousRow: previousRow)
+          currentRow.updateWithMin(
+            previousRow: previousRow,
+            indexInNew: indexInNew,
+            newItem: newItem,
+            indexInOld: indexInOld,
+            oldItem: oldItem
+          )
         }
       }
+
+      previousRow = currentRow
+      currentRow.empty(count: previousRow.slots.count)
     }
 
     return currentRow.lastSlot()
   }
 }
 
-class Row<T> {
+struct Row<T> {
   /// Each slot is a collection of Change
-  typealias Changes = [Change<T>]
-  var slots: [Changes] = []
+  var slots: [[Change<T>]] = []
 
   /// Seed with .insert from new
-  func seed(with new: Array<T>) {
+  mutating func seed(with new: Array<T>) {
     slots.append([])
     new.enumerated().forEach { index, item in
       slots.append([.insert(item: item, index: index)])
@@ -40,23 +51,49 @@ class Row<T> {
   }
 
   /// Allocate with empty slots
-  func allocate(count: Int) {
+  mutating func empty(count: Int) {
     slots = Array(0..<count).map { _ in
       return []
     }
   }
 
   /// Use .replace from previousRow
-  func update(indexInNew: Int, previousRow: Row) {
+  mutating func update(indexInNew: Int, previousRow: Row) {
     let slotIndex = convert(indexInNew: indexInNew)
     slots[slotIndex] = previousRow.slots[slotIndex - 1]
   }
 
-  func updateWithMin(indexInNew: Int, previousRow: Row) {
+  mutating func updateWithMin(previousRow: Row, indexInNew: Int, newItem: T, indexInOld: Int, oldItem: T) {
+    let slotIndex = convert(indexInNew: indexInNew)
+    let deleteSlot = previousRow.slots[slotIndex]
+    let insertSlot = slots[slotIndex - 1]
+    let replaceSlot = previousRow.slots[slotIndex - 1]
 
+    let minCount = min(min(deleteSlot.count, insertSlot.count), replaceSlot.count)
+    switch minCount {
+    case deleteSlot.count:
+      slots[slotIndex] = combine(slot: deleteSlot, change: .delete(item: oldItem, index: indexInOld))
+    case insertSlot.count:
+      slots[slotIndex] = combine(slot: insertSlot, change: .insert(item: newItem, index: indexInNew))
+    case replaceSlot.count:
+      slots[slotIndex] = combine(
+        slot: replaceSlot,
+        change: .replace(item: newItem, fromIndex: indexInOld, toIndex: indexInNew)
+      )
+    default:
+      assertionFailure()
+    }
   }
 
-  func lastSlot() -> Changes {
+  /// Add one more change
+  func combine<T>(slot: [Change<T>], change: Change<T>) -> [Change<T>] {
+    var slot = slot
+    slot.append(change)
+    return slot
+  }
+
+  //// Last slot
+  func lastSlot() -> [Change<T>] {
     return slots[slots.count - 1]
   }
 
