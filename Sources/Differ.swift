@@ -75,9 +75,15 @@ struct Row<T> {
     let minCount = min(min(deleteSlot.count, insertSlot.count), replaceSlot.count)
     switch minCount {
     case deleteSlot.count:
-      slots[slotIndex] = combine(slot: deleteSlot, change: .delete(Delete(item: oldItem, index: indexInOld)))
+      slots[slotIndex] = combine(
+        slot: deleteSlot,
+        change: .delete(Delete(item: oldItem, index: indexInOld))
+      )
     case insertSlot.count:
-      slots[slotIndex] = combine(slot: insertSlot, change: .insert(Insert(item: newItem, index: indexInNew)))
+      slots[slotIndex] = combine(
+        slot: insertSlot,
+        change: .insert(Insert(item: newItem, index: indexInNew))
+      )
     case replaceSlot.count:
       slots[slotIndex] = combine(
         slot: replaceSlot,
