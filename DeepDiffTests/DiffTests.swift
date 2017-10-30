@@ -14,6 +14,15 @@ class DiffTests: XCTestCase {
     let new = Array("abc")
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
+
+    XCTAssertEqual(changes[0].insert?.item, "a")
+    XCTAssertEqual(changes[0].insert?.index, 0)
+
+    XCTAssertEqual(changes[1].insert?.item, "b")
+    XCTAssertEqual(changes[1].insert?.index, 1)
+
+    XCTAssertEqual(changes[2].insert?.item, "c")
+    XCTAssertEqual(changes[2].insert?.index, 2)
   }
 
   func testAllDelete() {
@@ -21,6 +30,15 @@ class DiffTests: XCTestCase {
     let new = Array("")
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
+
+    XCTAssertEqual(changes[0].delete?.item, "a")
+    XCTAssertEqual(changes[0].delete?.index, 0)
+
+    XCTAssertEqual(changes[1].delete?.item, "b")
+    XCTAssertEqual(changes[1].delete?.index, 1)
+
+    XCTAssertEqual(changes[2].delete?.item, "c")
+    XCTAssertEqual(changes[2].delete?.index, 2)
   }
 
   func test1() {
