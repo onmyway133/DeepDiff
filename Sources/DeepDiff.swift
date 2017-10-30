@@ -9,18 +9,20 @@ import Foundation
 public func diff<T: Equatable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
   switch (old.isEmpty, new.isEmpty) {
   case (true, true):
+    // empty
     return []
   case (true, false):
-    // all insert
+    // all .insert
     return new.enumerated().map({ index, item in
       return .insert(item: item, index: index)
     })
   case (false, true):
-    // all delete
+    // all .delete
     return old.enumerated().map({ index, item in
       return .delete(item: item, index: index)
     })
   case (false, false):
+    // diff
     return Differ().diff(old: old, new: new)
   }
 }
