@@ -11,9 +11,9 @@ public struct Delete<T> {
 }
 
 public struct Replace<T> {
-  public let item: T
-  public let fromIndex: Int
-  public let toIndex: Int
+  public let oldItem: T
+  public let newItem: T
+  public let index: Int
 }
 
 public enum Change<T> {

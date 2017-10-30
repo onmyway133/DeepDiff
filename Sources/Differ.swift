@@ -87,7 +87,7 @@ struct Row<T> {
     case replaceSlot.count:
       slots[slotIndex] = combine(
         slot: replaceSlot,
-        change: .replace(Replace(item: newItem, fromIndex: indexInOld, toIndex: indexInNew))
+        change: .replace(Replace(oldItem: oldItem, newItem: newItem, index: indexInNew))
       )
     default:
       assertionFailure()

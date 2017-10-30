@@ -48,17 +48,17 @@ class DiffTests: XCTestCase {
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
-    XCTAssertEqual(changes[0].replace?.item, "A")
-    XCTAssertEqual(changes[0].replace?.fromIndex, 0)
-    XCTAssertEqual(changes[0].replace?.toIndex, 0)
+    XCTAssertEqual(changes[0].replace?.oldItem, "a")
+    XCTAssertEqual(changes[0].replace?.newItem, "A")
+    XCTAssertEqual(changes[0].replace?.index, 0)
 
-    XCTAssertEqual(changes[1].replace?.item, "B")
-    XCTAssertEqual(changes[1].replace?.fromIndex, 1)
-    XCTAssertEqual(changes[1].replace?.toIndex, 1)
+    XCTAssertEqual(changes[1].replace?.oldItem, "b")
+    XCTAssertEqual(changes[1].replace?.newItem, "B")
+    XCTAssertEqual(changes[1].replace?.index, 1)
 
-    XCTAssertEqual(changes[2].replace?.item, "C")
-    XCTAssertEqual(changes[2].replace?.fromIndex, 2)
-    XCTAssertEqual(changes[2].replace?.toIndex, 2)
+    XCTAssertEqual(changes[2].replace?.oldItem, "c")
+    XCTAssertEqual(changes[2].replace?.newItem, "C")
+    XCTAssertEqual(changes[2].replace?.index, 2)
   }
 
   func test1() {
@@ -68,9 +68,9 @@ class DiffTests: XCTestCase {
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
-    XCTAssertEqual(changes[0].replace?.item, "B")
-    XCTAssertEqual(changes[0].replace?.fromIndex, 1)
-    XCTAssertEqual(changes[0].replace?.toIndex, 1)
+    XCTAssertEqual(changes[0].replace?.oldItem, "b")
+    XCTAssertEqual(changes[0].replace?.newItem, "B")
+    XCTAssertEqual(changes[0].replace?.index, 1)
 
     XCTAssertEqual(changes[1].delete?.item, "c")
     XCTAssertEqual(changes[1].delete?.index, 2)
@@ -83,13 +83,13 @@ class DiffTests: XCTestCase {
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
-    XCTAssertEqual(changes[0].replace?.item, "c")
-    XCTAssertEqual(changes[0].replace?.fromIndex, 0)
-    XCTAssertEqual(changes[0].replace?.toIndex, 0)
+    XCTAssertEqual(changes[0].replace?.oldItem, "a")
+    XCTAssertEqual(changes[0].replace?.newItem, "c")
+    XCTAssertEqual(changes[0].replace?.index, 0)
 
-    XCTAssertEqual(changes[1].replace?.item, "a")
-    XCTAssertEqual(changes[1].replace?.fromIndex, 2)
-    XCTAssertEqual(changes[1].replace?.toIndex, 2)
+    XCTAssertEqual(changes[1].replace?.oldItem, "c")
+    XCTAssertEqual(changes[1].replace?.newItem, "a")
+    XCTAssertEqual(changes[1].replace?.index, 2)
   }
 
   func test3() {
@@ -99,13 +99,13 @@ class DiffTests: XCTestCase {
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
-    XCTAssertEqual(changes[0].replace?.item, "k")
-    XCTAssertEqual(changes[0].replace?.fromIndex, 0)
-    XCTAssertEqual(changes[0].replace?.toIndex, 0)
+    XCTAssertEqual(changes[0].replace?.oldItem, "s")
+    XCTAssertEqual(changes[0].replace?.newItem, "k")
+    XCTAssertEqual(changes[0].replace?.index, 0)
 
-    XCTAssertEqual(changes[1].replace?.item, "e")
-    XCTAssertEqual(changes[1].replace?.fromIndex, 4)
-    XCTAssertEqual(changes[1].replace?.toIndex, 4)
+    XCTAssertEqual(changes[1].replace?.oldItem, "i")
+    XCTAssertEqual(changes[1].replace?.newItem, "e")
+    XCTAssertEqual(changes[1].replace?.index, 4)
 
     XCTAssertEqual(changes[2].delete?.item, "g")
     XCTAssertEqual(changes[2].delete?.index, 6)
@@ -137,9 +137,9 @@ class DiffTests: XCTestCase {
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
-    XCTAssertEqual(changes[0].replace?.item, "b")
-    XCTAssertEqual(changes[0].replace?.fromIndex, 0)
-    XCTAssertEqual(changes[0].replace?.toIndex, 0)
+    XCTAssertEqual(changes[0].replace?.oldItem, "a")
+    XCTAssertEqual(changes[0].replace?.newItem, "b")
+    XCTAssertEqual(changes[0].replace?.index, 0)
   }
 }
 
