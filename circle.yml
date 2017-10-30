@@ -2,12 +2,6 @@ machine:
   xcode:
     version: "9.0"
 
-dependencies:
-  override:
-    - bin/bootstrap-if-needed
-  DeepDiff_directories:
-    - "Carthage"
-
 test:
   override:
     - set -o pipefail && xcodebuild -project DeepDiff.xcodeproj -scheme "DeepDiff-macOS" -sdk macosx clean build
