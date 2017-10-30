@@ -16,7 +16,7 @@ class Differ {
       currentRow.empty(count: previousRow.slots.count)
 
       // the first slot is .delete
-      currentRow.slots[0] = [.delete(item: oldItem, index: indexInOld)]
+      currentRow.slots[0] = [.delete(Delete(item: oldItem, index: indexInOld))]
 
       new.enumerated().forEach { indexInNew, newItem in
         if old[indexInOld] == new[indexInNew] {
@@ -48,7 +48,7 @@ struct Row<T> {
   mutating func seed(with new: Array<T>) {
     slots.append([])
     new.enumerated().forEach { index, item in
-      slots.append([.insert(item: item, index: index)])
+      slots.append([.insert(Insert(item: item, index: index))])
     }
   }
 
@@ -75,13 +75,13 @@ struct Row<T> {
     let minCount = min(min(deleteSlot.count, insertSlot.count), replaceSlot.count)
     switch minCount {
     case deleteSlot.count:
-      slots[slotIndex] = combine(slot: deleteSlot, change: .delete(item: oldItem, index: indexInOld))
+      slots[slotIndex] = combine(slot: deleteSlot, change: .delete(Delete(item: oldItem, index: indexInOld)))
     case insertSlot.count:
-      slots[slotIndex] = combine(slot: insertSlot, change: .insert(item: newItem, index: indexInNew))
+      slots[slotIndex] = combine(slot: insertSlot, change: .insert(Insert(item: newItem, index: indexInNew)))
     case replaceSlot.count:
       slots[slotIndex] = combine(
         slot: replaceSlot,
-        change: .replace(item: newItem, fromIndex: indexInOld, toIndex: indexInNew)
+        change: .replace(Replace(item: newItem, fromIndex: indexInOld, toIndex: indexInNew))
       )
     default:
       assertionFailure()
