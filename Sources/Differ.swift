@@ -68,27 +68,27 @@ struct Row<T> {
   /// Choose the min
   mutating func updateWithMin(previousRow: Row, indexInNew: Int, newItem: T, indexInOld: Int, oldItem: T) {
     let slotIndex = convert(indexInNew: indexInNew)
-    let deleteSlot = previousRow.slots[slotIndex]
-    let insertSlot = slots[slotIndex - 1]
-    let replaceSlot = previousRow.slots[slotIndex - 1]
+    let topSlot = previousRow.slots[slotIndex]
+    let leftSlot = slots[slotIndex - 1]
+    let topLeftSlot = previousRow.slots[slotIndex - 1]
 
-    let minCount = min(deleteSlot.count, insertSlot.count, replaceSlot.count)
+    let minCount = min(topSlot.count, leftSlot.count, topLeftSlot.count)
 
     // Order of cases does not matter
     switch minCount {
-    case deleteSlot.count:
+    case topSlot.count:
       slots[slotIndex] = combine(
-        slot: deleteSlot,
+        slot: topSlot,
         change: .delete(Delete(item: oldItem, index: indexInOld))
       )
-    case insertSlot.count:
+    case leftSlot.count:
       slots[slotIndex] = combine(
-        slot: insertSlot,
+        slot: leftSlot,
         change: .insert(Insert(item: newItem, index: indexInNew))
       )
-    case replaceSlot.count:
+    case topLeftSlot.count:
       slots[slotIndex] = combine(
-        slot: replaceSlot,
+        slot: topLeftSlot,
         change: .replace(Replace(oldItem: oldItem, newItem: newItem, index: indexInNew))
       )
     default:
