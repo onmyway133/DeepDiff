@@ -117,7 +117,16 @@ class DiffTests: XCTestCase {
     let new = Array("def")
 
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 6)
+    XCTAssertEqual(changes.count, 3)
+
+    XCTAssertEqual(changes[0].delete?.item, "a")
+    XCTAssertEqual(changes[0].delete?.index, 0)
+
+    XCTAssertEqual(changes[1].delete?.item, "b")
+    XCTAssertEqual(changes[1].delete?.index, 1)
+
+    XCTAssertEqual(changes[2].delete?.item, "c")
+    XCTAssertEqual(changes[2].delete?.index, 2)
   }
 
   func test5() {
