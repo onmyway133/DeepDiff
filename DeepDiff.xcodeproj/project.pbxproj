@@ -11,6 +11,10 @@
 		D21BBC501FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
 		D21BBC511FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
 		D21BBC521FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
+		D21BBC541FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
+		D21BBC551FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
+		D21BBC561FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
+		D21BBC571FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
 		D284B1051F79038B00D94AF3 /* DeepDiff_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */; };
 		D284B1381F7906DB00D94AF3 /* Info-iOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */; };
 		D284B1391F7906DB00D94AF3 /* Info-tvOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */; };
@@ -51,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		D21BBC4E1FA738A200784167 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
+		D21BBC531FA7390500784167 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
 		D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1041F79038B00D94AF3 /* DeepDiff-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1181F79039F00D94AF3 /* DeepDiff_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				D21BBC4E1FA738A200784167 /* DeepDiff.swift */,
+				D21BBC531FA7390500784167 /* Change.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21BBC561FA7390500784167 /* Change.swift in Sources */,
 				D21BBC511FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21BBC571FA7390500784167 /* Change.swift in Sources */,
 				D21BBC521FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21BBC541FA7390500784167 /* Change.swift in Sources */,
 				D21BBC4F1FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21BBC551FA7390500784167 /* Change.swift in Sources */,
 				D21BBC501FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
