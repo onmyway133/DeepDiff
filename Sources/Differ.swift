@@ -11,13 +11,16 @@ class Differ {
     previousRow.seed(with: new)
     var currentRow = Row<T>()
 
+    // row in matrix
     old.enumerated().forEach { indexInOld, oldItem in
       // reset current row
-      currentRow.empty(count: previousRow.slots.count)
+      currentRow.reset(
+        count: previousRow.slots.count,
+        indexInOld: indexInOld,
+        oldItem: oldItem
+      )
 
-      // the first slot is .delete
-      currentRow.slots[0] = [.delete(Delete(item: oldItem, index: indexInOld))]
-
+      // column in matrix
       new.enumerated().forEach { indexInNew, newItem in
         if old[indexInOld] == new[indexInNew] {
           currentRow.update(indexInNew: indexInNew, previousRow: previousRow)
@@ -52,11 +55,17 @@ struct Row<T> {
     }
   }
 
-  /// Allocate with empty slots
-  mutating func empty(count: Int) {
-    slots = Array(0..<count).map { _ in
-      return []
+  /// Reset with empty slots
+  /// First slot is .delete
+  mutating func reset(count: Int, indexInOld: Int, oldItem: T) {
+    if slots.isEmpty {
+      slots = Array(repeatElement([], count: count))
     }
+
+    slots[0] = combine(
+      slot: slots[0],
+      change: .delete(Delete(item: oldItem, index: indexInOld))
+    )
   }
 
   /// Use .replace from previousRow
