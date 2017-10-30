@@ -62,13 +62,35 @@ class DiffTests: XCTestCase {
   }
 
   func test1() {
-    let old = [1, 2, 3]
-    let new = [1, 3, 4]
+    let old = Array("abc")
+    let new = Array("aB")
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
+
+    XCTAssertEqual(changes[0].replace?.item, "B")
+    XCTAssertEqual(changes[0].replace?.fromIndex, 1)
+    XCTAssertEqual(changes[0].replace?.toIndex, 1)
+
+    XCTAssertEqual(changes[1].delete?.item, "c")
+    XCTAssertEqual(changes[1].delete?.index, 2)
   }
 
   func test2() {
+    let old = Array("abc")
+    let new = Array("cba")
+    let changes = diff(old: old, new: new)
+    XCTAssertEqual(changes.count, 2)
+
+    XCTAssertEqual(changes[0].replace?.item, "c")
+    XCTAssertEqual(changes[0].replace?.fromIndex, 0)
+    XCTAssertEqual(changes[0].replace?.toIndex, 0)
+
+    XCTAssertEqual(changes[1].replace?.item, "a")
+    XCTAssertEqual(changes[1].replace?.fromIndex, 2)
+    XCTAssertEqual(changes[1].replace?.toIndex, 2)
+  }
+
+  func test3() {
     let old = Array("sitting")
     let new = Array("kitten")
     let changes = diff(old: old, new: new)
