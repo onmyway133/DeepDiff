@@ -187,5 +187,17 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[1].insert?.item, User(name: "c", age: 3))
     XCTAssertEqual(changes[1].insert?.index, 2)
   }
+
+  func testMove() {
+    let old = Array("abcdefgh")
+    let new = Array("agbcdefh")
+
+    let changes = diff(old: old, new: new, reduceMove: true)
+    XCTAssertEqual(changes.count, 1)
+
+    XCTAssertEqual(changes[0].move?.item, "g")
+    XCTAssertEqual(changes[0].move?.fromIndex, 6)
+    XCTAssertEqual(changes[0].move?.toIndex, 1)
+  }
 }
 
