@@ -18,10 +18,10 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   
-  s.ios.source_files = 'Source/{iOS,Shared}/**/*'
-  s.osx.source_files = 'Source/{Shared}/**/*'
-  s.tvos.source_files = 'Source/{iOS,Shared}/**/*'
-  s.watchos.source_files = 'Source/Shared}/**/*'
+  s.ios.source_files = 'Sources/{iOS,Shared}/**/*'
+  s.osx.source_files = 'Sources/{Shared}/**/*'
+  s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
+  s.watchos.source_files = 'Sources/Shared}/**/*'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
