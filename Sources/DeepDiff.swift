@@ -6,7 +6,7 @@ import Foundation
 ///   - old: old collection
 ///   - new: new collection
 /// - Returns: A set of changes
-public func diff<T: Equatable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+public func diff<T: Equatable>(old: Array<T>, new: Array<T>, reduceMove: Bool = false) -> [Change<T>] {
   switch (old.isEmpty, new.isEmpty) {
   case (true, true):
     // empty
@@ -23,6 +23,10 @@ public func diff<T: Equatable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
     }
   case (false, false):
     // diff
-    return Differ().diff(old: old, new: new)
+    return Differ().diff(
+      old: old,
+      new: new,
+      reduceMove: reduceMove
+    )
   }
 }

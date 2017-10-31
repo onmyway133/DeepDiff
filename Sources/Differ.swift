@@ -3,10 +3,7 @@ import Foundation
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
 class Differ {
-  func diff<T: Equatable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
-    // We can adapt the algorithm to use less space, O(m) instead of O(mn),
-    // since it only requires that the previous row and current row be stored at any one time
-
+  func diff<T: Equatable>(old: Array<T>, new: Array<T>, reduceMove: Bool) -> [Change<T>] {
     var previousRow = Row<T>()
     previousRow.seed(with: new)
     var currentRow = Row<T>()
@@ -39,10 +36,13 @@ class Differ {
       previousRow = currentRow
     }
 
-    return currentRow.lastSlot()
+    let changes = currentRow.lastSlot()
+    return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
   }
 }
 
+// We can adapt the algorithm to use less space, O(m) instead of O(mn),
+// since it only requires that the previous row and current row be stored at any one time
 struct Row<T> {
   /// Each slot is a collection of Change
   var slots: [[Change<T>]] = []
