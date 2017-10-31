@@ -61,8 +61,7 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[2].replace?.index, 2)
   }
 
-  func test1() {
-    // Same prefix "a"
+  func testSamePrefix() {
     let old = Array("abc")
     let new = Array("aB")
     let changes = diff(old: old, new: new)
@@ -76,8 +75,7 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[1].delete?.index, 2)
   }
 
-  func test2() {
-    // Reversed
+  func testReversed() {
     let old = Array("abc")
     let new = Array("cba")
     let changes = diff(old: old, new: new)
@@ -92,8 +90,7 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[1].replace?.index, 2)
   }
 
-  func test3() {
-    // Small changes at beginning and end
+  func testSmallChangesAtEdges() {
     let old = Array("sitting")
     let new = Array("kitten")
     let changes = diff(old: old, new: new)
@@ -111,8 +108,7 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[2].delete?.index, 6)
   }
 
-  func test4() {
-    // Same postfix
+  func testSamePostfix() {
     let old = Array("abcdef")
     let new = Array("def")
 
@@ -129,8 +125,7 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[2].delete?.index, 2)
   }
 
-  func test5() {
-    // Replace with whole new word
+  func testReplaceWholeNewWord() {
     let old = Array("abc")
     let new = Array("d")
 
@@ -138,8 +133,7 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes.count, 3)
   }
 
-  func test6() {
-    // Replace with 1 character
+  func testReplace1Character() {
     let old = Array("a")
     let new = Array("b")
 
