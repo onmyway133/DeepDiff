@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classNames</key>
+	<dict>
+		<key>PerformanceTests</key>
+		<dict>
+			<key>test1000Items_Add100()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.5</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>31. okt. 2017, 10:51:38</string>
+				</dict>
+			</dict>
+			<key>test1000Items_Delete100_Add100()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.5</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>31. okt. 2017, 10:30:46</string>
+				</dict>
+			</dict>
+			<key>test100Items_Delete50_Add50()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.029626</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>31. okt. 2017, 10:30:05</string>
+				</dict>
+			</dict>
+			<key>test4Items_Delete2_Add2()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0001084</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>31. okt. 2017, 10:26:53</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
