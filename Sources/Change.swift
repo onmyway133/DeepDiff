@@ -16,10 +16,17 @@ public struct Replace<T> {
   public let index: Int
 }
 
+public struct Move<T> {
+  public let item: T
+  public let fromIndex: Int
+  public let toIndex: Int
+}
+
 public enum Change<T> {
   case insert(Insert<T>)
   case delete(Delete<T>)
   case replace(Replace<T>)
+  case move(Move<T>)
 
   public var insert: Insert<T>? {
     if case .insert(let insert) = self {
@@ -40,6 +47,14 @@ public enum Change<T> {
   public var replace: Replace<T>? {
     if case .replace(let replace) = self {
       return replace
+    }
+
+    return nil
+  }
+
+  public var move: Move<T>? {
+    if case .move(let move) = self {
+      return move
     }
 
     return nil
