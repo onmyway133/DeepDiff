@@ -1,15 +1,34 @@
 import UIKit
 import DeepDiff
+import Anchors
 
-class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+  var collectionView: UICollectionView!
   var items: [Int] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor.white
 
-    collectionView?.register(Cell.self, forCellWithReuseIdentifier: "Cell")
+    title = "DeepDiff"
+
+    let layout = UICollectionViewFlowLayout()
+    layout.minimumLineSpacing = 10
+    layout.minimumInteritemSpacing = 10
+
+    collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    collectionView.dataSource = self
+    collectionView.delegate = self
+    collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
+    collectionView.backgroundColor = .lightGray
+
+    view.addSubview(collectionView)
+    activate(
+      collectionView.anchor.edges
+    )
+
+    collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Reload", style: .plain, target: self, action: #selector(reload)
     )
@@ -19,16 +38,16 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     let oldItems = items
     items = generateItems()
     let changes = diff(old: oldItems, new: items, reduceMove: true)
-    collectionView?.reload(changes: changes, completion: { _ in })
+    collectionView.reload(changes: changes, completion: { _ in })
   }
 
   // MARK: - UICollectionViewDataSource
 
-  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count
   }
 
-  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
     let item = items[indexPath.item]
 
@@ -41,7 +60,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    let size = collectionView.frame.size.width / 4
+    let size = collectionView.frame.size.width / 5
     return CGSize(width: size, height: size)
   }
 
