@@ -3,7 +3,7 @@ import Foundation
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
 class Differ {
-  func diff<T: Equatable>(old: Array<T>, new: Array<T>, reduceMove: Bool) -> [Change<T>] {
+  func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMove: Bool) -> [Change<T>] {
     let previousRow = Row<T>()
     previousRow.seed(with: new)
     let currentRow = Row<T>()
@@ -19,7 +19,7 @@ class Differ {
 
       // column in matrix
       new.enumerated().forEach { indexInNew, newItem in
-        if old[indexInOld] == new[indexInNew] {
+        if isEqual(oldItem: old[indexInOld], newItem: new[indexInNew]) {
           currentRow.update(indexInNew: indexInNew, previousRow: previousRow)
         } else {
           currentRow.updateWithMin(
@@ -38,6 +38,18 @@ class Differ {
 
     let changes = currentRow.lastSlot()
     return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
+  }
+
+  // MARK: - Helper
+
+  private func isEqual<T: Equatable & Hashable>(oldItem: T, newItem: T) -> Bool {
+    // Same items must have same hashValue
+    if oldItem.hashValue != newItem.hashValue {
+      return false
+    } else {
+      // Different hashValue does not always mean different items
+      return oldItem == newItem
+    }
   }
 }
 

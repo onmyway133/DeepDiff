@@ -6,7 +6,7 @@ import Foundation
 ///   - old: old collection
 ///   - new: new collection
 /// - Returns: A set of changes
-public func diff<T: Equatable>(old: Array<T>, new: Array<T>, reduceMove: Bool = false) -> [Change<T>] {
+public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMove: Bool = false) -> [Change<T>] {
   switch (old.isEmpty, new.isEmpty) {
   case (true, true):
     // empty
