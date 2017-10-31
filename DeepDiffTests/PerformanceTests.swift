@@ -2,6 +2,15 @@ import XCTest
 import DeepDiff
 
 class PerformanceTests: XCTestCase {
+  func test4Items_Delete2_Add2() {
+    let data = generate(count: 4, removeRange: 0..<2, adding: true)
+
+    measure {
+      let changes = diff(old: data.old, new: data.new)
+      XCTAssertEqual(changes.count, 2)
+    }
+  }
+
   func test100Items_Delete50_Add50() {
     let data = generate(count: 100, removeRange: 0..<50, adding: true)
 
@@ -32,7 +41,8 @@ class PerformanceTests: XCTestCase {
   // MARK: - Helper
 
   /// Generate new by removing some items from old
-  /// If adding, add more items to new
+  /// Use UUID to generate all same items, because of repeating
+  /// If adding, add more items to new with new generated UUID
   func generate(count: Int, removeRange: Range<Int>, adding: Bool) -> (old: Array<String>, new: Array<String>) {
     let old = Array(repeating: UUID().uuidString, count: count)
     var new = old
