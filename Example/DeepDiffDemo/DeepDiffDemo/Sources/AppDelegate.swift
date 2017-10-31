@@ -9,9 +9,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
 
-    let viewController = CollectionViewController()
-    let navigationController = UINavigationController(rootViewController: viewController)
-    window?.rootViewController = navigationController
+    let tabController = UITabBarController()
+    tabController.viewControllers = [
+      UINavigationController(rootViewController: TableViewController()),
+      UINavigationController(rootViewController: CollectionViewController())
+    ]
+    window?.rootViewController = tabController
     window?.makeKeyAndVisible()
 
     return true

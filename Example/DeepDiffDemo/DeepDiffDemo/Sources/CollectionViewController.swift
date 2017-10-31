@@ -11,7 +11,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     super.viewDidLoad()
     view.backgroundColor = UIColor.white
 
-    title = "DeepDiff"
+    title = "CollectionView"
 
     let layout = UICollectionViewFlowLayout()
     layout.minimumLineSpacing = 10
