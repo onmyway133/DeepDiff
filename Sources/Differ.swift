@@ -4,9 +4,9 @@ import Foundation
 
 class Differ {
   func diff<T: Equatable>(old: Array<T>, new: Array<T>, reduceMove: Bool) -> [Change<T>] {
-    var previousRow = Row<T>()
+    let previousRow = Row<T>()
     previousRow.seed(with: new)
-    var currentRow = Row<T>()
+    let currentRow = Row<T>()
 
     // row in matrix
     old.enumerated().forEach { indexInOld, oldItem in
@@ -33,7 +33,7 @@ class Differ {
       }
 
       // set previousRow
-      previousRow = currentRow
+      previousRow.slots = currentRow.slots
     }
 
     let changes = currentRow.lastSlot()
@@ -43,12 +43,12 @@ class Differ {
 
 // We can adapt the algorithm to use less space, O(m) instead of O(mn),
 // since it only requires that the previous row and current row be stored at any one time
-struct Row<T> {
+class Row<T> {
   /// Each slot is a collection of Change
   var slots: [[Change<T>]] = []
 
   /// Seed with .insert from new
-  mutating func seed(with new: Array<T>) {
+  func seed(with new: Array<T>) {
     slots.append([])
     new.enumerated().forEach { index, item in
       slots.append([.insert(Insert(item: item, index: index))])
@@ -57,7 +57,7 @@ struct Row<T> {
 
   /// Reset with empty slots
   /// First slot is .delete
-  mutating func reset(count: Int, indexInOld: Int, oldItem: T) {
+  func reset(count: Int, indexInOld: Int, oldItem: T) {
     if slots.isEmpty {
       slots = Array(repeatElement([], count: count))
     }
@@ -69,13 +69,13 @@ struct Row<T> {
   }
 
   /// Use .replace from previousRow
-  mutating func update(indexInNew: Int, previousRow: Row) {
+  func update(indexInNew: Int, previousRow: Row) {
     let slotIndex = convert(indexInNew: indexInNew)
     slots[slotIndex] = previousRow.slots[slotIndex - 1]
   }
 
   /// Choose the min
-  mutating func updateWithMin(previousRow: Row, indexInNew: Int, newItem: T, indexInOld: Int, oldItem: T) {
+  func updateWithMin(previousRow: Row, indexInNew: Int, newItem: T, indexInOld: Int, oldItem: T) {
     let slotIndex = convert(indexInNew: indexInNew)
     let topSlot = previousRow.slots[slotIndex]
     let leftSlot = slots[slotIndex - 1]
