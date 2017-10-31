@@ -17,7 +17,11 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "3.0"
 
   s.requires_arc = true
-  s.source_files = 'Sources/**/*'
+  
+  s.ios.source_files = 'Source/{iOS,Shared}/**/*'
+  s.osx.source_files = 'Source/{Shared}/**/*'
+  s.tvos.source_files = 'Source/{iOS,Shared}/**/*'
+  s.watchos.source_files = 'Source/Shared}/**/*'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
