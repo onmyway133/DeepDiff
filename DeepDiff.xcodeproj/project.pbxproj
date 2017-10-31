@@ -20,6 +20,9 @@
 		D21BBC5B1FA7559900784167 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* Differ.swift */; };
 		D21BBC5C1FA7559900784167 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* Differ.swift */; };
 		D238491C1FA8692400316A21 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491B1FA8692400316A21 /* MoveReducer.swift */; };
+		D238491E1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
+		D238491F1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
+		D23849201FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D284B1051F79038B00D94AF3 /* DeepDiff_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */; };
 		D284B1381F7906DB00D94AF3 /* Info-iOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */; };
 		D284B1391F7906DB00D94AF3 /* Info-tvOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */; };
@@ -60,6 +63,7 @@
 		D21BBC531FA7390500784167 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
 		D21BBC581FA7559900784167 /* Differ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Differ.swift; sourceTree = "<group>"; };
 		D238491B1FA8692400316A21 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
+		D238491D1FA86AFC00316A21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1041F79038B00D94AF3 /* DeepDiff-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1181F79039F00D94AF3 /* DeepDiff_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,7 @@
 				D284B1331F7906DA00D94AF3 /* Info-macOS-Tests.plist */,
 				D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */,
 				D288B6411FA77CB100BBDC5F /* DiffTests.swift */,
+				D238491D1FA86AFC00316A21 /* User.swift */,
 			);
 			path = DeepDiffTests;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D288B6441FA77CB100BBDC5F /* DiffTests.swift in Sources */,
+				D23849201FA86AFC00316A21 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D288B6421FA77CB100BBDC5F /* DiffTests.swift in Sources */,
+				D238491E1FA86AFC00316A21 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D288B6431FA77CB100BBDC5F /* DiffTests.swift in Sources */,
+				D238491F1FA86AFC00316A21 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

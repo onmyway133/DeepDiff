@@ -144,5 +144,28 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[0].replace?.newItem, "b")
     XCTAssertEqual(changes[0].replace?.index, 0)
   }
+
+  func testObject() {
+    let old = [
+      User(name: "a", age: 1),
+      User(name: "b", age: 2)
+    ]
+
+    let new = [
+      User(name: "a", age: 1),
+      User(name: "a", age: 2),
+      User(name: "c", age: 3)
+    ]
+
+    let changes = diff(old: old, new: new)
+    XCTAssertEqual(changes.count, 2)
+
+    XCTAssertEqual(changes[0].replace?.oldItem, User(name: "b", age: 2))
+    XCTAssertEqual(changes[0].replace?.newItem, User(name: "a", age: 2))
+    XCTAssertEqual(changes[0].replace?.index, 1)
+
+    XCTAssertEqual(changes[1].insert?.item, User(name: "c", age: 3))
+    XCTAssertEqual(changes[1].insert?.index, 2)
+  }
 }
 
