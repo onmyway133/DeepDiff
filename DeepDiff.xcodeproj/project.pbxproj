@@ -7,19 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D21BBC4F1FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
-		D21BBC501FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
-		D21BBC511FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
-		D21BBC521FA738A200784167 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC4E1FA738A200784167 /* DeepDiff.swift */; };
-		D21BBC541FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
-		D21BBC551FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
-		D21BBC561FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
-		D21BBC571FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
-		D21BBC591FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
-		D21BBC5A1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
-		D21BBC5B1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
-		D21BBC5C1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
-		D238491C1FA8692400316A21 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491B1FA8692400316A21 /* MoveReducer.swift */; };
 		D238491E1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D238491F1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D23849201FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
@@ -33,6 +20,26 @@
 		D288B6421FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
 		D288B6431FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
 		D288B6441FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
+		D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */; };
+		D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */; };
+		D2B318FF1FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
+		D2B319001FA8CD1300A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
+		D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
+		D2B319021FA8CD1300A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
+		D2B319031FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
+		D2B319041FA8CD1300A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
+		D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
+		D2B319061FA8CD1300A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
+		D2B319071FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
+		D2B319081FA8CD1400A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
+		D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
+		D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
+		D2B3190B1FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
+		D2B3190C1FA8CD1400A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
+		D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
+		D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
+		D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3190F1FA8CD2200A0B637 /* UICollectionView+Extensions.swift */; };
+		D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3190F1FA8CD2200A0B637 /* UICollectionView+Extensions.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* DeepDiff.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* DeepDiff.framework */; };
 /* End PBXBuildFile section */
@@ -62,10 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D21BBC4E1FA738A200784167 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
-		D21BBC531FA7390500784167 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
-		D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerAlgorithm.swift; sourceTree = "<group>"; };
-		D238491B1FA8692400316A21 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
 		D238491D1FA86AFC00316A21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D23849211FA86DEF00316A21 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,12 @@
 		D284B1421F79081F00D94AF3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		D284B1431F79081F00D94AF3 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		D288B6411FA77CB100BBDC5F /* DiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffTests.swift; sourceTree = "<group>"; };
+		D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerAlgorithm.swift; sourceTree = "<group>"; };
+		D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
+		D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
+		D2B318FA1FA8CCFC00A0B637 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
+		D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		D2B3190F1FA8CD2200A0B637 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D500FD121C3AAC8E00782D78 /* Playground-macOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-macOS.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D5B2E89F1C3A780C00C0327D /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +163,26 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		D2B318F61FA8CCFC00A0B637 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */,
+				D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */,
+				D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */,
+				D2B318FA1FA8CCFC00A0B637 /* Change.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D2B318FB1FA8CCFC00A0B637 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */,
+				D2B3190F1FA8CD2200A0B637 /* UICollectionView+Extensions.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
@@ -183,10 +212,8 @@
 		D5C629691C3A809D007F7B7C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D21BBC4E1FA738A200784167 /* DeepDiff.swift */,
-				D21BBC531FA7390500784167 /* Change.swift */,
-				D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */,
-				D238491B1FA8692400316A21 /* MoveReducer.swift */,
+				D2B318FB1FA8CCFC00A0B637 /* iOS */,
+				D2B318F61FA8CCFC00A0B637 /* Shared */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -488,9 +515,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21BBC561FA7390500784167 /* Change.swift in Sources */,
-				D21BBC5B1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
-				D21BBC511FA738A200784167 /* DeepDiff.swift in Sources */,
+				D2B319071FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
+				D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */,
+				D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
+				D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
+				D2B319081FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
+				D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,9 +538,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21BBC571FA7390500784167 /* Change.swift in Sources */,
-				D21BBC5C1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
-				D21BBC521FA738A200784167 /* DeepDiff.swift in Sources */,
+				D2B3190C1FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
+				D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */,
+				D2B3190B1FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
+				D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,10 +549,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21BBC541FA7390500784167 /* Change.swift in Sources */,
-				D238491C1FA8692400316A21 /* MoveReducer.swift in Sources */,
-				D21BBC591FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
-				D21BBC4F1FA738A200784167 /* DeepDiff.swift in Sources */,
+				D2B318FF1FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
+				D2B319021FA8CD1300A0B637 /* Change.swift in Sources */,
+				D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
+				D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
+				D2B319001FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
+				D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,9 +572,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21BBC551FA7390500784167 /* Change.swift in Sources */,
-				D21BBC5A1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
-				D21BBC501FA738A200784167 /* DeepDiff.swift in Sources */,
+				D2B319041FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
+				D2B319061FA8CD1300A0B637 /* Change.swift in Sources */,
+				D2B319031FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
+				D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,6 +932,7 @@
 		D5B2E8B71C3A780C00C0327D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/DeepDiffTests/Info-iOS-Tests.plist";
@@ -912,6 +947,7 @@
 		D5B2E8B81C3A780C00C0327D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/DeepDiffTests/Info-iOS-Tests.plist";
@@ -970,6 +1006,7 @@
 		D5C629551C3A7FAA007F7B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -985,6 +1022,7 @@
 		D5C629561C3A7FAA007F7B7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
