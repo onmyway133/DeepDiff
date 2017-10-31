@@ -2,6 +2,7 @@ import Foundation
 
 struct MoveReducer<T> {
   func reduce<T: Equatable>(changes: [Change<T>]) -> [Change<T>] {
+    // Find pairs of .insert and .delete with same item
     let inserts = changes.flatMap({ $0.insert })
 
     if inserts.isEmpty {
@@ -17,9 +18,15 @@ struct MoveReducer<T> {
         let deleteChange = changes[deleteIndex].delete!
 
         let move = Move<T>(item: insert.item, fromIndex: deleteChange.index, toIndex: insertChange.index)
-        changes.remove(at: insertIndex)
-        changes.remove(at: deleteIndex.advanced(by: -1))
-        changes.insert(.move(move), at: insertIndex)
+
+        // .insert can be before or after .delete
+        let minIndex = min(insertIndex, deleteIndex)
+        let maxIndex = max(insertIndex, deleteIndex)
+
+        // remove both .insert and .delete, and replace by .move
+        changes.remove(at: minIndex)
+        changes.remove(at: maxIndex.advanced(by: -1))
+        changes.insert(.move(move), at: minIndex)
       }
     }
 

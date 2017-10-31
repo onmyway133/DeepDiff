@@ -188,16 +188,28 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[1].insert?.index, 2)
   }
 
-  func testMove() {
-    let old = Array("abcdefgh")
-    let new = Array("agbcdefh")
+  func testMoveWithInsertDelete() {
+    let old = Array("12345")
+    let new = Array("15234")
 
     let changes = diff(old: old, new: new, reduceMove: true)
     XCTAssertEqual(changes.count, 1)
 
-    XCTAssertEqual(changes[0].move?.item, "g")
-    XCTAssertEqual(changes[0].move?.fromIndex, 6)
+    XCTAssertEqual(changes[0].move?.item, "5")
+    XCTAssertEqual(changes[0].move?.fromIndex, 4)
     XCTAssertEqual(changes[0].move?.toIndex, 1)
+  }
+
+  func testMoveWithDeleteInsert() {
+    let old = Array("15234")
+    let new = Array("12345")
+
+    let changes = diff(old: old, new: new, reduceMove: true)
+    XCTAssertEqual(changes.count, 1)
+
+    XCTAssertEqual(changes[0].move?.item, "5")
+    XCTAssertEqual(changes[0].move?.fromIndex, 1)
+    XCTAssertEqual(changes[0].move?.toIndex, 4)
   }
 }
 
