@@ -67,16 +67,60 @@ class PerformanceTests: XCTestCase {
   }
 
   func test100000Items_AllDelete() {
-    let old = Array(repeatElement(UUID().uuidString, count: 100000))
+    let old = Array(repeatElement(UUID().uuidString, count: 10000))
     let new = [String]()
 
     measure {
       let changes = diff(old: old, new: new)
-      XCTAssertEqual(changes.count, 100000)
+      XCTAssertEqual(changes.count, 10000)
     }
   }
 
   // MARK: - Helper
+
+  func testCompareManyStrings() {
+    let old = Array(0..<10000).map { _ in
+      return UUID().uuidString
+    }
+
+    let new = Array(0..<10000).map { _ in
+      return UUID().uuidString
+    }
+
+    measure {
+      old.forEach { oldItem in
+        new.forEach { newItem in
+          if oldItem == newItem {
+
+          } else {
+
+          }
+        }
+      }
+    }
+  }
+
+  func testCompareManyInts() {
+    let old = Array(0..<10000).map { _ in
+      return arc4random()
+    }
+
+    let new = Array(0..<10000).map { _ in
+      return arc4random()
+    }
+
+    measure {
+      old.forEach { oldItem in
+        new.forEach { newItem in
+          if oldItem == newItem {
+
+          } else {
+
+          }
+        }
+      }
+    }
+  }
 
   /// Generate new by removing some items from old
   /// Use UUID to generate all same items, because of repeating
