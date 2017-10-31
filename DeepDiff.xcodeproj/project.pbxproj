@@ -23,6 +23,9 @@
 		D238491E1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D238491F1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D23849201FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
+		D23849221FA86DEF00316A21 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23849211FA86DEF00316A21 /* PerformanceTests.swift */; };
+		D23849231FA86DEF00316A21 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23849211FA86DEF00316A21 /* PerformanceTests.swift */; };
+		D23849241FA86DEF00316A21 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23849211FA86DEF00316A21 /* PerformanceTests.swift */; };
 		D284B1051F79038B00D94AF3 /* DeepDiff_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */; };
 		D284B1381F7906DB00D94AF3 /* Info-iOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */; };
 		D284B1391F7906DB00D94AF3 /* Info-tvOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */; };
@@ -64,6 +67,7 @@
 		D21BBC581FA7559900784167 /* Differ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Differ.swift; sourceTree = "<group>"; };
 		D238491B1FA8692400316A21 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
 		D238491D1FA86AFC00316A21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D23849211FA86DEF00316A21 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1041F79038B00D94AF3 /* DeepDiff-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1181F79039F00D94AF3 /* DeepDiff_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +199,7 @@
 				D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */,
 				D288B6411FA77CB100BBDC5F /* DiffTests.swift */,
 				D238491D1FA86AFC00316A21 /* User.swift */,
+				D23849211FA86DEF00316A21 /* PerformanceTests.swift */,
 			);
 			path = DeepDiffTests;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 			files = (
 				D288B6441FA77CB100BBDC5F /* DiffTests.swift in Sources */,
 				D23849201FA86AFC00316A21 /* User.swift in Sources */,
+				D23849241FA86DEF00316A21 /* PerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +531,7 @@
 			files = (
 				D288B6421FA77CB100BBDC5F /* DiffTests.swift in Sources */,
 				D238491E1FA86AFC00316A21 /* User.swift in Sources */,
+				D23849221FA86DEF00316A21 /* PerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +551,7 @@
 			files = (
 				D288B6431FA77CB100BBDC5F /* DiffTests.swift in Sources */,
 				D238491F1FA86AFC00316A21 /* User.swift in Sources */,
+				D23849231FA86DEF00316A21 /* PerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
