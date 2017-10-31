@@ -1,7 +1,7 @@
 import UIKit
 import Anchors
 
-class Cell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
   let label = UILabel()
 
   override func didMoveToSuperview() {

@@ -2,7 +2,7 @@ import UIKit
 import DeepDiff
 import Anchors
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
   var collectionView: UICollectionView!
   var items: [Int] = []
@@ -28,7 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
       collectionView.anchor.edges
     )
 
-    collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
+    collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Reload", style: .plain, target: self, action: #selector(reload)
     )
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   @objc func reload() {
     let oldItems = items
     items = generateItems()
-    let changes = diff(old: oldItems, new: items, reduceMove: true)
+    let changes = diff(old: oldItems, new: items, reduceMove: false)
     collectionView.reload(changes: changes, completion: { _ in })
   }
 
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! Cell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
     let item = items[indexPath.item]
 
     cell.label.text = "\(item)"
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
   // MARK: - Data
 
   func generateItems() -> [Int] {
-    let count = Int(arc4random_uniform(10)) + 20
+    let count = 4
     let items = Array(0..<count)
     return items.shuffled()
   }
