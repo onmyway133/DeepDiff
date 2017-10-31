@@ -2,7 +2,7 @@ import Foundation
 
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
-class Differ {
+class WagnerFischerAlgorithm {
   func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMove: Bool) -> [Change<T>] {
     let previousRow = Row<T>()
     previousRow.seed(with: new)

@@ -15,10 +15,10 @@
 		D21BBC551FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
 		D21BBC561FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
 		D21BBC571FA7390500784167 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC531FA7390500784167 /* Change.swift */; };
-		D21BBC591FA7559900784167 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* Differ.swift */; };
-		D21BBC5A1FA7559900784167 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* Differ.swift */; };
-		D21BBC5B1FA7559900784167 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* Differ.swift */; };
-		D21BBC5C1FA7559900784167 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* Differ.swift */; };
+		D21BBC591FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
+		D21BBC5A1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
+		D21BBC5B1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
+		D21BBC5C1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */; };
 		D238491C1FA8692400316A21 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491B1FA8692400316A21 /* MoveReducer.swift */; };
 		D238491E1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D238491F1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
@@ -64,7 +64,7 @@
 /* Begin PBXFileReference section */
 		D21BBC4E1FA738A200784167 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
 		D21BBC531FA7390500784167 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
-		D21BBC581FA7559900784167 /* Differ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Differ.swift; sourceTree = "<group>"; };
+		D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerAlgorithm.swift; sourceTree = "<group>"; };
 		D238491B1FA8692400316A21 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
 		D238491D1FA86AFC00316A21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D23849211FA86DEF00316A21 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 			children = (
 				D21BBC4E1FA738A200784167 /* DeepDiff.swift */,
 				D21BBC531FA7390500784167 /* Change.swift */,
-				D21BBC581FA7559900784167 /* Differ.swift */,
+				D21BBC581FA7559900784167 /* WagnerFischerAlgorithm.swift */,
 				D238491B1FA8692400316A21 /* MoveReducer.swift */,
 			);
 			path = Sources;
@@ -489,7 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21BBC561FA7390500784167 /* Change.swift in Sources */,
-				D21BBC5B1FA7559900784167 /* Differ.swift in Sources */,
+				D21BBC5B1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
 				D21BBC511FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21BBC571FA7390500784167 /* Change.swift in Sources */,
-				D21BBC5C1FA7559900784167 /* Differ.swift in Sources */,
+				D21BBC5C1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
 				D21BBC521FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,7 +520,7 @@
 			files = (
 				D21BBC541FA7390500784167 /* Change.swift in Sources */,
 				D238491C1FA8692400316A21 /* MoveReducer.swift in Sources */,
-				D21BBC591FA7559900784167 /* Differ.swift in Sources */,
+				D21BBC591FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
 				D21BBC4F1FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,7 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D21BBC551FA7390500784167 /* Change.swift in Sources */,
-				D21BBC5A1FA7559900784167 /* Differ.swift in Sources */,
+				D21BBC5A1FA7559900784167 /* WagnerFischerAlgorithm.swift in Sources */,
 				D21BBC501FA738A200784167 /* DeepDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
