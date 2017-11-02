@@ -264,8 +264,8 @@ class DiffTests: XCTestCase {
   }
 
   func testReplaceMoveReplace() {
-    let old = Array("1302")
-    let new = Array("0231")
+    let old = Array("2013")
+    let new = Array("1302")
 
     let changes = diff(old: old, new: new, reduceMove: true)
     XCTAssertEqual(changes.count, 3)
