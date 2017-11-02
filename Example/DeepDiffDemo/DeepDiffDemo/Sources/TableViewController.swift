@@ -40,7 +40,13 @@ class TableViewController: UIViewController, UITableViewDataSource {
       self.tableView.reload(changes: changes, completion: { _ in })
     }
 
-    print(exception as Any)
+    if let exception = exception {
+      print(exception as Any)
+      print(oldItems)
+      print(items)
+      print(changes)
+    }
+
   }
 
   // MARK: - UITableViewDataSource
