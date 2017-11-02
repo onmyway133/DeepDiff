@@ -255,13 +255,12 @@ class DiffTests: XCTestCase {
     let new = Array("0231")
 
     let changes = diff(old: old, new: new, reduceMove: false)
-    XCTAssertEqual(changes.count, 3)
+    XCTAssertEqual(changes.count, 4)
 
-    XCTAssertEqual(changes[0].delete?.item, "b")
-    XCTAssertEqual(changes[0].delete?.index, 1)
-
-    XCTAssertEqual(changes[1].delete?.item, "c")
-    XCTAssertEqual(changes[1].delete?.index, 2)
+    XCTAssertNotNil(changes[0].replace)
+    XCTAssertNotNil(changes[1].insert)
+    XCTAssertNotNil(changes[2].replace)
+    XCTAssertNotNil(changes[3].delete)
   }
 
   func testReplaceMoveReplace() {
@@ -271,11 +270,9 @@ class DiffTests: XCTestCase {
     let changes = diff(old: old, new: new, reduceMove: true)
     XCTAssertEqual(changes.count, 3)
 
-    XCTAssertEqual(changes[0].delete?.item, "b")
-    XCTAssertEqual(changes[0].delete?.index, 1)
-
-    XCTAssertEqual(changes[1].delete?.item, "c")
-    XCTAssertEqual(changes[1].delete?.index, 2)
+    XCTAssertNotNil(changes[0].replace)
+    XCTAssertNotNil(changes[1].move)
+    XCTAssertNotNil(changes[2].replace)
   }
 }
 
