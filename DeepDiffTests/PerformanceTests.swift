@@ -20,7 +20,7 @@ class PerformanceTests: XCTestCase {
     }
   }
 
-  func test1000Items_Replace100() {
+  func _test1000Items_Replace100() {
     let data = generate(count: 1000, removeRange: 100..<200, addRange: 799..<899)
 
     measure {
@@ -29,7 +29,7 @@ class PerformanceTests: XCTestCase {
     }
   }
 
-  func test1000Items_Delete100() {
+  func _test1000Items_Delete100() {
     let data = generate(count: 1000, removeRange: 100..<200)
 
     measure {
@@ -38,7 +38,7 @@ class PerformanceTests: XCTestCase {
     }
   }
 
-  func test1000Items_Add100() {
+  func _test1000Items_Add100() {
     let data = generate(count: 1000, addRange: 999..<1099)
 
     measure {
@@ -47,7 +47,7 @@ class PerformanceTests: XCTestCase {
     }
   }
 
-  func test10000Items_Delete1000() {
+  func _test10000Items_Delete1000() {
     let data = generate(count: 10000, removeRange: 1000..<2000)
 
     measure {
@@ -78,7 +78,7 @@ class PerformanceTests: XCTestCase {
 
   // MARK: - Helper
 
-  func testCompareManyStrings() {
+  func _testCompareManyStrings() {
     let old = Array(0..<10000).map { _ in
       return UUID().uuidString
     }
@@ -100,7 +100,7 @@ class PerformanceTests: XCTestCase {
     }
   }
 
-  func testCompareManyInts() {
+  func _testCompareManyInts() {
     let old = Array(0..<10000).map { _ in
       return arc4random()
     }
