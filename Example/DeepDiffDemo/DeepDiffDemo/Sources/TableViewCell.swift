@@ -1,22 +1,26 @@
 import UIKit
 import Anchors
+import Hue
 
 class TableViewCell: UITableViewCell {
   let label = UILabel()
+  let container = UIView()
 
   override func didMoveToSuperview() {
     super.didMoveToSuperview()
 
-    addSubview(label)
+    contentView.addSubview(container)
+    container.addSubview(label)
     activate(
+      container.anchor.edges.insets(UIEdgeInsets(top: 5, left: 10, bottom: -5, right: -10)),
       label.anchor.center
     )
 
-    backgroundColor = .white
-    layer.cornerRadius = 10
-    layer.masksToBounds = true
+    container.backgroundColor = UIColor(hex: "#9b59b6")
+    container.layer.cornerRadius = 5
+    container.layer.masksToBounds = true
 
-    label.font = UIFont.preferredFont(forTextStyle: .headline)
-    label.textColor = .red
+    label.font = UIFont.boldSystemFont(ofSize: 20)
+    label.textColor = .white
   }
 }

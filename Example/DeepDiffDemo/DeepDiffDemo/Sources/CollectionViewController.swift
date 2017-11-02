@@ -21,7 +21,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
-    collectionView.backgroundColor = .lightGray
+    collectionView.backgroundColor = .white
 
     view.addSubview(collectionView)
     activate(

@@ -1,5 +1,6 @@
 import UIKit
 import DeepDiff
+import Hue
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     collectionController.tabBarItem.image = UIImage(named: "collection")
 
     let tabController = UITabBarController()
+
     tabController.viewControllers = [
       UINavigationController(rootViewController: tableController),
       UINavigationController(rootViewController: collectionController)
     ]
+
+    UINavigationBar.appearance().barTintColor = UIColor(hex: "#2ecc71")
+
     window?.rootViewController = tabController
     window?.makeKeyAndVisible()
 

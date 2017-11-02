@@ -15,7 +15,10 @@ class TableViewController: UIViewController, UITableViewDataSource {
 
     tableView = UITableView()
     tableView.dataSource = self
-    tableView.backgroundColor = .lightGray
+    tableView.backgroundColor = .white
+    tableView.rowHeight = 56
+    tableView.contentInset = UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0)
+    tableView.separatorStyle = .none
 
     view.addSubview(tableView)
     activate(

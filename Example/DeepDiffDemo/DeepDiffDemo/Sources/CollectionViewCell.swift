@@ -1,5 +1,6 @@
 import UIKit
 import Anchors
+import Hue
 
 class CollectionViewCell: UICollectionViewCell {
   let label = UILabel()
@@ -12,11 +13,11 @@ class CollectionViewCell: UICollectionViewCell {
       label.anchor.center
     )
 
-    backgroundColor = .white
-    layer.cornerRadius = 10
+    backgroundColor = UIColor(hex: "#e67e22")
+    layer.cornerRadius = 5
     layer.masksToBounds = true
 
-    label.font = UIFont.preferredFont(forTextStyle: .headline)
-    label.textColor = .red
+    label.font = UIFont.boldSystemFont(ofSize: 20)
+    label.textColor = .white
   }
 }
