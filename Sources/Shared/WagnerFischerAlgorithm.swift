@@ -61,9 +61,16 @@ class Row<T> {
 
   /// Seed with .insert from new
   func seed(with new: Array<T>) {
-    slots.append([])
+    // First slot should be empty
+    slots = Array(repeatElement([], count: new.count + 1))
+
+    // Each slot increases in the number of changes
     new.enumerated().forEach { index, item in
-      slots.append([.insert(Insert(item: item, index: index))])
+      let slotIndex = convert(indexInNew: index)
+      slots[slotIndex] = combine(
+        slot: slots[slotIndex-1],
+       change: .insert(Insert(item: item, index: index))
+      )
     }
   }
 
