@@ -36,7 +36,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 
   @objc func reload() {
     let oldItems = items
-    items = generateItems()
+    items = DataSet.generateItems()
     let changes = diff(old: oldItems, new: items, reduceMove: false)
     collectionView.reload(changes: changes, completion: { _ in })
   }
@@ -62,13 +62,5 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 
     let size = collectionView.frame.size.width / 5
     return CGSize(width: size, height: size)
-  }
-
-  // MARK: - Data
-
-  func generateItems() -> [Int] {
-    let count = 4
-    let items = Array(0..<count)
-    return items.shuffled()
   }
 }

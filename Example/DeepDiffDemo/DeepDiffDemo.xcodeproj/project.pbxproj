@@ -12,6 +12,7 @@
 		D23B9F461FA92ACB008363A1 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */; };
 		D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F471FA9315F008363A1 /* TableViewController.swift */; };
 		D23B9F4A1FA93199008363A1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F491FA93199008363A1 /* TableViewCell.swift */; };
+		D2E33C861FAB4DC000BCE1E2 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */; };
 		D5C7F74E1C3BC9CE008CDDBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F74C1C3BC9CE008CDDBA /* LaunchScreen.storyboard */; };
 		D5C7F75B1C3BCA1E008CDDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */; };
 		D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D23B9F471FA9315F008363A1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D23B9F491FA93199008363A1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		D5C7F7401C3BC9CE008CDDBA /* DeepDiffDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDiffDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C7F74D1C3BC9CE008CDDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5C7F74F1C3BC9CE008CDDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */,
 				D23B9F471FA9315F008363A1 /* TableViewController.swift */,
 				D23B9F491FA93199008363A1 /* TableViewCell.swift */,
+				D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */,
 				D23B9F4A1FA93199008363A1 /* TableViewCell.swift in Sources */,
 				D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */,
+				D2E33C861FAB4DC000BCE1E2 /* DataSet.swift in Sources */,
 				D23B9F441FA92867008363A1 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

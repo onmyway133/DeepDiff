@@ -33,7 +33,7 @@ class TableViewController: UIViewController, UITableViewDataSource {
 
   @objc func reload() {
     let oldItems = items
-    items = generateItems()
+    items = DataSet.generateItems()
     let changes = diff(old: oldItems, new: items, reduceMove: false)
     tableView.reload(changes: changes, completion: { _ in })
   }
@@ -51,14 +51,6 @@ class TableViewController: UIViewController, UITableViewDataSource {
     cell.label.text = "\(item)"
 
     return cell
-  }
-
-  // MARK: - Data
-
-  func generateItems() -> [Int] {
-    let count = 4
-    let items = Array(0..<count)
-    return items.shuffled()
   }
 }
 
