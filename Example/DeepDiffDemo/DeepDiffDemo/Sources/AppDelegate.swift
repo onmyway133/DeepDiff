@@ -9,10 +9,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
 
+    let tableController = TableViewController()
+    tableController.tabBarItem.image = UIImage(named: "table")
+
+    let collectionController = CollectionViewController()
+    collectionController.tabBarItem.image = UIImage(named: "collection")
+
     let tabController = UITabBarController()
     tabController.viewControllers = [
-      UINavigationController(rootViewController: TableViewController()),
-      UINavigationController(rootViewController: CollectionViewController())
+      UINavigationController(rootViewController: tableController),
+      UINavigationController(rootViewController: collectionController)
     ]
     window?.rootViewController = tabController
     window?.makeKeyAndVisible()
