@@ -8,11 +8,22 @@ public extension UICollectionView {
     performBatchUpdates({
       let changesWithIndexPath = IndexPathConverter().convert(changes: changes)
 
-      deleteItems(at: changesWithIndexPath.deletes)
-      insertItems(at: changesWithIndexPath.inserts)
-      reloadItems(at: changesWithIndexPath.replaces)
-      changesWithIndexPath.moves.forEach {
-        moveItem(at: $0.from, to: $0.to)
+      changesWithIndexPath.deletes.executeIfPresent {
+        deleteItems(at: $0)
+      }
+
+      changesWithIndexPath.inserts.executeIfPresent {
+        insertItems(at: $0)
+      }
+
+      changesWithIndexPath.replaces.executeIfPresent {
+        reloadItems(at: $0)
+      }
+
+      changesWithIndexPath.moves.executeIfPresent {
+        $0.forEach { move in
+          moveItem(at: move.from, to: move.to)
+        }
       }
     }, completion: { finished in
       completion(finished)

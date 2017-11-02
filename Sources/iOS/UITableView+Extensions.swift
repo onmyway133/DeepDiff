@@ -22,11 +22,22 @@ public extension UITableView {
   private func internalReload<T>(changes: [Change<T>]) {
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes)
 
-    deleteRows(at: changesWithIndexPath.deletes, with: .automatic)
-    insertRows(at: changesWithIndexPath.inserts, with: .automatic)
-    reloadRows(at: changesWithIndexPath.replaces, with: .automatic)
-    changesWithIndexPath.moves.forEach {
-      moveRow(at: $0.from, to: $0.to)
+    changesWithIndexPath.deletes.executeIfPresent {
+      deleteRows(at: $0, with: .automatic)
+    }
+
+    changesWithIndexPath.inserts.executeIfPresent {
+      insertRows(at: $0, with: .automatic)
+    }
+
+    changesWithIndexPath.replaces.executeIfPresent {
+      reloadRows(at: $0, with: .automatic)
+    }
+
+    changesWithIndexPath.moves.executeIfPresent {
+      $0.forEach { move in
+        moveRow(at: move.from, to: move.to)
+      }
     }
   }
 }

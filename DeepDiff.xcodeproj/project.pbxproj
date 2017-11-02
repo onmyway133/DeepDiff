@@ -20,6 +20,10 @@
 		D288B6421FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
 		D288B6431FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
 		D288B6441FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
+		D2A813671FAB731600A94BDE /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Performer.swift */; };
+		D2A813681FAB731600A94BDE /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Performer.swift */; };
+		D2A813691FAB731600A94BDE /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Performer.swift */; };
+		D2A8136A1FAB731600A94BDE /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Performer.swift */; };
 		D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */; };
 		D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */; };
 		D2B318FF1FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
@@ -86,6 +90,7 @@
 		D284B1421F79081F00D94AF3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		D284B1431F79081F00D94AF3 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		D288B6411FA77CB100BBDC5F /* DiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffTests.swift; sourceTree = "<group>"; };
+		D2A813661FAB731600A94BDE /* Performer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performer.swift; sourceTree = "<group>"; };
 		D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerAlgorithm.swift; sourceTree = "<group>"; };
 		D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
 		D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
@@ -176,6 +181,7 @@
 				D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */,
 				D2B318FA1FA8CCFC00A0B637 /* Change.swift */,
 				D2B319171FA8D02B00A0B637 /* IndexPathConverter.swift */,
+				D2A813661FAB731600A94BDE /* Performer.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -525,6 +531,7 @@
 				D2B319071FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */,
 				D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
+				D2A813691FAB731600A94BDE /* Performer.swift in Sources */,
 				D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
 				D2B319081FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
 				D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
@@ -549,6 +556,7 @@
 				D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */,
 				D2B3190B1FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
+				D2A8136A1FAB731600A94BDE /* Performer.swift in Sources */,
 				D2B3191B1FA8D02B00A0B637 /* IndexPathConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +569,7 @@
 				D2B318FF1FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B319021FA8CD1300A0B637 /* Change.swift in Sources */,
 				D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
+				D2A813671FAB731600A94BDE /* Performer.swift in Sources */,
 				D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
 				D2B319001FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
 				D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
@@ -585,6 +594,7 @@
 				D2B319061FA8CD1300A0B637 /* Change.swift in Sources */,
 				D2B319031FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
+				D2A813681FAB731600A94BDE /* Performer.swift in Sources */,
 				D2B319191FA8D02B00A0B637 /* IndexPathConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
