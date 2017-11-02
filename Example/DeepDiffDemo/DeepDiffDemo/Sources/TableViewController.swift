@@ -34,7 +34,7 @@ class TableViewController: UIViewController, UITableViewDataSource {
   @objc func reload() {
     let oldItems = items
     items = DataSet.generateItems()
-    let changes = diff(old: oldItems, new: items, reduceMove: false)
+    let changes = diff(old: oldItems, new: items, reduceMove: true)
     tableView.reload(changes: changes, completion: { _ in })
   }
 
