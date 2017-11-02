@@ -27,6 +27,8 @@
 		D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D23B9F471FA9315F008363A1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D23B9F491FA93199008363A1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D2A8136D1FABA4D000A94BDE /* ExceptionCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionCatcher.h; sourceTree = "<group>"; };
+		D2A8136E1FABA51100A94BDE /* DeepDiffDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeepDiffDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		D5C7F7401C3BC9CE008CDDBA /* DeepDiffDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDiffDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C7F74D1C3BC9CE008CDDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,8 @@
 				D23B9F471FA9315F008363A1 /* TableViewController.swift */,
 				D23B9F491FA93199008363A1 /* TableViewCell.swift */,
 				D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */,
+				D2A8136D1FABA4D000A94BDE /* ExceptionCatcher.h */,
+				D2A8136E1FABA51100A94BDE /* DeepDiffDemo-Bridging-Header.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -389,6 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.DeepDiffDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DeepDiffDemo/Sources/DeepDiffDemo-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -401,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.DeepDiffDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DeepDiffDemo/Sources/DeepDiffDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};

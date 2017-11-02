@@ -35,7 +35,12 @@ class TableViewController: UIViewController, UITableViewDataSource {
     let oldItems = items
     items = DataSet.generateItems()
     let changes = diff(old: oldItems, new: items, reduceMove: true)
-    tableView.reload(changes: changes, completion: { _ in })
+
+    let exception = tryBlock {
+      self.tableView.reload(changes: changes, completion: { _ in })
+    }
+
+    print(exception as Any)
   }
 
   // MARK: - UITableViewDataSource
