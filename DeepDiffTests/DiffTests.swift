@@ -235,5 +235,19 @@ class DiffTests: XCTestCase {
     XCTAssertNotNil(changes[1].replace)
     XCTAssertNotNil(changes[2].replace)
   }
+
+  func testDeleteUntilOne() {
+    let old = Array("abc")
+    let new = Array("a")
+
+    let changes = diff(old: old, new: new, reduceMove: true)
+    XCTAssertEqual(changes.count, 2)
+
+    XCTAssertEqual(changes[0].delete?.item, "b")
+    XCTAssertEqual(changes[0].delete?.index, 1)
+
+    XCTAssertEqual(changes[1].delete?.item, "c")
+    XCTAssertEqual(changes[1].delete?.index, 2)
+  }
 }
 
