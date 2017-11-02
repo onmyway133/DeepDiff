@@ -23,10 +23,11 @@ public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMo
     }
   case (false, false):
     // diff
-    return WagnerFischerAlgorithm().diff(
+    let changes = WagnerFischerAlgorithm().diff(
       old: old,
-      new: new,
-      reduceMove: reduceMove
+      new: new
     )
+
+    return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
   }
 }
