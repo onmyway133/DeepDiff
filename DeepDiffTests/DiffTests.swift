@@ -211,5 +211,29 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[0].move?.fromIndex, 1)
     XCTAssertEqual(changes[0].move?.toIndex, 4)
   }
+
+  func testMoveWithReplaceMoveReplace() {
+    let old = Array("34152")
+    let new = Array("51324")
+
+    let changes = diff(old: old, new: new, reduceMove: true)
+    XCTAssertEqual(changes.count, 3)
+
+    XCTAssertNotNil(changes[0].replace)
+    XCTAssertNotNil(changes[1].move)
+    XCTAssertNotNil(changes[2].replace)
+  }
+
+  func testInt() {
+    let old = Array("321")
+    let new = Array("143")
+
+    let changes = diff(old: old, new: new, reduceMove: true)
+    XCTAssertEqual(changes.count, 3)
+
+    XCTAssertNotNil(changes[0].replace)
+    XCTAssertNotNil(changes[1].replace)
+    XCTAssertNotNil(changes[2].replace)
+  }
 }
 
