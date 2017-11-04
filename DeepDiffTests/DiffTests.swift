@@ -188,6 +188,25 @@ class DiffTests: XCTestCase {
     XCTAssertEqual(changes[1].insert?.index, 2)
   }
 
+  func testObjectReplace() {
+    let old = [
+      City(name: "New York"),
+      City(name: "Berlin"),
+      City(name: "London")
+    ]
+
+    let new = [
+      City(name: "New York"),
+      City(name: "Oslo"),
+      City(name: "London"),
+    ]
+
+    let changes = diff(old: old, new: new)
+    XCTAssertEqual(changes.count, 1)
+
+    XCTAssertNotNil(changes[0].replace)
+  }
+
   func testMoveWithInsertDelete() {
     let old = Array("12345")
     let new = Array("15234")
