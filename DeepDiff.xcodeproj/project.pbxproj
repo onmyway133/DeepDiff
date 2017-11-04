@@ -13,10 +13,6 @@
 		D23849221FA86DEF00316A21 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23849211FA86DEF00316A21 /* PerformanceTests.swift */; };
 		D23849231FA86DEF00316A21 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23849211FA86DEF00316A21 /* PerformanceTests.swift */; };
 		D23849241FA86DEF00316A21 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23849211FA86DEF00316A21 /* PerformanceTests.swift */; };
-		D239E4121FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E4111FAE1C580042E7BA /* SunWuAlgorithm.swift */; };
-		D239E4131FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E4111FAE1C580042E7BA /* SunWuAlgorithm.swift */; };
-		D239E4141FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E4111FAE1C580042E7BA /* SunWuAlgorithm.swift */; };
-		D239E4151FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E4111FAE1C580042E7BA /* SunWuAlgorithm.swift */; };
 		D284B1051F79038B00D94AF3 /* DeepDiff_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */; };
 		D284B1381F7906DB00D94AF3 /* Info-iOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */; };
 		D284B1391F7906DB00D94AF3 /* Info-tvOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */; };
@@ -83,7 +79,6 @@
 /* Begin PBXFileReference section */
 		D238491D1FA86AFC00316A21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D23849211FA86DEF00316A21 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
-		D239E4111FAE1C580042E7BA /* SunWuAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunWuAlgorithm.swift; sourceTree = "<group>"; };
 		D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1041F79038B00D94AF3 /* DeepDiff-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1181F79039F00D94AF3 /* DeepDiff_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,7 +182,6 @@
 				D2B318FA1FA8CCFC00A0B637 /* Change.swift */,
 				D2B319171FA8D02B00A0B637 /* IndexPathConverter.swift */,
 				D2A813661FAB731600A94BDE /* Array+Extensions.swift */,
-				D239E4111FAE1C580042E7BA /* SunWuAlgorithm.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -539,7 +533,6 @@
 				D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
 				D2A813691FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
-				D239E4141FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */,
 				D2B319081FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
 				D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
 			);
@@ -565,7 +558,6 @@
 				D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
 				D2A8136A1FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B3191B1FA8D02B00A0B637 /* IndexPathConverter.swift in Sources */,
-				D239E4151FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +571,6 @@
 				D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
 				D2A813671FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
-				D239E4121FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */,
 				D2B319001FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
 				D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
 			);
@@ -605,7 +596,6 @@
 				D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
 				D2A813681FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319191FA8D02B00A0B637 /* IndexPathConverter.swift in Sources */,
-				D239E4131FAE1C580042E7BA /* SunWuAlgorithm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
