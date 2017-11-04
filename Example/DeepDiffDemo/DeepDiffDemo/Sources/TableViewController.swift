@@ -46,7 +46,6 @@ class TableViewController: UIViewController, UITableViewDataSource {
       print(items)
       print(changes)
     }
-
   }
 
   // MARK: - UITableViewDataSource

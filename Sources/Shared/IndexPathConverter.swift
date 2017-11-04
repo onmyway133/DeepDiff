@@ -1,13 +1,13 @@
 import Foundation
 
-class IndexPathConverter {
-  struct ChangeWithIndexPath {
-    let inserts: [IndexPath]
-    let deletes: [IndexPath]
-    let replaces: [IndexPath]
-    let moves: [(from: IndexPath, to: IndexPath)]
-  }
+struct ChangeWithIndexPath {
+  let inserts: [IndexPath]
+  let deletes: [IndexPath]
+  let replaces: [IndexPath]
+  let moves: [(from: IndexPath, to: IndexPath)]
+}
 
+class IndexPathConverter {
   func convert<T>(changes: [Change<T>]) -> ChangeWithIndexPath {
     let inserts = changes.flatMap({ $0.insert }).map({ $0.index.deepDiff_indexPath })
     let deletes = changes.flatMap({ $0.delete }).map({ $0.index.deepDiff_indexPath })

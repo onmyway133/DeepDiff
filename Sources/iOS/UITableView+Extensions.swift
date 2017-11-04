@@ -5,33 +5,41 @@ public extension UITableView {
     changes: [Change<T>],
     completion: @escaping (Bool) -> Void) {
 
+    let changesWithIndexPath = IndexPathConverter().convert(changes: changes)
+
+    // reloadRows needs to be called outside the batch
+
     if #available(iOS 11, *) {
       performBatchUpdates({
-        internalReload(changes: changes)
-      }, completion: completion)
+        internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
+      }, completion: { finished in
+        changesWithIndexPath.replaces.executeIfPresent {
+          self.reloadRows(at: $0, with: .automatic)
+        }
+        completion(finished)
+      })
     } else {
       beginUpdates()
-      internalReload(changes: changes)
+      internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
       endUpdates()
+
+      changesWithIndexPath.replaces.executeIfPresent {
+        reloadRows(at: $0, with: .automatic)
+      }
+
       completion(true)
     }
   }
 
   // MARK: - Helper
 
-  private func internalReload<T>(changes: [Change<T>]) {
-    let changesWithIndexPath = IndexPathConverter().convert(changes: changes)
-
+  private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath) {
     changesWithIndexPath.deletes.executeIfPresent {
       deleteRows(at: $0, with: .automatic)
     }
 
     changesWithIndexPath.inserts.executeIfPresent {
       insertRows(at: $0, with: .automatic)
-    }
-
-    changesWithIndexPath.replaces.executeIfPresent {
-      reloadRows(at: $0, with: .automatic)
     }
 
     changesWithIndexPath.moves.executeIfPresent {
