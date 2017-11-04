@@ -7,15 +7,22 @@
 [![Platform](https://img.shields.io/cocoapods/p/DeepDiff.svg?style=flat)](http://cocoadocs.org/docsets/DeepDiff)
 ![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
 
-## Description
+![](Screenshots/Banner.png)
 
-**DeepDiff** description.
+**DeepDiff** tells the difference between 2 collections and the changes as edit steps. It works on any collection of `Equatable` and `Hashable` items.
 
-## Usage
+<div align = "center">
+<img src="Screenshots/table.gif" width="" height="400" />
+<img src="Screenshots/collection.gif" width="" height="400" />
+</div>
+
+## How to use
 
 ```swift
 <API>
 ```
+
+## How does it work
 
 ## Installation
 
