@@ -12,12 +12,11 @@ public extension UITableView {
     if #available(iOS 11, *) {
       performBatchUpdates({
         internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
-      }, completion: { finished in
-        changesWithIndexPath.replaces.executeIfPresent {
-          self.reloadRows(at: $0, with: .automatic)
-        }
-        completion(finished)
-      })
+      }, completion: completion)
+
+      changesWithIndexPath.replaces.executeIfPresent {
+        self.reloadRows(at: $0, with: .automatic)
+      }
     } else {
       beginUpdates()
       internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)

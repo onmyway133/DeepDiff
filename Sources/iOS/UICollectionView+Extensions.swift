@@ -11,13 +11,11 @@ public extension UICollectionView {
 
     performBatchUpdates({
       internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
-    }, completion: { finished in
-      changesWithIndexPath.replaces.executeIfPresent {
-        self.reloadItems(at: $0)
-      }
+    }, completion: completion)
 
-      completion(finished)
-    })
+    changesWithIndexPath.replaces.executeIfPresent {
+      self.reloadItems(at: $0)
+    }
   }
 
   // MARK: - Helper
