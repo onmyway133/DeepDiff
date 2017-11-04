@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 extension Array {
   func executeIfPresent(_ closure: ([Element]) -> Void) {

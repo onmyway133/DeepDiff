@@ -15,7 +15,7 @@ public extension UITableView {
 
     // reloadRows needs to be called outside the batch
 
-    if #available(iOS 11, *) {
+    if #available(iOS 11, tvOS 11, *) {
       performBatchUpdates({
         internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
       }, completion: completion)
