@@ -1,6 +1,12 @@
 import UIKit
 
 public extension UICollectionView {
+
+  /// Animate reload in a batch update
+  ///
+  /// - Parameters:
+  ///   - changes: The changes from diff
+  ///   - completion: Called when operation completes
   public func reload<T: Equatable & Hashable>(
     changes: [Change<T>],
     completion: @escaping (Bool) -> Void) {

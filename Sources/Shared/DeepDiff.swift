@@ -3,8 +3,9 @@ import Foundation
 /// Perform diff between old and new collections
 ///
 /// - Parameters:
-///   - old: old collection
-///   - new: new collection
+///   - old: Old collection
+///   - new: New collection
+///   - reduceMove: Reduce move from insertions and deletions
 /// - Returns: A set of changes
 public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMove: Bool = false) -> [Change<T>] {
   switch (old.isEmpty, new.isEmpty) {

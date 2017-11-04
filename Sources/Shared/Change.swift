@@ -22,6 +22,12 @@ public struct Move<T> {
   public let toIndex: Int
 }
 
+/// The computed changes from diff
+///
+/// - insert: Insert an item at index
+/// - delete: Delete an item from index
+/// - replace: Replace an item at index with another item
+/// - move: Move the same item from this index to another index
 public enum Change<T> {
   case insert(Insert<T>)
   case delete(Delete<T>)
