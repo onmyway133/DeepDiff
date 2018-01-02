@@ -6,13 +6,13 @@ final class Heckel {
 
   // OC and NC can assume three values: 1, 2, and many.
   enum Counter {
-    case one, two, many
+    case zero, one, many
 
     func increment() -> Counter {
       switch self {
+      case .zero:
+        return .one
       case .one:
-        return .two
-      case .two:
         return .many
       case .many:
         return self
@@ -24,8 +24,8 @@ final class Heckel {
   class TableEntry {
     // The value entry for each line in table has two counters.
     // They specify the line's number of occurrences in O and N: OC and NC.
-    var oldCounter: Counter = .one
-    var newCounter: Counter = .one
+    var oldCounter: Counter = .zero
+    var newCounter: Counter = .zero
 
     // Aside from the two counters, the line's entry
     // also includes a reference to the line's line number in O: OLNO.
@@ -53,6 +53,18 @@ final class Heckel {
     var oldArray = [ArrayEntry]()
     var newArray = [ArrayEntry]()
 
+    perform1stPass(new: new, table: &table, newArray: &newArray)
+    perform2ndPass(old: old, table: &table, oldArray: &oldArray)
+    perform3rdPass(newArray: &newArray)
+
+    return []
+  }
+
+  private func perform1stPass<T: Equatable & Hashable>(
+    new: Array<T>,
+    table: inout [Int: TableEntry],
+    newArray: inout [ArrayEntry]) {
+
     // 1st pass
     // a. Each line i of file N is read in sequence
     new.forEach { item in
@@ -68,6 +80,12 @@ final class Heckel {
       //
       table[item.hashValue] = entry
     }
+  }
+
+  private func perform2ndPass<T: Equatable & Hashable>(
+    old: Array<T>,
+    table: inout [Int: TableEntry],
+    oldArray: inout [ArrayEntry]) {
 
     // 2nd pass
     // Similar to first pass, except it acts on files
@@ -88,9 +106,34 @@ final class Heckel {
       //
       table[tuple.element.hashValue] = entry
     }
+  }
 
+  private func perform3rdPass(newArray: inout [ArrayEntry]) {
     // 3rd pass
+    // a. We use Observation
+    // If a line occurs only once in each file, then it must be the same line,
+    // although it may have been moved.
+    // We use this observation to locate unaltered lines that we
+    // subsequently exclude from further treatment.
 
-    return []
+    newArray.enumerated().forEach { tuple in
+      guard case let .tableEntry(entry) = tuple.element else {
+        return
+      }
+
+      // b. Using this, we only process the lines where OC == NC == 1
+      guard entry.oldCounter == .one,
+        entry.newCounter == .one else {
+          return
+      }
+
+      // c. As the lines between O and N "must be the same line,
+      // although it may have been moved", we alter the table pointers
+      // in OA and NA to the number of the line in the other file.
+
+      // d. We also locate unique virtual lines
+      // immediately before the first and
+      // immediately after the last lines of the files ???
+    }
   }
 }
