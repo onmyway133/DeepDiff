@@ -31,7 +31,7 @@ final class Heckel {
     // also includes a reference to the line's line number in O: OLNO.
     // OLNO is only interesting, if OC == 1.
     // Alternatively, OLNO would have to assume multiple values or none at all.
-    var lineNumberInOld: [Int] = []
+    var indexInOld: [Int] = []
   }
 
   // The arrays OA and NA have one entry for each line in their respective files, O and N.
@@ -98,7 +98,7 @@ final class Heckel {
       entry.oldCounter = entry.oldCounter.increment()
 
       // lineNumberInOld which is set to the line's number
-      entry.lineNumberInOld.append(tuple.offset)
+      entry.indexInOld.append(tuple.offset)
 
       // oldArray
       oldArray.append(.tableEntry(entry))
