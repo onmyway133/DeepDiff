@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21E6E2B1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2A1FFBC1E20048AF75 /* WagnerFischer.swift */; };
+		D21E6E2C1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2A1FFBC1E20048AF75 /* WagnerFischer.swift */; };
+		D21E6E2D1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2A1FFBC1E20048AF75 /* WagnerFischer.swift */; };
+		D21E6E2E1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2A1FFBC1E20048AF75 /* WagnerFischer.swift */; };
+		D21E6E301FFBC1EF0048AF75 /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2F1FFBC1EF0048AF75 /* Heckel.swift */; };
+		D21E6E311FFBC1EF0048AF75 /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2F1FFBC1EF0048AF75 /* Heckel.swift */; };
+		D21E6E321FFBC1EF0048AF75 /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2F1FFBC1EF0048AF75 /* Heckel.swift */; };
+		D21E6E331FFBC1EF0048AF75 /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E6E2F1FFBC1EF0048AF75 /* Heckel.swift */; };
 		D238491E1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D238491F1FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
 		D23849201FA86AFC00316A21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D238491D1FA86AFC00316A21 /* User.swift */; };
@@ -31,19 +39,15 @@
 		D2A8136A1FAB731600A94BDE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Array+Extensions.swift */; };
 		D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */; };
 		D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FC1FA8CD0F00A0B637 /* UITableView+Extensions.swift */; };
-		D2B318FF1FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
 		D2B319001FA8CD1300A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
 		D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
 		D2B319021FA8CD1300A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
-		D2B319031FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
 		D2B319041FA8CD1300A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
 		D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
 		D2B319061FA8CD1300A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
-		D2B319071FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
 		D2B319081FA8CD1400A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
 		D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
 		D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
-		D2B3190B1FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */; };
 		D2B3190C1FA8CD1400A0B637 /* DeepDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */; };
 		D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */; };
 		D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B318FA1FA8CCFC00A0B637 /* Change.swift */; };
@@ -78,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D21E6E2A1FFBC1E20048AF75 /* WagnerFischer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WagnerFischer.swift; sourceTree = "<group>"; };
+		D21E6E2F1FFBC1EF0048AF75 /* Heckel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heckel.swift; sourceTree = "<group>"; };
 		D238491D1FA86AFC00316A21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D23849211FA86DEF00316A21 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		D239E4161FAE2A420042E7BA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -94,7 +100,6 @@
 		D284B1431F79081F00D94AF3 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		D288B6411FA77CB100BBDC5F /* DiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffTests.swift; sourceTree = "<group>"; };
 		D2A813661FAB731600A94BDE /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
-		D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerAlgorithm.swift; sourceTree = "<group>"; };
 		D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
 		D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
 		D2B318FA1FA8CCFC00A0B637 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
@@ -164,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21E6E291FFBC1E20048AF75 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				D21E6E2A1FFBC1E20048AF75 /* WagnerFischer.swift */,
+				D21E6E2F1FFBC1EF0048AF75 /* Heckel.swift */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
 		D284B13F1F79081F00D94AF3 /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +192,7 @@
 		D2B318F61FA8CCFC00A0B637 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D2B318F71FA8CCFC00A0B637 /* WagnerFischerAlgorithm.swift */,
+				D21E6E291FFBC1E20048AF75 /* Algorithms */,
 				D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */,
 				D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */,
 				D2B318FA1FA8CCFC00A0B637 /* Change.swift */,
@@ -531,12 +545,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D239E4211FAE34740042E7BA /* IndexPathConverter.swift in Sources */,
-				D2B319071FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */,
+				D21E6E321FFBC1EF0048AF75 /* Heckel.swift in Sources */,
 				D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
 				D2A813691FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
 				D2B319081FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
+				D21E6E2D1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
 				D2B318FE1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,9 +573,10 @@
 			files = (
 				D2B3190C1FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
 				D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */,
-				D2B3190B1FA8CD1400A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
+				D21E6E2E1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
 				D2A8136A1FAB731600A94BDE /* Array+Extensions.swift in Sources */,
+				D21E6E331FFBC1EF0048AF75 /* Heckel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,12 +585,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D239E4201FAE34740042E7BA /* IndexPathConverter.swift in Sources */,
-				D2B318FF1FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B319021FA8CD1300A0B637 /* Change.swift in Sources */,
+				D21E6E301FFBC1EF0048AF75 /* Heckel.swift in Sources */,
 				D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
 				D2A813671FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
 				D2B319001FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
+				D21E6E2B1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
 				D2B318FD1FA8CD0F00A0B637 /* UITableView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,9 +613,10 @@
 			files = (
 				D2B319041FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
 				D2B319061FA8CD1300A0B637 /* Change.swift in Sources */,
-				D2B319031FA8CD1300A0B637 /* WagnerFischerAlgorithm.swift in Sources */,
 				D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
+				D21E6E2C1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
 				D2A813681FAB731600A94BDE /* Array+Extensions.swift in Sources */,
+				D21E6E311FFBC1EF0048AF75 /* Heckel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

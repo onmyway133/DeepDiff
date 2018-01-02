@@ -24,7 +24,7 @@ public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMo
     }
   case (false, false):
     // diff
-    let changes = WagnerFischerAlgorithm().diff(
+    let changes = WagnerFischer().diff(
       old: old,
       new: new
     )
