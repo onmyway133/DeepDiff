@@ -7,7 +7,7 @@ public extension UICollectionView {
   /// - Parameters:
   ///   - changes: The changes from diff
   ///   - completion: Called when operation completes
-  public func reload<T: Equatable & Hashable>(
+  public func reload<T: Hashable>(
     changes: [Change<T>],
     completion: @escaping (Bool) -> Void) {
 

@@ -9,7 +9,7 @@ public final class WagnerFischer: DiffAware {
     self.reduceMove = reduceMove
   }
 
-  public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  public func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
     let previousRow = Row<T>()
     previousRow.seed(with: new)
     let currentRow = Row<T>()
@@ -52,7 +52,7 @@ public final class WagnerFischer: DiffAware {
 
   // MARK: - Helper
 
-  private func isEqual<T: Equatable & Hashable>(oldItem: T, newItem: T) -> Bool {
+  private func isEqual<T: Hashable>(oldItem: T, newItem: T) -> Bool {
     // Same items must have same hashValue
     if oldItem.hashValue != newItem.hashValue {
       return false

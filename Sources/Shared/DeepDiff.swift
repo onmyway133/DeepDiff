@@ -7,7 +7,7 @@ import Foundation
 ///   - new: New collection
 ///   - reduceMove: Reduce move from insertions and deletions
 /// - Returns: A set of changes
-public func diff<T: Equatable & Hashable>(
+public func diff<T: Hashable>(
   old: Array<T>,
   new: Array<T>,
   algorithm: DiffAware = Heckel()) -> [Change<T>] {

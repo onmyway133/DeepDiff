@@ -1,6 +1,6 @@
 import Foundation
 
-struct City: Equatable, Hashable {
+struct City: Hashable {
   let name: String
 
   var hashValue: Int {

@@ -223,7 +223,7 @@ public final class Heckel: DiffAware {
     }
   }
 
-  private func perform6thPass<T: Hashable & Equatable>(
+  private func perform6thPass<T: Hashable>(
     new: Array<T>,
     old: Array<T>,
     newArray: [ArrayEntry],
