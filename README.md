@@ -109,7 +109,7 @@ Thanks to
 - [Isolating Differences Between Files](https://gist.github.com/ndarville/3166060) for explaining step by step
 - [HeckelDiff](https://github.com/mcudich/HeckelDiff) for a clever move reducer based on tracking `deleteOffset`
 
-### [Upcoming]
+### More
 
 There are other algorithms that are interesting
 
