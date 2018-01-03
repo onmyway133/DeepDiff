@@ -7,7 +7,12 @@ import Foundation
 ///   - new: New collection
 ///   - reduceMove: Reduce move from insertions and deletions
 /// - Returns: A set of changes
-public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMove: Bool = false) -> [Change<T>] {
+public func diff<T: Equatable & Hashable>(
+  old: Array<T>,
+  new: Array<T>,
+  reduceMove: Bool = false,
+  algorithm: DiffAware = Heckel()) -> [Change<T>] {
+
   switch (old.isEmpty, new.isEmpty) {
   case (true, true):
     // empty
@@ -24,10 +29,8 @@ public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>, reduceMo
     }
   case (false, false):
     // diff
-    let changes = WagnerFischer().diff(
-      old: old,
-      new: new
-    )
+    // let changes = WagnerFischer().diff(old: old, new: new)
+    let changes = Heckel().diff(old: old, new: new)
 
     return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
   }

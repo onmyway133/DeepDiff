@@ -2,7 +2,7 @@ import Foundation
 
 // https://gist.github.com/ndarville/3166060
 
-final class Heckel {
+public final class Heckel: DiffAware {
 
   // OC and NC can assume three values: 1, 2, and many.
   enum Counter {
@@ -44,7 +44,9 @@ final class Heckel {
     case indexInOther(Int)
   }
 
-  func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  public init() {}
+
+  public func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
     // The Symbol Table
     // Each line works as the key in the table look-up, i.e. as table[line].
     var table: [Int: TableEntry] = [:]
