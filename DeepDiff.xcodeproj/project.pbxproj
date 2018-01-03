@@ -30,13 +30,16 @@
 		D284B1381F7906DB00D94AF3 /* Info-iOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */; };
 		D284B1391F7906DB00D94AF3 /* Info-tvOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */; };
 		D284B13B1F7906DB00D94AF3 /* Info-macOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1331F7906DA00D94AF3 /* Info-macOS-Tests.plist */; };
-		D288B6421FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
-		D288B6431FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
-		D288B6441FA77CB100BBDC5F /* DiffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* DiffTests.swift */; };
+		D288B6421FA77CB100BBDC5F /* WagnerFischerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* WagnerFischerTests.swift */; };
+		D288B6431FA77CB100BBDC5F /* WagnerFischerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* WagnerFischerTests.swift */; };
+		D288B6441FA77CB100BBDC5F /* WagnerFischerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D288B6411FA77CB100BBDC5F /* WagnerFischerTests.swift */; };
 		D29C691E1FFCD8790028DE14 /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C691D1FFCD8790028DE14 /* DiffAware.swift */; };
 		D29C691F1FFCD8790028DE14 /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C691D1FFCD8790028DE14 /* DiffAware.swift */; };
 		D29C69201FFCD8790028DE14 /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C691D1FFCD8790028DE14 /* DiffAware.swift */; };
 		D29C69211FFCD8790028DE14 /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C691D1FFCD8790028DE14 /* DiffAware.swift */; };
+		D29C69231FFCDBFA0028DE14 /* HeckelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C69221FFCDBFA0028DE14 /* HeckelTests.swift */; };
+		D29C69241FFCDBFA0028DE14 /* HeckelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C69221FFCDBFA0028DE14 /* HeckelTests.swift */; };
+		D29C69251FFCDBFA0028DE14 /* HeckelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29C69221FFCDBFA0028DE14 /* HeckelTests.swift */; };
 		D2A813671FAB731600A94BDE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Array+Extensions.swift */; };
 		D2A813681FAB731600A94BDE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Array+Extensions.swift */; };
 		D2A813691FAB731600A94BDE /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A813661FAB731600A94BDE /* Array+Extensions.swift */; };
@@ -102,8 +105,9 @@
 		D284B1411F79081F00D94AF3 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		D284B1421F79081F00D94AF3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		D284B1431F79081F00D94AF3 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
-		D288B6411FA77CB100BBDC5F /* DiffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffTests.swift; sourceTree = "<group>"; };
+		D288B6411FA77CB100BBDC5F /* WagnerFischerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerTests.swift; sourceTree = "<group>"; };
 		D29C691D1FFCD8790028DE14 /* DiffAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffAware.swift; sourceTree = "<group>"; };
+		D29C69221FFCDBFA0028DE14 /* HeckelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeckelTests.swift; sourceTree = "<group>"; };
 		D2A813661FAB731600A94BDE /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDiff.swift; sourceTree = "<group>"; };
 		D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveReducer.swift; sourceTree = "<group>"; };
@@ -255,10 +259,11 @@
 		D5C6298F1C3A8BDA007F7B7C /* DeepDiffTests */ = {
 			isa = PBXGroup;
 			children = (
+				D29C69221FFCDBFA0028DE14 /* HeckelTests.swift */,
 				D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */,
 				D284B1331F7906DA00D94AF3 /* Info-macOS-Tests.plist */,
 				D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */,
-				D288B6411FA77CB100BBDC5F /* DiffTests.swift */,
+				D288B6411FA77CB100BBDC5F /* WagnerFischerTests.swift */,
 				D238491D1FA86AFC00316A21 /* User.swift */,
 				D23849211FA86DEF00316A21 /* PerformanceTests.swift */,
 				D239E4161FAE2A420042E7BA /* City.swift */,
@@ -567,7 +572,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D288B6441FA77CB100BBDC5F /* DiffTests.swift in Sources */,
+				D288B6441FA77CB100BBDC5F /* WagnerFischerTests.swift in Sources */,
+				D29C69251FFCDBFA0028DE14 /* HeckelTests.swift in Sources */,
 				D23849201FA86AFC00316A21 /* User.swift in Sources */,
 				D239E4191FAE2A420042E7BA /* City.swift in Sources */,
 				D23849241FA86DEF00316A21 /* PerformanceTests.swift in Sources */,
@@ -609,7 +615,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D288B6421FA77CB100BBDC5F /* DiffTests.swift in Sources */,
+				D288B6421FA77CB100BBDC5F /* WagnerFischerTests.swift in Sources */,
+				D29C69231FFCDBFA0028DE14 /* HeckelTests.swift in Sources */,
 				D238491E1FA86AFC00316A21 /* User.swift in Sources */,
 				D239E4171FAE2A420042E7BA /* City.swift in Sources */,
 				D23849221FA86DEF00316A21 /* PerformanceTests.swift in Sources */,
@@ -634,7 +641,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D288B6431FA77CB100BBDC5F /* DiffTests.swift in Sources */,
+				D288B6431FA77CB100BBDC5F /* WagnerFischerTests.swift in Sources */,
+				D29C69241FFCDBFA0028DE14 /* HeckelTests.swift in Sources */,
 				D238491F1FA86AFC00316A21 /* User.swift in Sources */,
 				D239E4181FAE2A420042E7BA /* City.swift in Sources */,
 				D23849231FA86DEF00316A21 /* PerformanceTests.swift in Sources */,

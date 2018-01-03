@@ -158,13 +158,19 @@ public final class Heckel: DiffAware {
     // This information can be used to find blocks of unchanged lines.
 
     // b. Using this, we process each entry in ascending order.
-    Array(1..<newArray.count-1).forEach { newIndex in
+    newArray.enumerated().forEach { newTuple in
       // c. If
       // NA[i] points to OA[j], and
       // NA[i+1] and OA[j+1] contain identical table entry pointers
       // then
       // OA[j+1] is set to line i+1, and
       // NA[i+1] is set to line j+1
+
+      let newIndex = newTuple.offset
+
+      guard newIndex > 0 && newIndex < newArray.count - 1 else {
+        return
+      }
 
       guard case .indexInOther(let oldIndex) = newArray[newIndex] else {
         return
@@ -190,7 +196,13 @@ public final class Heckel: DiffAware {
     // Similar to fourth pass, except:
     // It processes each entry in descending order
 
-    Array(1..<newArray.count-1).reversed().forEach { newIndex in
+    newArray.enumerated().reversed().forEach { newTuple in
+      let newIndex = newTuple.offset
+
+      guard newIndex > 0 && newIndex < newArray.count - 1 else {
+        return
+      }
+
       guard case .indexInOther(let oldIndex) = newArray[newIndex] else {
         return
       }

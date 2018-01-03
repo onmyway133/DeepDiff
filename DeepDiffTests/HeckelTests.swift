@@ -1,7 +1,7 @@
 import XCTest
 import DeepDiff
 
-class DiffTests: XCTestCase {
+class HeckelTests: XCTestCase {
   func testEmpty() {
     let old: [String] = []
     let new: [String] = []

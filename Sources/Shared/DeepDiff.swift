@@ -13,25 +13,10 @@ public func diff<T: Equatable & Hashable>(
   reduceMove: Bool = false,
   algorithm: DiffAware = Heckel()) -> [Change<T>] {
 
-  switch (old.isEmpty, new.isEmpty) {
-  case (true, true):
-    // empty
-    return []
-  case (true, false):
-    // all .insert
-    return new.enumerated().map { index, item in
-      return .insert(Insert(item: item, index: index))
-    }
-  case (false, true):
-    // all .delete
-    return old.enumerated().map { index, item in
-      return .delete(Delete(item: item, index: index))
-    }
-  case (false, false):
-    // diff
-    // let changes = WagnerFischer().diff(old: old, new: new)
-    let changes = Heckel().diff(old: old, new: new)
-
-    return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
+  if let changes = algorithm.preprocess(old: old, new: new) {
+    return changes
   }
+
+  let changes = algorithm.diff(old: old, new: new)
+  return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
 }
