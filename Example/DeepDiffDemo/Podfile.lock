@@ -1,7 +1,7 @@
 PODS:
-  - Anchors (2.2.0)
+  - Anchors (2.2.1)
   - DeepDiff (1.0.0)
-  - Hue (3.0.0)
+  - Hue (3.0.1)
 
 DEPENDENCIES:
   - Anchors
@@ -13,9 +13,9 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
-  Anchors: 6746bd8d590fb142878f595c8b5b93474b742c40
-  DeepDiff: 383ed9c0a6162099abe046f3fcbda87776e2b333
-  Hue: b8fe1e43eef13631331eebecb2198b68e2622f95
+  Anchors: c1dd44c918ec9fb331e1f786546950e36a50a337
+  DeepDiff: 4f8bdaaeaf72e20e2207688594150dca3ab354cc
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
 
 PODFILE CHECKSUM: 45a32d197bb76c977d91e848997dc427ac82ee5b
 

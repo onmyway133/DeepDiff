@@ -37,7 +37,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
   @objc func reload() {
     let oldItems = items
     items = DataSet.generateItems()
-    let changes = diff(old: oldItems, new: items, reduceMove: true)
+    let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
       self.collectionView.reload(changes: changes, completion: { _ in })

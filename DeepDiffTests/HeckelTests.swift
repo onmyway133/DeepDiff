@@ -41,38 +41,42 @@ class HeckelTests: XCTestCase {
     XCTAssertEqual(changes[2].delete?.index, 2)
   }
 
+  func testReplace() {
+    let old = Array("abc")
+    let new = Array("aBc")
+
+    let changes = diff(old: old, new: new)
+    XCTAssertEqual(changes.count, 2)
+
+    XCTAssertNotNil(changes[0].delete)
+    XCTAssertNotNil(changes[1].insert)
+  }
+
   func testAllReplace() {
     let old = Array("abc")
     let new = Array("ABC")
 
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 3)
+    XCTAssertEqual(changes.count, 6)
 
-    XCTAssertEqual(changes[0].replace?.oldItem, "a")
-    XCTAssertEqual(changes[0].replace?.newItem, "A")
-    XCTAssertEqual(changes[0].replace?.index, 0)
+    XCTAssertNotNil(changes[0].delete)
+    XCTAssertNotNil(changes[1].delete)
+    XCTAssertNotNil(changes[2].delete)
 
-    XCTAssertEqual(changes[1].replace?.oldItem, "b")
-    XCTAssertEqual(changes[1].replace?.newItem, "B")
-    XCTAssertEqual(changes[1].replace?.index, 1)
-
-    XCTAssertEqual(changes[2].replace?.oldItem, "c")
-    XCTAssertEqual(changes[2].replace?.newItem, "C")
-    XCTAssertEqual(changes[2].replace?.index, 2)
+    XCTAssertNotNil(changes[3].insert)
+    XCTAssertNotNil(changes[4].insert)
+    XCTAssertNotNil(changes[5].insert)
   }
 
   func testSamePrefix() {
     let old = Array("abc")
     let new = Array("aB")
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 2)
+    XCTAssertEqual(changes.count, 3)
 
-    XCTAssertEqual(changes[0].replace?.oldItem, "b")
-    XCTAssertEqual(changes[0].replace?.newItem, "B")
-    XCTAssertEqual(changes[0].replace?.index, 1)
-
-    XCTAssertEqual(changes[1].delete?.item, "c")
-    XCTAssertEqual(changes[1].delete?.index, 2)
+    XCTAssertNotNil(changes[0].delete)
+    XCTAssertNotNil(changes[1].delete)
+    XCTAssertNotNil(changes[2].insert)
   }
 
   func testReversed() {
@@ -81,13 +85,8 @@ class HeckelTests: XCTestCase {
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
-    XCTAssertEqual(changes[0].replace?.oldItem, "a")
-    XCTAssertEqual(changes[0].replace?.newItem, "c")
-    XCTAssertEqual(changes[0].replace?.index, 0)
-
-    XCTAssertEqual(changes[1].replace?.oldItem, "c")
-    XCTAssertEqual(changes[1].replace?.newItem, "a")
-    XCTAssertEqual(changes[1].replace?.index, 2)
+    XCTAssertNotNil(changes[0].move)
+    XCTAssertNotNil(changes[1].move)
   }
 
   func testSmallChangesAtEdges() {
@@ -248,11 +247,12 @@ class HeckelTests: XCTestCase {
     let new = Array("143")
 
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 3)
+    XCTAssertEqual(changes.count, 4)
 
-    XCTAssertNotNil(changes[0].replace)
-    XCTAssertNotNil(changes[1].replace)
-    XCTAssertNotNil(changes[2].replace)
+    XCTAssertNotNil(changes[0].delete)
+    XCTAssertNotNil(changes[1].move)
+    XCTAssertNotNil(changes[2].insert)
+    XCTAssertNotNil(changes[3].move)
   }
 
   func testDeleteUntilOne() {

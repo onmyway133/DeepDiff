@@ -176,7 +176,7 @@ public final class Heckel: DiffAware {
         return
       }
 
-      guard oldIndex + 1 < newArray.count else {
+      guard oldIndex + 1 < oldArray.count else {
         return
       }
 
@@ -261,35 +261,59 @@ public final class Heckel: DiffAware {
     // This means our boundary is between the two lines.
 
     var changes = [Change<T>]()
+    var deleteOffsets = Array(repeating: 0, count: old.count)
 
     // deletions
-    oldArray.enumerated().forEach { oldTuple in
-      guard case .tableEntry = oldTuple.element else {
-        return
-      }
+    do {
+      var runningOffset = 0
 
-      changes.append(.delete(Delete(
-        item: old[oldTuple.offset],
-        index: oldTuple.offset
-      )))
+      oldArray.enumerated().forEach { oldTuple in
+        deleteOffsets[oldTuple.offset] = runningOffset
+
+        guard case .tableEntry = oldTuple.element else {
+          return
+        }
+
+        changes.append(.delete(Delete(
+          item: old[oldTuple.offset],
+          index: oldTuple.offset
+        )))
+
+        runningOffset += 1
+      }
     }
 
-    newArray.enumerated().forEach { newTuple in
-      switch newTuple.element {
-      case .indexInOther(let oldIndex):
-        if old[oldIndex] != new[newTuple.offset] {
-          changes.append(.replace(Replace(
-            oldItem: old[oldIndex],
-            newItem: new[newTuple.offset],
+    // insertions, replaces, moves
+    do {
+      var runningOffset = 0
+
+      newArray.enumerated().forEach { newTuple in
+        switch newTuple.element {
+        case .tableEntry:
+          runningOffset += 1
+          changes.append(.insert(Insert(
+            item: new[newTuple.offset],
             index: newTuple.offset
           )))
+        case .indexInOther(let oldIndex):
+          if old[oldIndex] != new[newTuple.offset] {
+            changes.append(.replace(Replace(
+              oldItem: old[oldIndex],
+              newItem: new[newTuple.offset],
+              index: newTuple.offset
+            )))
+          }
+
+          let deleteOffset = deleteOffsets[oldIndex]
+          // The object is not at the expected position, so move it.
+          if (oldIndex - deleteOffset + runningOffset) != newTuple.offset {
+            changes.append(.move(Move(
+              item: new[newTuple.offset],
+              fromIndex: oldIndex,
+              toIndex: newTuple.offset
+            )))
+          }
         }
-      break
-      case .tableEntry:
-        changes.append(.insert(Insert(
-          item: new[newTuple.offset],
-          index: newTuple.offset
-        )))
       }
     }
 
