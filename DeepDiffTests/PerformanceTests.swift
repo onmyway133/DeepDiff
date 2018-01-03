@@ -7,7 +7,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 2)
+      XCTAssertEqual(changes.count, 8)
     }
   }
 
@@ -16,43 +16,43 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 50)
+      XCTAssertEqual(changes.count, 200)
     }
   }
 
-  func _test1000Items_Replace100() {
+  func test1000Items_Replace100() {
     let data = generate(count: 1000, removeRange: 100..<200, addRange: 799..<899)
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 100)
+      XCTAssertEqual(changes.count, 2000)
     }
   }
 
-  func _test1000Items_Delete100() {
+  func test1000Items_Delete100() {
     let data = generate(count: 1000, removeRange: 100..<200)
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 100)
+      XCTAssertEqual(changes.count, 1900)
     }
   }
 
-  func _test1000Items_Add100() {
+  func test1000Items_Add100() {
     let data = generate(count: 1000, addRange: 999..<1099)
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 100)
+      XCTAssertEqual(changes.count, 2100)
     }
   }
 
-  func _test10000Items_Delete1000() {
+  func test10000Items_Delete1000() {
     let data = generate(count: 10000, removeRange: 1000..<2000)
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 1000)
+      XCTAssertEqual(changes.count, 19000)
     }
   }
 
