@@ -84,11 +84,13 @@ Take a look at [Demo](https://github.com/onmyway133/DeepDiff/tree/master/Example
 
 ## How does it work
 
+### [Wagner–Fischer](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm)
+
 If you recall from school, there is [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) which counts the minimum edit distance to go from one string to another.
 
-Based on that, the current version of `DeepDiff` implements [Wagner–Fischer algorithm](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm), which uses [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) to compute the edit steps between 2 strings of characters. `DeepDiff` generalizes this to make it work for any collection.
+Based on that, the first version of `DeepDiff` implements Wagner–Fischer, which uses [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) to compute the edit steps between 2 strings of characters. `DeepDiff` generalizes this to make it work for any collection.
 
-Some optimisations
+Some optimisations made
 
 - Check empty old or new collection to return early
 - Use `Hashable` to quickly check that 2 items are not equal
@@ -98,9 +100,19 @@ The performance greatly depends on the number of items, the changes and the comp
 
 `Wagner–Fischer algorithm` has O(mn) complexity, so it should be used for collection with < 100 items.
 
+### Heckel
+
+The current version of `DeepDiff` uses Heckel algorithm as described in [A technique for isolating differences between files](https://dl.acm.org/citation.cfm?id=359467). It works on 2 observations about line occurences and counters. The result is a bit lengthy compared to the first version, but it runs in linear time.
+
+Thanks to
+
+- [Isolating Differences Between Files](https://gist.github.com/ndarville/3166060) for explaining step by step
+- [HeckelDiff](https://github.com/mcudich/HeckelDiff) for a clever move reducer based on tracking `deleteOffset`
+
+### [Upcoming]
+
 There are other algorithms that are interesting
 
-- [A technique for isolating differences between files](https://dl.acm.org/citation.cfm?id=359467)
 - [An O(ND) Difference Algorithm and Its Variations](http://www.xmailserver.org/diff2.pdf)
 - [An O(NP) Sequence Comparison Algorithm](https://publications.mpi-cbg.de/Wu_1990_6334.pdf)
 
