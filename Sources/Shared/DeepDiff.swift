@@ -10,13 +10,11 @@ import Foundation
 public func diff<T: Equatable & Hashable>(
   old: Array<T>,
   new: Array<T>,
-  reduceMove: Bool = false,
   algorithm: DiffAware = Heckel()) -> [Change<T>] {
 
   if let changes = algorithm.preprocess(old: old, new: new) {
     return changes
   }
 
-  let changes = algorithm.diff(old: old, new: new)
-  return reduceMove ? MoveReducer<T>().reduce(changes: changes) : changes
+  return algorithm.diff(old: old, new: new)
 }

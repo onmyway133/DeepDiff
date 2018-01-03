@@ -3,7 +3,11 @@ import Foundation
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
 public final class WagnerFischer: DiffAware {
-  public init() {}
+  private let reduceMove: Bool
+
+  public init(reduceMove: Bool = false) {
+    self.reduceMove = reduceMove
+  }
 
   public func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
     let previousRow = Row<T>()
@@ -38,7 +42,12 @@ public final class WagnerFischer: DiffAware {
       previousRow.slots = currentRow.slots
     }
 
-    return currentRow.lastSlot()
+    let changes = currentRow.lastSlot()
+    if reduceMove {
+      return MoveReducer<T>().reduce(changes: changes)
+    } else {
+      return changes
+    }
   }
 
   // MARK: - Helper
