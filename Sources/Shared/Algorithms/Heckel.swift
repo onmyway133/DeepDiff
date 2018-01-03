@@ -44,7 +44,7 @@ final class Heckel {
     case indexInOther(Int)
   }
 
-  func diff<T: Equatable & Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
     // The Symbol Table
     // Each line works as the key in the table look-up, i.e. as table[line].
     var table: [Int: TableEntry] = [:]
@@ -58,12 +58,11 @@ final class Heckel {
     perform3rdPass(newArray: &newArray, oldArray: &oldArray)
     perform4thPass(newArray: &newArray, oldArray: &oldArray)
     perform5thPass(newArray: &newArray, oldArray: &oldArray)
-    perform6thPass()
-
-    return []
+    let changes = perform6thPass(new: new, old: old, newArray: newArray, oldArray: oldArray)
+    return changes
   }
 
-  private func perform1stPass<T: Equatable & Hashable>(
+  private func perform1stPass<T: Hashable>(
     new: Array<T>,
     table: inout [Int: TableEntry],
     newArray: inout [ArrayEntry]) {
@@ -85,7 +84,7 @@ final class Heckel {
     }
   }
 
-  private func perform2ndPass<T: Equatable & Hashable>(
+  private func perform2ndPass<T: Hashable>(
     old: Array<T>,
     table: inout [Int: TableEntry],
     oldArray: inout [ArrayEntry]) {
@@ -210,7 +209,76 @@ final class Heckel {
     }
   }
 
-  private func perform6thPass() {
+  private func perform6thPass<T: Hashable & Equatable>(
+    new: Array<T>,
+    old: Array<T>,
+    newArray: [ArrayEntry],
+    oldArray: [ArrayEntry]) -> [Change<T>] {
 
+    // 6th pass
+    // At this point following our five passes,
+    // we have the necessary information contained in NA to tell the differences between O and N.
+    // This pass uses NA and OA to tell when a line has changed between O and N,
+    // and how far the change extends.
+
+    // a. Determining a New Line
+    // Recall our initial description of NA in which we said that the array has either:
+    // one entry for each line of file N containing either
+    // a pointer to table[line]
+    // the line's number in file O
+
+    // Using these two cases, we know that if NA[i] refers
+    // to an entry in table (case 1), then line i must be new
+    // We know this, because otherwise, NA[i] would have contained
+    // the line's number in O (case 2), if it existed in O and N
+
+    // b. Determining the Boundaries of the New Line
+    // We now know that we are dealing with a new line, but we have yet to figure where the change ends.
+    // Recall Observation 2:
+
+    // If NA[i] points to OA[j], but NA[i+1] does not
+    // point to OA[j+1], then line i is the boundary for the alteration.
+
+    // You can look at it this way:
+    // i  : The quick brown fox      | j  : The quick brown fox
+    // i+1: jumps over the lazy dog  | j+1: jumps over the loafing cat
+
+    // Here, NA[i] == OA[j], but NA[i+1] != OA[j+1].
+    // This means our boundary is between the two lines.
+
+    var changes = [Change<T>]()
+
+    // deletions
+    oldArray.enumerated().forEach { oldTuple in
+      guard case .tableEntry = oldTuple.element else {
+        return
+      }
+
+      changes.append(.delete(Delete(
+        item: old[oldTuple.offset],
+        index: oldTuple.offset
+      )))
+    }
+
+    newArray.enumerated().forEach { newTuple in
+      switch newTuple.element {
+      case .indexInOther(let oldIndex):
+        if old[oldIndex] != new[newTuple.offset] {
+          changes.append(.replace(Replace(
+            oldItem: old[oldIndex],
+            newItem: new[newTuple.offset],
+            index: newTuple.offset
+          )))
+        }
+      break
+      case .tableEntry:
+        changes.append(.insert(Insert(
+          item: new[newTuple.offset],
+          index: newTuple.offset
+        )))
+      }
+    }
+
+    return changes
   }
 }
