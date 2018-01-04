@@ -118,16 +118,23 @@ There are other algorithms that are interesting
 
 ## Benchmarking
 
-Here are benchmark comparing several popular diffing libraries
+Benchmarking is done on real device iPhone 6, with random items made of UUID strings (36 characters including hyphens), just to make comparisions more difficult.
+
+You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDiff/tree/master/Example/Benchmark).
+
+### Among different frameworks
+
+Here are several popular diffing frameworks to compare
 
 - [Differ](https://github.com/tonyarnold/Differ), originally [Diff.swift](https://github.com/wokalski/Diff.swift)
 - [Changeset](https://github.com/osteslag/Changeset)
 - [Dwifft](https://github.com/jflinter/Dwifft)
+- [ListDiff](https://github.com/lxcid/ListDiff), port from [IGListKit](https://github.com/Instagram/IGListKit/)
 
-You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDiff/tree/master/Example/Benchmark)
+💪 From 2000 items to 2100 items (100 deletions, 200 insertions)
 
 ```swift
-let (old, new) = generate()
+let (old, new) = let (old, new) = generate(count: 2000, removeRange: 100..<200, addRange: 1000..<1200)
 
 benchmark(name: "DeepDiff", closure: {
   _ = DeepDiff.diff(old: old, new: new)
@@ -146,7 +153,41 @@ benchmark(name: "Differ", closure: {
 })
 ```
 
-The benchmark is done by diffing random UUID strings (36 characters) from 10000 items to 12000 items (1000 deletions, 3000 additions), on a real device iPhone 6
+**Result**
+
+```
+DeepDiff: 0.0450611114501953ms
+Differ: 0.199673891067505ms
+Dwifft: 149.603884935379ms
+Changeset: 77.5895738601685ms
+ListDiff: 0.105544805526733ms
+```
+
+![](Screenshots/benchmark.png)
+
+
+### Increasing complexity
+
+Here is how `DeepDiff` handles large number of items and changes
+
+💪 From 10000 items to 11000 items (1000 deletions, 2000 insertions)
+
+```
+DeepDiff: 0.233131170272827ms
+```
+
+💪 From 20000 items to 22000 items (2000 deletions, 4000 insertions)
+
+```
+DeepDiff: 0.453393936157227ms
+```
+
+💪 From 50000 items to 55000 items (5000 deletions, 10000 insertions)
+
+```
+DeepDiff: 1.04128122329712ms
+```
+
 
 ## Installation
 

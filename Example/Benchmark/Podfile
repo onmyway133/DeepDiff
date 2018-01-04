@@ -7,5 +7,6 @@ target 'Benchmark' do
  pod 'Dwifft'
  pod 'Changeset'
  pod 'Differ'
+ pod 'ListDiff'
 end
 
