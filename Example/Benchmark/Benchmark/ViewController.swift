@@ -9,6 +9,7 @@
 import UIKit
 import DeepDiff
 import Dwifft
+import Changeset
 
 class ViewController: UIViewController {
 
@@ -19,14 +20,18 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    let tuple = generate()
+    let (old, new) = generate()
 
     benchmark(name: "DeepDiff", closure: {
-      _ = DeepDiff.diff(old: tuple.old, new: tuple.new)
+      _ = DeepDiff.diff(old: old, new: new)
     })
 
     benchmark(name: "Dwifft", closure: {
-      _ = Dwifft.diff(tuple.old, tuple.new)
+      _ = Dwifft.diff(old, new)
+    })
+
+    benchmark(name: "Changeset", closure: {
+      _ = Changeset.edits(from: old, to: new)
     })
   }
 

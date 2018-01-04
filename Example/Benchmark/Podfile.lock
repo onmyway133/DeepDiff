@@ -1,8 +1,10 @@
 PODS:
+  - Changeset (3.0)
   - DeepDiff (1.1.0)
   - Dwifft (0.8)
 
 DEPENDENCIES:
+  - Changeset
   - DeepDiff (from `../../`)
   - Dwifft
 
@@ -11,9 +13,10 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
+  Changeset: cbb84a74639049a7b96fc64851e8a9cfcc3c9989
   DeepDiff: 788b32d301f244a89ffc14a33ab0c046a8dc64ef
   Dwifft: 463e61d07322fdf83b32ee6975ca1b20708db746
 
-PODFILE CHECKSUM: a44932cad5b8714006f2fb538e2f54543e5f508d
+PODFILE CHECKSUM: f33b2ee31e055ab9d1f8ff837bc5f2e821eba25c
 
 COCOAPODS: 1.3.1
