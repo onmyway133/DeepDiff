@@ -1,0 +1,8 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'Benchmark' do
+ pod 'DeepDiff', path: '../../'
+end
+
