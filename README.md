@@ -116,6 +116,38 @@ There are other algorithms that are interesting
 - [An O(ND) Difference Algorithm and Its Variations](http://www.xmailserver.org/diff2.pdf)
 - [An O(NP) Sequence Comparison Algorithm](https://publications.mpi-cbg.de/Wu_1990_6334.pdf)
 
+## Benchmarking
+
+Here are benchmark comparing several popular diffing libraries
+
+- [Differ](https://github.com/tonyarnold/Differ), originally [Diff.swift](https://github.com/wokalski/Diff.swift)
+- [Changeset](https://github.com/osteslag/Changeset)
+- [Dwifft](https://github.com/jflinter/Dwifft)
+
+You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDiff/tree/master/Example/Benchmark)
+
+```swift
+let (old, new) = generate()
+
+benchmark(name: "DeepDiff", closure: {
+  _ = DeepDiff.diff(old: old, new: new)
+})
+
+benchmark(name: "Dwifft", closure: {
+  _ = Dwifft.diff(old, new)
+})
+
+benchmark(name: "Changeset", closure: {
+  _ = Changeset.edits(from: old, to: new)
+})
+
+benchmark(name: "Differ", closure: {
+  _ = old.diffTraces(to: new)
+})
+```
+
+The benchmark is done by diffing random UUID string (36 characters) from 10000 items to 12000 items (1000 deletions, 2000 additions), on a real device iPhone 6
+
 ## Installation
 
 **DeepDiff** is available through [CocoaPods](http://cocoapods.org). To install
