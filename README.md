@@ -126,10 +126,10 @@ You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDi
 
 Here are several popular diffing frameworks to compare
 
-- [Differ](https://github.com/tonyarnold/Differ), originally [Diff.swift](https://github.com/wokalski/Diff.swift)
-- [Changeset](https://github.com/osteslag/Changeset)
-- [Dwifft](https://github.com/jflinter/Dwifft)
-- [ListDiff](https://github.com/lxcid/ListDiff), port from [IGListKit](https://github.com/Instagram/IGListKit/)
+- [Differ](https://github.com/tonyarnold/Differ) 1.0.3, originally [Diff.swift](https://github.com/wokalski/Diff.swift)
+- [Changeset](https://github.com/osteslag/Changeset) 3.0
+- [Dwifft](https://github.com/jflinter/Dwifft) 0.8
+- [ListDiff](https://github.com/lxcid/ListDiff) 0.1.0, port from [IGListKit](https://github.com/Instagram/IGListKit/)
 
 💪 From 2000 items to 2100 items (100 deletions, 200 insertions)
 
