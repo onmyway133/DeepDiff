@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import DeepDiff
 
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+    let tuple = generate()
+
+    benchmark(name: "DeepDiff", closure: {
+      _ = DeepDiff.diff(old: tuple.old, new: tuple.new)
+    })
+  }
+
+  func benchmark(name: String ,closure: () -> Void) {
+    let start = Date()
+    closure()
+    let end = Date()
+
+    print("\(name) takes \(end.timeIntervalSince1970 - start.timeIntervalSince1970) ms")
+  }
+
+  // Generate old and new
+  private func generate() -> (old: Array<String>, new: Array<String>) {
+    let old = Array(repeating: UUID().uuidString, count: 10000)
+    var new = old
+
+    new.removeSubrange(1000..<2000)
+    new.insert(
+      contentsOf: Array(repeating: UUID().uuidString, count: 2000),
+      at: new.endIndex.advanced(by: -200)
+    )
+
+    return (old: old, new: new)
   }
 }
 
