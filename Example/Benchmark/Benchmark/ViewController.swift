@@ -8,20 +8,29 @@
 
 import UIKit
 import DeepDiff
+import Dwifft
 
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
 
     let tuple = generate()
 
     benchmark(name: "DeepDiff", closure: {
       _ = DeepDiff.diff(old: tuple.old, new: tuple.new)
     })
+
+    benchmark(name: "Dwifft", closure: {
+      _ = Dwifft.diff(tuple.old, tuple.new)
+    })
   }
 
-  func benchmark(name: String ,closure: () -> Void) {
+  private func benchmark(name: String ,closure: () -> Void) {
     let start = Date()
     closure()
     let end = Date()

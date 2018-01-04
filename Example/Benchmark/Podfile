@@ -4,5 +4,6 @@ platform :ios, '9.0'
 
 target 'Benchmark' do
  pod 'DeepDiff', path: '../../'
+ pod 'Dwifft'
 end
 
