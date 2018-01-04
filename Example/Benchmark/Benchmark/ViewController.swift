@@ -27,16 +27,16 @@ class ViewController: UIViewController {
       _ = DeepDiff.diff(old: old, new: new)
     })
 
+    benchmark(name: "Differ", closure: {
+      _ = old.diffTraces(to: new)
+    })
+
     benchmark(name: "Dwifft", closure: {
       _ = Dwifft.diff(old, new)
     })
 
     benchmark(name: "Changeset", closure: {
       _ = Changeset.edits(from: old, to: new)
-    })
-
-    benchmark(name: "Differ", closure: {
-      _ = old.diffTraces(to: new)
     })
   }
 
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     closure()
     let end = Date()
 
-    print("\(name) takes \(end.timeIntervalSince1970 - start.timeIntervalSince1970) ms")
+    print("\(name): \(end.timeIntervalSince1970 - start.timeIntervalSince1970)ms")
   }
 
   // Generate old and new
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 
     new.removeSubrange(1000..<2000)
     new.insert(
-      contentsOf: Array(repeating: UUID().uuidString, count: 2000),
+      contentsOf: Array(repeating: UUID().uuidString, count: 3000),
       at: new.endIndex.advanced(by: -200)
     )
 

@@ -146,7 +146,7 @@ benchmark(name: "Differ", closure: {
 })
 ```
 
-The benchmark is done by diffing random UUID string (36 characters) from 10000 items to 12000 items (1000 deletions, 2000 additions), on a real device iPhone 6
+The benchmark is done by diffing random UUID strings (36 characters) from 10000 items to 12000 items (1000 deletions, 3000 additions), on a real device iPhone 6
 
 ## Installation
 
