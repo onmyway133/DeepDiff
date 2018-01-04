@@ -134,7 +134,7 @@ Here are several popular diffing frameworks to compare
 💪 From 2000 items to 2100 items (100 deletions, 200 insertions)
 
 ```swift
-let (old, new) = let (old, new) = generate(count: 2000, removeRange: 100..<200, addRange: 1000..<1200)
+let (old, new) = generate(count: 2000, removeRange: 100..<200, addRange: 1000..<1200)
 
 benchmark(name: "DeepDiff", closure: {
   _ = DeepDiff.diff(old: old, new: new)
