@@ -116,7 +116,7 @@ There are other algorithms that are interesting
 - [An O(ND) Difference Algorithm and Its Variations](http://www.xmailserver.org/diff2.pdf)
 - [An O(NP) Sequence Comparison Algorithm](https://publications.mpi-cbg.de/Wu_1990_6334.pdf)
 
-## Benchmarking
+## Benchmarks
 
 Benchmarking is done on real device iPhone 6, with random items made of UUID strings (36 characters including hyphens), just to make comparisions more difficult.
 
@@ -164,7 +164,6 @@ ListDiff: 0.105544805526733ms
 ```
 
 ![](Screenshots/benchmark.png)
-
 
 ### Increasing complexity
 
