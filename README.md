@@ -163,7 +163,7 @@ Changeset: 77.5895738601685s
 ListDiff: 0.105544805526733s
 ```
 
-![](Screenshots/benchmark.png)
+![](Screenshots/benchmark3d.png)
 
 ### Increasing complexity
 
