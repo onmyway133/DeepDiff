@@ -151,6 +151,10 @@ benchmark(name: "Changeset", closure: {
 benchmark(name: "Differ", closure: {
   _ = old.diffTraces(to: new)
 })
+
+benchmark(name: "ListDiff", closure: {
+  _ = ListDiff.List.diffing(oldArray: old, newArray: new)
+})
 ```
 
 **Result**
