@@ -22,8 +22,8 @@ class ViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-//    benchmarkManyFrameworks()
-    benchmarkSelf()
+    benchmarkManyFrameworks()
+//    benchmarkSelf()
   }
 
   private func benchmarkManyFrameworks() {
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     closure()
     let end = Date()
 
-    print("\(name): \(end.timeIntervalSince1970 - start.timeIntervalSince1970)ms")
+    print("\(name): \(end.timeIntervalSince1970 - start.timeIntervalSince1970)s")
   }
 
   // Generate old and new

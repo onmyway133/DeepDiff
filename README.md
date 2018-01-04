@@ -156,11 +156,11 @@ benchmark(name: "Differ", closure: {
 **Result**
 
 ```
-DeepDiff: 0.0450611114501953ms
-Differ: 0.199673891067505ms
-Dwifft: 149.603884935379ms
-Changeset: 77.5895738601685ms
-ListDiff: 0.105544805526733ms
+DeepDiff: 0.0450611114501953s
+Differ: 0.199673891067505s
+Dwifft: 149.603884935379s
+Changeset: 77.5895738601685s
+ListDiff: 0.105544805526733s
 ```
 
 ![](Screenshots/benchmark.png)
@@ -172,19 +172,19 @@ Here is how `DeepDiff` handles large number of items and changes
 💪 From 10000 items to 11000 items (1000 deletions, 2000 insertions)
 
 ```
-DeepDiff: 0.233131170272827ms
+DeepDiff: 0.233131170272827s
 ```
 
 💪 From 20000 items to 22000 items (2000 deletions, 4000 insertions)
 
 ```
-DeepDiff: 0.453393936157227ms
+DeepDiff: 0.453393936157227s
 ```
 
 💪 From 50000 items to 55000 items (5000 deletions, 10000 insertions)
 
 ```
-DeepDiff: 1.04128122329712ms
+DeepDiff: 1.04128122329712s
 ```
 
 
