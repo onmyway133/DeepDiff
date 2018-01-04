@@ -6,5 +6,6 @@ target 'Benchmark' do
  pod 'DeepDiff', path: '../../'
  pod 'Dwifft'
  pod 'Changeset'
+ pod 'Differ'
 end
 

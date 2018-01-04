@@ -10,6 +10,7 @@ import UIKit
 import DeepDiff
 import Dwifft
 import Changeset
+import Differ
 
 class ViewController: UIViewController {
 
@@ -32,6 +33,10 @@ class ViewController: UIViewController {
 
     benchmark(name: "Changeset", closure: {
       _ = Changeset.edits(from: old, to: new)
+    })
+
+    benchmark(name: "Differ", closure: {
+      _ = old.diffTraces(to: new)
     })
   }
 
