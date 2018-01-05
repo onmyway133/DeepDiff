@@ -120,7 +120,7 @@ There are other algorithms that are interesting
 
 Benchmarking is done on real device iPhone 6, with random items made of UUID strings (36 characters including hyphens), just to make comparisions more difficult.
 
-You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDiff/tree/master/Example/Benchmark).
+You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDiff/tree/master/Example/Benchmark). Test is inspired from [DiffUtil](https://developer.android.com/reference/android/support/v7/util/DiffUtil.html)
 
 ### Among different frameworks
 
