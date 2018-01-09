@@ -102,7 +102,7 @@ The performance greatly depends on the number of items, the changes and the comp
 
 ### Heckel
 
-The current version of `DeepDiff` uses Heckel algorithm as described in [A technique for isolating differences between files](https://dl.acm.org/citation.cfm?id=359467). It works on 2 observations about line occurences and counters. The result is a bit lengthy compared to the first version, but it runs in linear time.
+The current version of `DeepDiff` uses Heckel algorithm as described in [A technique for isolating differences between files](https://dl.acm.org/citation.cfm?id=359467). It works on 2 observations about line occurrences and counters. The result is a bit lengthy compared to the first version, but it runs in linear time.
 
 Thanks to
 
@@ -118,7 +118,7 @@ There are other algorithms that are interesting
 
 ## Benchmarks
 
-Benchmarking is done on real device iPhone 6, with random items made of UUID strings (36 characters including hyphens), just to make comparisions more difficult.
+Benchmarking is done on real device iPhone 6, with random items made of UUID strings (36 characters including hyphens), just to make comparisons more difficult.
 
 You can take a look at the code [Benchmark](https://github.com/onmyway133/DeepDiff/tree/master/Example/Benchmark). Test is inspired from [DiffUtil](https://developer.android.com/reference/android/support/v7/util/DiffUtil.html)
 
