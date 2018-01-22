@@ -6,6 +6,7 @@ public extension UITableView {
   ///
   /// - Parameters:
   ///   - changes: The changes from diff
+  ///   - section: The section that all calculated IndexPath belong
   ///   - completion: Called when operation completes
   public func reload<T: Hashable>(
     changes: [Change<T>],
