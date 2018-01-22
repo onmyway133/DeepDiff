@@ -9,9 +9,10 @@ public extension UICollectionView {
   ///   - completion: Called when operation completes
   public func reload<T: Hashable>(
     changes: [Change<T>],
+    section: Int = 0,
     completion: @escaping (Bool) -> Void) {
 
-    let changesWithIndexPath = IndexPathConverter().convert(changes: changes)
+    let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
 
     // reloadRows needs to be called outside the batch
 

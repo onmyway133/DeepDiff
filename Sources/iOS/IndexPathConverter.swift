@@ -8,14 +8,14 @@ struct ChangeWithIndexPath {
 }
 
 final class IndexPathConverter {
-  func convert<T>(changes: [Change<T>]) -> ChangeWithIndexPath {
-    let inserts = changes.flatMap({ $0.insert }).map({ $0.index.deepDiff_indexPath })
-    let deletes = changes.flatMap({ $0.delete }).map({ $0.index.deepDiff_indexPath })
-    let replaces = changes.flatMap({ $0.replace }).map({ $0.index.deepDiff_indexPath })
+  func convert<T>(changes: [Change<T>], section: Int) -> ChangeWithIndexPath {
+    let inserts = changes.flatMap({ $0.insert }).map({ $0.index.toIndexPath(section: section) })
+    let deletes = changes.flatMap({ $0.delete }).map({ $0.index.toIndexPath(section: section) })
+    let replaces = changes.flatMap({ $0.replace }).map({ $0.index.toIndexPath(section: section) })
     let moves = changes.flatMap({ $0.move }).map({
       (
-        from: $0.fromIndex.deepDiff_indexPath,
-        to: $0.toIndex.deepDiff_indexPath
+        from: $0.fromIndex.toIndexPath(section: section),
+        to: $0.toIndex.toIndexPath(section: section)
       )
     })
 
@@ -29,7 +29,7 @@ final class IndexPathConverter {
 }
 
 extension Int {
-  fileprivate var deepDiff_indexPath: IndexPath {
-    return IndexPath(item: self, section: 0)
+  fileprivate func toIndexPath(section: Int) -> IndexPath {
+    return IndexPath(item: self, section: section)
   }
 }
