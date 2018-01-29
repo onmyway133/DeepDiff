@@ -125,6 +125,14 @@ class WagnerFischerTests: XCTestCase {
     XCTAssertEqual(changes[2].delete?.index, 2)
   }
 
+  func testKitKat() {
+    let old = Array("kit")
+    let new = Array("kat")
+
+    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    XCTAssertEqual(changes.count, 1)
+  }
+
   func testShift() {
     let old = Array("abcd")
     let new = Array("cdef")
