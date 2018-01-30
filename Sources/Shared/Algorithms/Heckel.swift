@@ -21,7 +21,7 @@ public final class Heckel: DiffAware {
   }
 
   // The symbol table stores three entries for each line
-  class TableEntry {
+  class TableEntry: Equatable {
     // The value entry for each line in table has two counters.
     // They specify the line's number of occurrences in O and N: OC and NC.
     var oldCounter: Counter = .zero
@@ -32,16 +32,31 @@ public final class Heckel: DiffAware {
     // OLNO is only interesting, if OC == 1.
     // Alternatively, OLNO would have to assume multiple values or none at all.
     var indexesInOld: [Int] = []
+
+    static func ==(lhs: TableEntry, rhs: TableEntry) -> Bool {
+        return lhs.oldCounter == rhs.oldCounter && lhs.newCounter == rhs.newCounter && lhs.indexesInOld == rhs.indexesInOld
+    }
   }
 
   // The arrays OA and NA have one entry for each line in their respective files, O and N.
   // The arrays contain either:
-  enum ArrayEntry {
+  enum ArrayEntry: Equatable {
     // a pointer to the line's symbol table entry, table[line]
     case tableEntry(TableEntry)
 
     // the line's number in the other file (N for OA, O for NA)
     case indexInOther(Int)
+
+    public static func == (lhs: ArrayEntry, rhs: ArrayEntry) -> Bool {
+        switch (lhs, rhs) {
+        case (.tableEntry(let l), .tableEntry(let r)):
+            return l == r
+        case (.indexInOther(let l), .indexInOther(let r)):
+            return l == r
+        default:
+            return false
+        }
+    }
   }
 
   public init() {}
@@ -57,9 +72,7 @@ public final class Heckel: DiffAware {
 
     perform1stPass(new: new, table: &table, newArray: &newArray)
     perform2ndPass(old: old, table: &table, oldArray: &oldArray)
-    perform3rdPass(newArray: &newArray, oldArray: &oldArray)
-    perform4thPass(newArray: &newArray, oldArray: &oldArray)
-    perform5thPass(newArray: &newArray, oldArray: &oldArray)
+    perform345Pass(newArray: &newArray, oldArray: &oldArray)
     let changes = perform6thPass(new: new, old: old, newArray: newArray, oldArray: oldArray)
     return changes
   }
@@ -112,114 +125,57 @@ public final class Heckel: DiffAware {
     }
   }
 
-  private func perform3rdPass(newArray: inout [ArrayEntry], oldArray: inout [ArrayEntry]) {
+  private func perform345Pass(newArray: inout [ArrayEntry], oldArray: inout [ArrayEntry]) {
     // 3rd pass
-    // a. We use Observation
+    // a. We use Observation 1:
     // If a line occurs only once in each file, then it must be the same line,
     // although it may have been moved.
     // We use this observation to locate unaltered lines that we
     // subsequently exclude from further treatment.
-
-    newArray.enumerated().forEach { tuple in
-      guard case let .tableEntry(entry) = tuple.element else {
-        return
-      }
-
-      // b. Using this, we only process the lines where OC == NC == 1
-      guard entry.oldCounter == .one,
-        entry.newCounter == .one else {
-          return
-      }
-
-      guard !entry.indexesInOld.isEmpty else {
-        return
-      }
-
-      // c. As the lines between O and N "must be the same line,
-      // although it may have been moved", we alter the table pointers
-      // in OA and NA to the number of the line in the other file.
-
-      let oldIndex = entry.indexesInOld.removeFirst()
-      newArray[tuple.offset] = .indexInOther(oldIndex)
-      oldArray[oldIndex] = .indexInOther(tuple.offset)
-
-      // d. We also locate unique virtual lines
-      // immediately before the first and
-      // immediately after the last lines of the files ???
-    }
-  }
-
-  private func perform4thPass(newArray: inout [ArrayEntry], oldArray: inout [ArrayEntry]) {
+    // b. Using this, we only process the lines where OC == NC == 1
+    // c. As the lines between O and N "must be the same line,
+    // although it may have been moved", we alter the table pointers
+    // in OA and NA to the number of the line in the other file.
+    // d. We also locate unique virtual lines
+    // immediately before the first and
+    // immediately after the last lines of the files ???
+    //
     // 4th pass
     // a. We use Observation 2:
     // If a line has been found to be unaltered,
     // and the lines immediately adjacent to it in both files are identical,
     // then these lines must be the same line.
     // This information can be used to find blocks of unchanged lines.
-
     // b. Using this, we process each entry in ascending order.
-    newArray.enumerated().forEach { newTuple in
-      // c. If
-      // NA[i] points to OA[j], and
-      // NA[i+1] and OA[j+1] contain identical table entry pointers
-      // then
-      // OA[j+1] is set to line i+1, and
-      // NA[i+1] is set to line j+1
-
-      let newIndex = newTuple.offset
-
-      guard newIndex > 0 && newIndex < newArray.count - 1 else {
-        return
-      }
-
-      guard case .indexInOther(let oldIndex) = newArray[newIndex] else {
-        return
-      }
-
-      guard oldIndex + 1 < oldArray.count else {
-        return
-      }
-
-      guard case .tableEntry(let newEntry) = newArray[newIndex + 1],
-        case .tableEntry(let oldEntry) = oldArray[oldIndex + 1],
-        newEntry === oldEntry else {
-          return
-      }
-
-      newArray[newIndex + 1] = .indexInOther(oldIndex + 1)
-      oldArray[oldIndex + 1] = .indexInOther(newIndex + 1)
-    }
-  }
-
-  private func perform5thPass(newArray: inout [ArrayEntry], oldArray: inout [ArrayEntry]) {
+    // c. If
+    // NA[i] points to OA[j], and
+    // NA[i+1] and OA[j+1] contain identical table entry pointers
+    // then
+    // OA[j+1] is set to line i+1, and
+    // NA[i+1] is set to line j+1
+    //
     // 5th pass
     // Similar to fourth pass, except:
     // It processes each entry in descending order
+    // It uses j-1 and i-1 instead of j+1 and i+1
 
-    newArray.enumerated().reversed().forEach { newTuple in
-      let newIndex = newTuple.offset
-
-      guard newIndex > 0 && newIndex < newArray.count - 1 else {
-        return
-      }
-
-      guard case .indexInOther(let oldIndex) = newArray[newIndex] else {
-        return
-      }
-
-      // It uses j-1 and i-1 instead of j+1 and i+1
-      guard oldIndex - 1 >= 0 else {
-        return
-      }
-
-      guard case .tableEntry(let newEntry) = newArray[newIndex - 1],
-        case .tableEntry(let oldEntry) = oldArray[oldIndex - 1],
-        newEntry === oldEntry else {
-          return
-      }
-
-      newArray[newIndex - 1] = .indexInOther(oldIndex - 1)
-      oldArray[oldIndex - 1] = .indexInOther(newIndex - 1)
+    newArray.enumerated().forEach { (indexOfNew, item) in
+        switch item {
+        case .tableEntry(let entry):
+            guard !entry.indexesInOld.isEmpty else {
+                return
+            }
+            let indexOfOld = entry.indexesInOld.removeFirst()
+            let isObservation1 = entry.newCounter == .one && entry.oldCounter == .one
+            let isObservation2 = entry.newCounter != .zero && entry.oldCounter != .zero && newArray[indexOfNew] == oldArray[indexOfOld]
+            guard isObservation1 || isObservation2 else {
+                return
+            }
+            newArray[indexOfNew] = .indexInOther(indexOfOld)
+            oldArray[indexOfOld] = .indexInOther(indexOfNew)
+        case .indexInOther(_):
+            break
+        }
     }
   }
 
