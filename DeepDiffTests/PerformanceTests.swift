@@ -7,7 +7,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 8)
+      XCTAssertEqual(changes.count, 4)
     }
   }
 
@@ -16,7 +16,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 200)
+      XCTAssertEqual(changes.count, 100)
     }
   }
 
@@ -25,7 +25,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 2000)
+      XCTAssertEqual(changes.count, 200)
     }
   }
 
@@ -34,7 +34,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 1900)
+      XCTAssertEqual(changes.count, 100)
     }
   }
 
@@ -43,7 +43,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 2100)
+      XCTAssertEqual(changes.count, 100)
     }
   }
 
@@ -52,7 +52,7 @@ class PerformanceTests: XCTestCase {
 
     measure {
       let changes = diff(old: data.old, new: data.new)
-      XCTAssertEqual(changes.count, 19000)
+      XCTAssertEqual(changes.count, 1000)
     }
   }
 
