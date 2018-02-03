@@ -93,19 +93,13 @@ class HeckelTests: XCTestCase {
     let old = Array("sitting")
     let new = Array("kitten")
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 11)
+    XCTAssertEqual(changes.count, 5)
 
     XCTAssertNotNil(changes[0].delete)
     XCTAssertNotNil(changes[1].delete)
     XCTAssertNotNil(changes[2].delete)
-    XCTAssertNotNil(changes[3].delete)
-    XCTAssertNotNil(changes[4].delete)
-    XCTAssertNotNil(changes[5].delete)
-    XCTAssertNotNil(changes[6].insert)
-    XCTAssertNotNil(changes[7].insert)
-    XCTAssertNotNil(changes[8].insert)
-    XCTAssertNotNil(changes[9].insert)
-    XCTAssertNotNil(changes[10].insert)
+    XCTAssertNotNil(changes[3].insert)
+    XCTAssertNotNil(changes[4].insert)
   }
 
   func testSamePostfix() {
@@ -182,13 +176,11 @@ class HeckelTests: XCTestCase {
     ]
 
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 5)
+    XCTAssertEqual(changes.count, 3)
 
     XCTAssertNotNil(changes[0].delete)
-    XCTAssertNotNil(changes[1].delete)
+    XCTAssertNotNil(changes[1].insert)
     XCTAssertNotNil(changes[2].insert)
-    XCTAssertNotNil(changes[3].insert)
-    XCTAssertNotNil(changes[4].insert)
   }
 
   func testObjectReplace() {

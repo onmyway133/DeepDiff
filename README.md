@@ -191,6 +191,11 @@ DeepDiff: 0.453393936157227s
 DeepDiff: 1.04128122329712s
 ```
 
+💪 From 100000 items to 1000000 items
+
+```
+Are you sure?
+```
 
 ## Installation
 
