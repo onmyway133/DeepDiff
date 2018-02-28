@@ -6,6 +6,18 @@ public struct ChangeWithIndexPath {
   public let deletes: [IndexPath]
   public let replaces: [IndexPath]
   public let moves: [(from: IndexPath, to: IndexPath)]
+
+  public init(
+    inserts: [IndexPath],
+    deletes: [IndexPath],
+    replaces:[IndexPath],
+    moves: [(from: IndexPath, to: IndexPath)]) {
+
+    self.inserts = inserts
+    self.deletes = deletes
+    self.replaces = replaces
+    self.moves = moves
+  }
 }
 
 public class IndexPathConverter {
