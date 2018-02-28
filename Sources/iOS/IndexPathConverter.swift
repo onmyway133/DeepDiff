@@ -1,14 +1,20 @@
 import Foundation
 
-struct ChangeWithIndexPath {
-  let inserts: [IndexPath]
-  let deletes: [IndexPath]
-  let replaces: [IndexPath]
-  let moves: [(from: IndexPath, to: IndexPath)]
+public struct ChangeWithIndexPath {
+  
+  public let inserts: [IndexPath]
+  public let deletes: [IndexPath]
+  public let replaces: [IndexPath]
+  public let moves: [(from: IndexPath, to: IndexPath)]
 }
 
-final class IndexPathConverter {
-  func convert<T>(changes: [Change<T>], section: Int) -> ChangeWithIndexPath {
+public class IndexPathConverter {
+  
+  public init() {
+    
+  }
+  
+  public func convert<T>(changes: [Change<T>], section: Int) -> ChangeWithIndexPath {
     let inserts = changes.flatMap({ $0.insert }).map({ $0.index.toIndexPath(section: section) })
     let deletes = changes.flatMap({ $0.delete }).map({ $0.index.toIndexPath(section: section) })
     let replaces = changes.flatMap({ $0.replace }).map({ $0.index.toIndexPath(section: section) })
@@ -18,7 +24,7 @@ final class IndexPathConverter {
         to: $0.toIndex.toIndexPath(section: section)
       )
     })
-
+    
     return ChangeWithIndexPath(
       inserts: inserts,
       deletes: deletes,
@@ -29,6 +35,7 @@ final class IndexPathConverter {
 }
 
 extension Int {
+  
   fileprivate func toIndexPath(section: Int) -> IndexPath {
     return IndexPath(item: self, section: section)
   }

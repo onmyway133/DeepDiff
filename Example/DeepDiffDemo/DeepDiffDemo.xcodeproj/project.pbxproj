@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2364C5722044053D000018AB /* ASTableNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C5712044053D000018AB /* ASTableNodeExtension.swift */; };
+		2364C575204405A1000018AB /* TextureTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C574204405A1000018AB /* TextureTableController.swift */; };
+		2364C577204405CC000018AB /* TableCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C576204405CC000018AB /* TableCellNode.swift */; };
+		2364C579204405DC000018AB /* RootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C578204405DC000018AB /* RootNode.swift */; };
 		7394660C78BAEBC72FA11E3E /* Pods_DeepDiffDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A95FD443E68DDA3D38B925B /* Pods_DeepDiffDemo.framework */; };
 		D23B9F441FA92867008363A1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F431FA92867008363A1 /* CollectionViewCell.swift */; };
 		D23B9F461FA92ACB008363A1 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2364C5712044053D000018AB /* ASTableNodeExtension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ASTableNodeExtension.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2364C574204405A1000018AB /* TextureTableController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TextureTableController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2364C576204405CC000018AB /* TableCellNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TableCellNode.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2364C578204405DC000018AB /* RootNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RootNode.swift; sourceTree = "<group>"; tabWidth = 2; };
 		31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7A95FD443E68DDA3D38B925B /* Pods_DeepDiffDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepDiffDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -34,7 +42,7 @@
 		D5C7F74D1C3BC9CE008CDDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5C7F74F1C3BC9CE008CDDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		D5C7F75A1C3BCA1E008CDDBA /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +58,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2364C57320440579000018AB /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				2364C5712044053D000018AB /* ASTableNodeExtension.swift */,
+				2364C574204405A1000018AB /* TextureTableController.swift */,
+				2364C576204405CC000018AB /* TableCellNode.swift */,
+				2364C578204405DC000018AB /* RootNode.swift */,
+			);
+			path = Texture;
+			sourceTree = "<group>";
+		};
 		3A227F10A798EEE5D13C24A5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +134,7 @@
 		D5C7F7581C3BCA1E008CDDBA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2364C57320440579000018AB /* Texture */,
 				D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */,
 				D5C7F75A1C3BCA1E008CDDBA /* CollectionViewController.swift */,
 				D23B9F431FA92867008363A1 /* CollectionViewCell.swift */,
@@ -163,6 +183,7 @@
 				TargetAttributes = {
 					D5C7F73F1C3BC9CE008CDDBA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 456T4LX972;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -241,12 +262,20 @@
 				"${BUILT_PRODUCTS_DIR}/Anchors/Anchors.framework",
 				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -262,8 +291,12 @@
 			files = (
 				D5C7F75D1C3BCA1E008CDDBA /* CollectionViewController.swift in Sources */,
 				D23B9F461FA92ACB008363A1 /* Collection+Extensions.swift in Sources */,
+				2364C577204405CC000018AB /* TableCellNode.swift in Sources */,
 				D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */,
 				D23B9F4A1FA93199008363A1 /* TableViewCell.swift in Sources */,
+				2364C5722044053D000018AB /* ASTableNodeExtension.swift in Sources */,
+				2364C575204405A1000018AB /* TextureTableController.swift in Sources */,
+				2364C579204405DC000018AB /* RootNode.swift in Sources */,
 				D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */,
 				D2E33C861FAB4DC000BCE1E2 /* DataSet.swift in Sources */,
 				D23B9F441FA92867008363A1 /* CollectionViewCell.swift in Sources */,
@@ -389,6 +422,7 @@
 			baseConfigurationReference = CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 456T4LX972;
 				INFOPLIST_FILE = DeepDiffDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.DeepDiffDemo;
@@ -402,6 +436,7 @@
 			baseConfigurationReference = 31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 456T4LX972;
 				INFOPLIST_FILE = DeepDiffDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.DeepDiffDemo;

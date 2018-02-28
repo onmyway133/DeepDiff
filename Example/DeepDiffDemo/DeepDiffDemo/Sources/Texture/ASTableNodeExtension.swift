@@ -1,6 +1,15 @@
-import UIKit
+//
+//  ASTableNodeExtension.swift
+//  DeepDiffDemo
+//
+//  Created by Gungor Basa on 26.02.2018.
+//  Copyright © 2018 Hyper Interaktiv AS. All rights reserved.
+//
 
-public extension UITableView {
+import AsyncDisplayKit
+import DeepDiff
+
+extension ASTableNode {
   
   /// Animate reload in a batch update
   ///
@@ -16,25 +25,12 @@ public extension UITableView {
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
     
     // reloadRows needs to be called outside the batch
-    
-    if #available(iOS 11, tvOS 11, *) {
-      performBatchUpdates({
-        internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
-      }, completion: completion)
-      
-      changesWithIndexPath.replaces.executeIfPresent {
-        self.reloadRows(at: $0, with: .automatic)
-      }
-    } else {
-      beginUpdates()
+    performBatchUpdates({
       internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
-      endUpdates()
-      
-      changesWithIndexPath.replaces.executeIfPresent {
-        reloadRows(at: $0, with: .automatic)
-      }
-      
-      completion(true)
+    }, completion: completion)
+    
+    changesWithIndexPath.replaces.executeIfPresent {
+      self.reloadRows(at: $0, with: .automatic)
     }
   }
   
@@ -56,3 +52,4 @@ public extension UITableView {
     }
   }
 }
+

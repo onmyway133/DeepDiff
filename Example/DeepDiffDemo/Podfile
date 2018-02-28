@@ -6,5 +6,6 @@ target 'DeepDiffDemo' do
  pod 'DeepDiff', path: '../../'
  pod 'Anchors'
  pod 'Hue'
+ pod 'Texture'
 end
 
