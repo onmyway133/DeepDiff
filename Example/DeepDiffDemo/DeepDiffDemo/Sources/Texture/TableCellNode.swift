@@ -9,17 +9,17 @@
 import AsyncDisplayKit
 
 class TableCellNode: ASCellNode {
-
-    var text = ASTextNode()
-
-    override init() {
-        super.init()
-        automaticallyManagesSubnodes = true
-        self.backgroundColor = .orange
-        self.style.preferredSize.height = CGFloat(50)
-    }
-
-    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        return ASStackLayoutSpec(direction: .vertical, spacing: 0, justifyContent: .center, alignItems: .stretch, children: [text])
-    }
+  
+  var text = ASTextNode()
+  
+  override init() {
+    super.init()
+    automaticallyManagesSubnodes = true
+    self.backgroundColor = .orange
+    self.style.preferredSize.height = CGFloat(50)
+  }
+  
+  override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+    return ASStackLayoutSpec(direction: .vertical, spacing: 0, justifyContent: .center, alignItems: .stretch, children: [text])
+  }
 }

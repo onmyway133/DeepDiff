@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     collectionController.tabBarItem.image = UIImage(named: "collection")
 
     let textureController = TextureTableController()
-    collectionController.tabBarItem.image = UIImage(named: "table")
+    textureController.tabBarItem.image = UIImage(named: "table")
 
     let tabController = UITabBarController()
 

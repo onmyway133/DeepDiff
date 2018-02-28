@@ -9,21 +9,21 @@
 import AsyncDisplayKit
 
 class RootNode: ASDisplayNode {
-
-    let tableNode: ASTableNode = {
-        let node = ASTableNode()
-        let full = ASDimension(unit: .fraction, value: 1.0)
-        node.style.preferredLayoutSize = ASLayoutSize(width: full, height: full)
-
-        return node
-    }()
-
-    override init() {
-        super.init()
-        automaticallyManagesSubnodes = true
-    }
-
-    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        return ASAbsoluteLayoutSpec(children: [tableNode])
-    }
+  
+  let tableNode: ASTableNode = {
+    let node = ASTableNode()
+    let full = ASDimension(unit: .fraction, value: 1.0)
+    node.style.preferredLayoutSize = ASLayoutSize(width: full, height: full)
+    
+    return node
+  }()
+  
+  override init() {
+    super.init()
+    automaticallyManagesSubnodes = true
+  }
+  
+  override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+    return ASAbsoluteLayoutSpec(children: [tableNode])
+  }
 }

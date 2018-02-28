@@ -24,10 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2364C5712044053D000018AB /* ASTableNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTableNodeExtension.swift; sourceTree = "<group>"; };
-		2364C574204405A1000018AB /* TextureTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureTableController.swift; sourceTree = "<group>"; };
-		2364C576204405CC000018AB /* TableCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellNode.swift; sourceTree = "<group>"; };
-		2364C578204405DC000018AB /* RootNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNode.swift; sourceTree = "<group>"; };
+		2364C5712044053D000018AB /* ASTableNodeExtension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ASTableNodeExtension.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2364C574204405A1000018AB /* TextureTableController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TextureTableController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2364C576204405CC000018AB /* TableCellNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TableCellNode.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2364C578204405DC000018AB /* RootNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RootNode.swift; sourceTree = "<group>"; tabWidth = 2; };
 		31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7A95FD443E68DDA3D38B925B /* Pods_DeepDiffDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepDiffDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		D5C7F74D1C3BC9CE008CDDBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5C7F74F1C3BC9CE008CDDBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		D5C7F75A1C3BCA1E008CDDBA /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +183,7 @@
 				TargetAttributes = {
 					D5C7F73F1C3BC9CE008CDDBA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 456T4LX972;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -421,6 +422,7 @@
 			baseConfigurationReference = CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 456T4LX972;
 				INFOPLIST_FILE = DeepDiffDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.DeepDiffDemo;
@@ -434,6 +436,7 @@
 			baseConfigurationReference = 31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 456T4LX972;
 				INFOPLIST_FILE = DeepDiffDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantageek.DeepDiffDemo;
