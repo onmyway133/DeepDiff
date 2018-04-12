@@ -45,7 +45,7 @@ let changes = diff(old: old, new: new)
 ```swift
 let old = Array("abcd")
 let new = Array("adbc")
-let changes = diff(old: old, new: new, reduceMove: true)
+let changes = diff(old: old, new: new)
 
 // Move "d" from index 3 to index 1
 ```

@@ -5,7 +5,6 @@ import Foundation
 /// - Parameters:
 ///   - old: Old collection
 ///   - new: New collection
-///   - reduceMove: Reduce move from insertions and deletions
 /// - Returns: A set of changes
 public func diff<T: Hashable>(
   old: Array<T>,
