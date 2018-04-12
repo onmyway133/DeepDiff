@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "DeepDiff"
   s.summary          = "Diff in Swift"
-  s.version          = "1.1.2"
+  s.version          = "1.2.0"
   s.homepage         = "https://github.com/onmyway133/DeepDiff"
   s.license          = 'MIT'
   s.author           = { "Khoa Pham" => "onmyway133@gmail.com" }
@@ -25,5 +25,5 @@ Pod::Spec.new do |s|
 
   s.ios.framework  = "UIKit"
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
 end
