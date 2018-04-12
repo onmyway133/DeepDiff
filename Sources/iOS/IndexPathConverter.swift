@@ -27,10 +27,10 @@ public class IndexPathConverter {
   }
   
   public func convert<T>(changes: [Change<T>], section: Int) -> ChangeWithIndexPath {
-    let inserts = changes.flatMap({ $0.insert }).map({ $0.index.toIndexPath(section: section) })
-    let deletes = changes.flatMap({ $0.delete }).map({ $0.index.toIndexPath(section: section) })
-    let replaces = changes.flatMap({ $0.replace }).map({ $0.index.toIndexPath(section: section) })
-    let moves = changes.flatMap({ $0.move }).map({
+    let inserts = changes.compactMap({ $0.insert }).map({ $0.index.toIndexPath(section: section) })
+    let deletes = changes.compactMap({ $0.delete }).map({ $0.index.toIndexPath(section: section) })
+    let replaces = changes.compactMap({ $0.replace }).map({ $0.index.toIndexPath(section: section) })
+    let moves = changes.compactMap({ $0.move }).map({
       (
         from: $0.fromIndex.toIndexPath(section: section),
         to: $0.toIndex.toIndexPath(section: section)

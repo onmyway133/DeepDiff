@@ -3,7 +3,7 @@ import Foundation
 struct MoveReducer<T> {
   func reduce<T: Equatable>(changes: [Change<T>]) -> [Change<T>] {
     // Find pairs of .insert and .delete with same item
-    let inserts = changes.flatMap({ $0.insert })
+    let inserts = changes.compactMap({ $0.insert })
 
     if inserts.isEmpty {
       return changes
