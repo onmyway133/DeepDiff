@@ -52,6 +52,16 @@ class HeckelTests: XCTestCase {
     XCTAssertNotNil(changes[1].insert)
   }
 
+  func testReplace2() {
+    let old = Array("abcd")
+    let new = Array("aecd")
+
+    let changes = diff(old: old, new: new)
+    XCTAssertEqual(changes.count, 1)
+
+    XCTAssertNotNil(changes[0].replace)
+  }
+
   func testAllReplace() {
     let old = Array("abc")
     let new = Array("ABC")
