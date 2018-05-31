@@ -99,6 +99,15 @@ class HeckelTests: XCTestCase {
     XCTAssertNotNil(changes[1].move)
   }
 
+  func testInsert() {
+    let old = Array("a")
+    let new = Array("ba")
+    let changes = diff(old: old, new: new)
+    XCTAssertEqual(changes.count, 1)
+
+    XCTAssertNotNil(changes[0].insert)
+  }
+
   func testSmallChangesAtEdges() {
     let old = Array("sitting")
     let new = Array("kitten")
