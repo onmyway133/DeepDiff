@@ -53,8 +53,15 @@ class HeckelTests: XCTestCase {
   }
 
   func testReplace2() {
-    let old = Array("abcd")
-    let new = Array("aecd")
+    let old = [
+      Car(id: 1, name: "Volvo", travelledMiles: 10),
+      Car(id: 2, name: "Tesla", travelledMiles: 20)
+    ]
+
+    let new = [
+      Car(id: 1, name: "Volvo", travelledMiles: 10),
+      Car(id: 2, name: "Tesla", travelledMiles: 30)
+    ]
 
     let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Car: Equatable {
+struct Car: Hashable {
   let id: Int
   let name: String
   let travelledMiles: Int
@@ -17,9 +17,9 @@ struct Car: Equatable {
     return id
   }
 
-  static func == (left: Car, right: Car) {
+  static func == (left: Car, right: Car) -> Bool {
     return left.id == right.id
       && left.name == right.name
-      && left.travelledMiles = right.travelledMiles
+      && left.travelledMiles == right.travelledMiles
   }
 }
