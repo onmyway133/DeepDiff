@@ -1,3 +1,11 @@
+//
+//  Heckel.swift
+//  DeepDiff
+//
+//  Created by Khoa Pham.
+//  Copyright © 2018 Khoa Pham. All rights reserved.
+//
+
 import Foundation
 
 // https://gist.github.com/ndarville/3166060

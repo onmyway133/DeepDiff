@@ -1,3 +1,11 @@
+//
+//  DeepDiff.swift
+//  DeepDiff
+//
+//  Created by Khoa Pham.
+//  Copyright © 2018 Khoa Pham. All rights reserved.
+//
+
 import Foundation
 
 /// Perform diff between old and new collections
