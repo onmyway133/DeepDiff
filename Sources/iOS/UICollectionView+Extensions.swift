@@ -19,7 +19,7 @@ public extension UICollectionView {
   public func reload<T: Hashable>(
     changes: [Change<T>],
     section: Int = 0,
-    completion: @escaping (Bool) -> Void) {
+    completion: ((Bool) -> Void)? = nil) {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
     
@@ -27,7 +27,9 @@ public extension UICollectionView {
     
     performBatchUpdates({
       internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
-    }, completion: completion)
+    }, completion: { finished in
+      completion?(finished)
+    })
     
     changesWithIndexPath.replaces.executeIfPresent {
       self.reloadItems(at: $0)
