@@ -22,9 +22,9 @@ public extension UITableView {
   public func reload<T: Hashable>(
     changes: [Change<T>],
     section: Int = 0,
-    insertionAnimation: UITableViewRowAnimation = .automatic,
-    deletionAnimation: UITableViewRowAnimation = .automatic,
-    replacementAnimation: UITableViewRowAnimation = .automatic,
+    insertionAnimation: UITableView.RowAnimation = .automatic,
+    deletionAnimation: UITableView.RowAnimation = .automatic,
+    replacementAnimation: UITableView.RowAnimation = .automatic,
     completion: ((Bool) -> Void)? = nil) {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
@@ -61,8 +61,8 @@ public extension UITableView {
   // MARK: - Helper
   
   private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath,
-                                    insertionAnimation: UITableViewRowAnimation,
-                                    deletionAnimation: UITableViewRowAnimation) {
+                                    insertionAnimation: UITableView.RowAnimation,
+                                    deletionAnimation: UITableView.RowAnimation) {
     changesWithIndexPath.deletes.executeIfPresent {
       deleteRows(at: $0, with: deletionAnimation)
     }
