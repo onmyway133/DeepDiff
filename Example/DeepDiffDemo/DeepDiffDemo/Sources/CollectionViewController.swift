@@ -40,7 +40,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
-      self.collectionView.reload(changes: changes, completion: { _ in })
+      self.collectionView.reload(changes: changes, updateData: {})
     }
 
     if let exception = exception {

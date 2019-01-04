@@ -37,7 +37,7 @@ class TableViewController: UIViewController, UITableViewDataSource {
     let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
-      self.tableView.reload(changes: changes, completion: { _ in })
+      self.tableView.reload(changes: changes, updateData: {})
     }
 
     if let exception = exception {

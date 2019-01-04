@@ -1,7 +1,6 @@
 PODS:
-  - Anchors (2.2.1)
-  - DeepDiff (1.1.2)
-  - Hue (3.0.1)
+  - Anchors (2.4.0)
+  - DeepDiff (1.3.0)
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
     - PINCache/Core (= 3.0.1-beta.6)
@@ -9,7 +8,7 @@ PODS:
     - PINCache/Core
   - PINCache/Core (3.0.1-beta.6):
     - PINOperation (~> 1.1.0)
-  - PINOperation (1.1)
+  - PINOperation (1.1.1)
   - PINRemoteImage/Core (3.0.0-beta.13):
     - PINOperation
   - PINRemoteImage/iOS (3.0.0-beta.13):
@@ -17,10 +16,10 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
-  - Texture (2.6):
-    - Texture/PINRemoteImage (= 2.6)
-  - Texture/Core (2.6)
-  - Texture/PINRemoteImage (2.6):
+  - Texture (2.7):
+    - Texture/PINRemoteImage (= 2.7)
+  - Texture/Core (2.7)
+  - Texture/PINRemoteImage (2.7):
     - PINRemoteImage/iOS (= 3.0.0-beta.13)
     - PINRemoteImage/PINCache
     - Texture/Core
@@ -28,22 +27,28 @@ PODS:
 DEPENDENCIES:
   - Anchors
   - DeepDiff (from `../../`)
-  - Hue
   - Texture
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Anchors
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - Texture
 
 EXTERNAL SOURCES:
   DeepDiff:
-    :path: ../../
+    :path: "../../"
 
 SPEC CHECKSUMS:
-  Anchors: c1dd44c918ec9fb331e1f786546950e36a50a337
-  DeepDiff: de0fe88e65789b1cc5fdabaaeaceb8c63a3ac24c
-  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  Anchors: 75614cac462e063b395386e31eb593a856d831a8
+  DeepDiff: 0d52be4ac0822b38f1ce1ad1514c841d7166a67b
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
-  PINOperation: 7f042fa6df5b606deb4bd5997654cf7033d5be1d
+  PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
-  Texture: 7249074582daf75e524e59df5428b66b8e8db0e4
+  Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
 
-PODFILE CHECKSUM: 5d15be81a5159ec07f66a2ca4a2ece5798312cc8
+PODFILE CHECKSUM: 551a7ffbc699c31e790e8573c6e13b0c4f28a66e
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0.beta.2

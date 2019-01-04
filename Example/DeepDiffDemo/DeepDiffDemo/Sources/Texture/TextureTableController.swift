@@ -3,7 +3,7 @@
 //  DeepDiffDemo
 //
 //  Created by Gungor Basa on 26.02.2018.
-//  Copyright © 2018 Hyper Interaktiv AS. All rights reserved.
+//  Copyright © 2018 onmyway133. All rights reserved.
 //
 
 import AsyncDisplayKit

@@ -16,6 +16,7 @@
 		D23B9F461FA92ACB008363A1 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */; };
 		D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F471FA9315F008363A1 /* TableViewController.swift */; };
 		D23B9F4A1FA93199008363A1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F491FA93199008363A1 /* TableViewCell.swift */; };
+		D26B2DF121DF8917000628A0 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B2DF021DF8917000628A0 /* Color+Extensions.swift */; };
 		D2E33C861FAB4DC000BCE1E2 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */; };
 		D5C7F74E1C3BC9CE008CDDBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F74C1C3BC9CE008CDDBA /* LaunchScreen.storyboard */; };
 		D5C7F75B1C3BCA1E008CDDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D23B9F471FA9315F008363A1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D23B9F491FA93199008363A1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D26B2DF021DF8917000628A0 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		D2A8136D1FABA4D000A94BDE /* ExceptionCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionCatcher.h; sourceTree = "<group>"; };
 		D2A8136E1FABA51100A94BDE /* DeepDiffDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeepDiffDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				D2E33C851FAB4DC000BCE1E2 /* DataSet.swift */,
 				D2A8136D1FABA4D000A94BDE /* ExceptionCatcher.h */,
 				D2A8136E1FABA51100A94BDE /* DeepDiffDemo-Bridging-Header.h */,
+				D26B2DF021DF8917000628A0 /* Color+Extensions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -160,7 +163,6 @@
 				D5C7F73D1C3BC9CE008CDDBA /* Frameworks */,
 				D5C7F73E1C3BC9CE008CDDBA /* Resources */,
 				E5B175587D90824418631905 /* [CP] Embed Pods Frameworks */,
-				45FA1C6D55A1C6393E94AA41 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,21 +221,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		45FA1C6D55A1C6393E94AA41 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		97FB05B06011C9EFA7FDDF89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,10 +245,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Anchors/Anchors.framework",
 				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
-				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
@@ -271,7 +257,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
@@ -279,7 +264,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -300,6 +285,7 @@
 				D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */,
 				D2E33C861FAB4DC000BCE1E2 /* DataSet.swift in Sources */,
 				D23B9F441FA92867008363A1 /* CollectionViewCell.swift in Sources */,
+				D26B2DF121DF8917000628A0 /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +354,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -416,7 +402,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

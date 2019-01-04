@@ -3,7 +3,7 @@
 //  DeepDiffDemo
 //
 //  Created by Gungor Basa on 26.02.2018.
-//  Copyright © 2018 Hyper Interaktiv AS. All rights reserved.
+//  Copyright © 2018 onmyway133. All rights reserved.
 //
 
 import AsyncDisplayKit
@@ -23,9 +23,9 @@ extension ASTableNode {
   public func reload<T: Hashable>(
     changes: [Change<T>],
     section: Int = 0,
-    insertionAnimation: UITableViewRowAnimation = .automatic,
-    deletionAnimation: UITableViewRowAnimation = .automatic,
-    replacementAnimation: UITableViewRowAnimation = .automatic,
+    insertionAnimation: UITableView.RowAnimation = .automatic,
+    deletionAnimation: UITableView.RowAnimation = .automatic,
+    replacementAnimation: UITableView.RowAnimation = .automatic,
     completion: @escaping (Bool) -> Void) {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
@@ -45,8 +45,8 @@ extension ASTableNode {
   // MARK: - Helper
   
   private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath,
-                                    insertionAnimation: UITableViewRowAnimation,
-                                    deletionAnimation: UITableViewRowAnimation) {
+                                    insertionAnimation: UITableView.RowAnimation,
+                                    deletionAnimation: UITableView.RowAnimation) {
     changesWithIndexPath.deletes.executeIfPresent {
       deleteRows(at: $0, with: deletionAnimation)
     }
