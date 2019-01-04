@@ -23,22 +23,19 @@ public extension UICollectionView {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
     
-    // reloadRows needs to be called outside the batch
-    
     performBatchUpdates({
-      internalBatchUpdates(changesWithIndexPath: changesWithIndexPath)
+      insideUpdate(changesWithIndexPath: changesWithIndexPath)
     }, completion: { finished in
       completion?(finished)
     })
-    
-    changesWithIndexPath.replaces.executeIfPresent {
-      self.reloadItems(at: $0)
-    }
+
+    // reloadRows needs to be called outside the batch
+    outsideUpdate(changesWithIndexPath: changesWithIndexPath)
   }
   
   // MARK: - Helper
   
-  private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath) {
+  private func insideUpdate(changesWithIndexPath: ChangeWithIndexPath) {
     changesWithIndexPath.deletes.executeIfPresent {
       deleteItems(at: $0)
     }
@@ -51,6 +48,12 @@ public extension UICollectionView {
       $0.forEach { move in
         moveItem(at: move.from, to: move.to)
       }
+    }
+  }
+
+  private func outsideUpdate(changesWithIndexPath: ChangeWithIndexPath) {
+    changesWithIndexPath.replaces.executeIfPresent {
+      self.reloadItems(at: $0)
     }
   }
 }

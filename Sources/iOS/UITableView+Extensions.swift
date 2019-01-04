@@ -28,41 +28,42 @@ public extension UITableView {
     completion: ((Bool) -> Void)? = nil) {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
-    
+
+    unifiedPerformBatchUpdates({
+      self.insideUpdate(
+        changesWithIndexPath: changesWithIndexPath,
+        insertionAnimation: insertionAnimation,
+        deletionAnimation: deletionAnimation
+      )
+    }, completion: { finished in
+      completion?(finished)
+    })
+
     // reloadRows needs to be called outside the batch
-    
+    outsideUpdate(changesWithIndexPath: changesWithIndexPath, replacementAnimation: replacementAnimation)
+  }
+  
+  // MARK: - Helper
+
+  private func unifiedPerformBatchUpdates(
+    _ updates: (() -> Void)?,
+    completion: ((Bool) -> Void)? = nil) {
+
     if #available(iOS 11, tvOS 11, *) {
-      performBatchUpdates({
-        internalBatchUpdates(changesWithIndexPath: changesWithIndexPath,
-                             insertionAnimation: insertionAnimation,
-                             deletionAnimation: deletionAnimation)
-      }, completion: { finished in
-        completion?(finished)
-      })
-      
-      changesWithIndexPath.replaces.executeIfPresent {
-        self.reloadRows(at: $0, with: replacementAnimation)
-      }
+      performBatchUpdates(updates, completion: completion)
     } else {
       beginUpdates()
-      internalBatchUpdates(changesWithIndexPath: changesWithIndexPath,
-                           insertionAnimation: insertionAnimation,
-                           deletionAnimation: deletionAnimation)
+      updates?()
       endUpdates()
-      
-      changesWithIndexPath.replaces.executeIfPresent {
-        reloadRows(at: $0, with: replacementAnimation)
-      }
-      
       completion?(true)
     }
   }
   
-  // MARK: - Helper
-  
-  private func internalBatchUpdates(changesWithIndexPath: ChangeWithIndexPath,
-                                    insertionAnimation: UITableView.RowAnimation,
-                                    deletionAnimation: UITableView.RowAnimation) {
+  private func insideUpdate(
+    changesWithIndexPath: ChangeWithIndexPath,
+    insertionAnimation: UITableView.RowAnimation,
+    deletionAnimation: UITableView.RowAnimation) {
+
     changesWithIndexPath.deletes.executeIfPresent {
       deleteRows(at: $0, with: deletionAnimation)
     }
@@ -75,6 +76,15 @@ public extension UITableView {
       $0.forEach { move in
         moveRow(at: move.from, to: move.to)
       }
+    }
+  }
+
+  private func outsideUpdate(
+    changesWithIndexPath: ChangeWithIndexPath,
+    replacementAnimation: UITableView.RowAnimation) {
+
+    changesWithIndexPath.replaces.executeIfPresent {
+      reloadRows(at: $0, with: replacementAnimation)
     }
   }
 }
