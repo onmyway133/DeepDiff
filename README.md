@@ -74,12 +74,16 @@ Changes to `DataSource` can be animated by using batch update, as guided in [Bat
 
 Since `Change` returned by `DeepDiff` follows the way batch update works, animating `DataSource` changes is easy.
 
+For safety, update your data source model inside `updateData` to ensure synchrony inside `performBatchUpdates`
+
 ```swift
 let oldItems = items
-items = DataSet.generateNewItems()
-let changes = diff(old: oldItems, new: items)
+let newItems = DataSet.generateNewItems()
+let changes = diff(old: oldItems, new: newItems)
 
-collectionView.reload(changes: changes, section: 2, updateData: { // update data source model  })
+collectionView.reload(changes: changes, section: 2, updateData: { 
+  self.items = newItems
+})
 ```
 
 Take a look at [Demo](https://github.com/onmyway133/DeepDiff/tree/master/Example/DeepDiffDemo) where changes are made via random number of items, and the items are shuffled.
