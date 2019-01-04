@@ -18,6 +18,7 @@ public extension UITableView {
   ///   - insertionAnimation: The animation for insert rows
   ///   - deletionAnimation: The animation for delete rows
   ///   - replacementAnimation: The animation for reload rows
+  ///   - updateData: Update your data source model
   ///   - completion: Called when operation completes
   public func reload<T: Hashable>(
     changes: [Change<T>],
@@ -25,11 +26,13 @@ public extension UITableView {
     insertionAnimation: UITableView.RowAnimation = .automatic,
     deletionAnimation: UITableView.RowAnimation = .automatic,
     replacementAnimation: UITableView.RowAnimation = .automatic,
+    updateData: () -> Void,
     completion: ((Bool) -> Void)? = nil) {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
 
     unifiedPerformBatchUpdates({
+      updateData()
       self.insideUpdate(
         changesWithIndexPath: changesWithIndexPath,
         insertionAnimation: insertionAnimation,
@@ -46,16 +49,16 @@ public extension UITableView {
   // MARK: - Helper
 
   private func unifiedPerformBatchUpdates(
-    _ updates: (() -> Void)?,
-    completion: ((Bool) -> Void)? = nil) {
+    _ updates: (() -> Void),
+    completion: (@escaping (Bool) -> Void)) {
 
     if #available(iOS 11, tvOS 11, *) {
       performBatchUpdates(updates, completion: completion)
     } else {
       beginUpdates()
-      updates?()
+      updates()
       endUpdates()
-      completion?(true)
+      completion(true)
     }
   }
   

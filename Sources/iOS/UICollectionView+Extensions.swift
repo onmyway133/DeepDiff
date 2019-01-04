@@ -15,15 +15,18 @@ public extension UICollectionView {
   /// - Parameters:
   ///   - changes: The changes from diff
   ///   - section: The section that all calculated IndexPath belong
+  ///   - updateData: Update your data source model
   ///   - completion: Called when operation completes
   public func reload<T: Hashable>(
     changes: [Change<T>],
     section: Int = 0,
+    updateData: () -> Void,
     completion: ((Bool) -> Void)? = nil) {
     
     let changesWithIndexPath = IndexPathConverter().convert(changes: changes, section: section)
     
     performBatchUpdates({
+      updateData()
       insideUpdate(changesWithIndexPath: changesWithIndexPath)
     }, completion: { finished in
       completion?(finished)
