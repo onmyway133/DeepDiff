@@ -30,9 +30,7 @@ public struct ChangeWithIndexPath {
 
 public class IndexPathConverter {
   
-  public init() {
-    
-  }
+  public init() {}
   
   public func convert<T>(changes: [Change<T>], section: Int) -> ChangeWithIndexPath {
     let inserts = changes.compactMap({ $0.insert }).map({ $0.index.toIndexPath(section: section) })
