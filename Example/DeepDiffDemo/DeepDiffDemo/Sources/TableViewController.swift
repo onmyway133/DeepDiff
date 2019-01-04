@@ -11,8 +11,6 @@ class TableViewController: UIViewController, UITableViewDataSource {
     super.viewDidLoad()
     view.backgroundColor = UIColor.white
 
-    title = "TableView"
-
     tableView = UITableView()
     tableView.dataSource = self
     tableView.backgroundColor = .white
@@ -32,12 +30,14 @@ class TableViewController: UIViewController, UITableViewDataSource {
   }
 
   @objc func reload() {
-    let oldItems = items
-    items = DataSet.generateItems()
+    let oldItems = self.items
+    let items = DataSet.generateItems()
     let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
-      self.tableView.reload(changes: changes, updateData: {})
+      self.tableView.reload(changes: changes, updateData: {
+        self.items = items
+      })
     }
 
     if let exception = exception {

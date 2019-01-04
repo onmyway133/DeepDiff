@@ -11,8 +11,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     super.viewDidLoad()
     view.backgroundColor = UIColor.white
 
-    title = "CollectionView"
-
     let layout = UICollectionViewFlowLayout()
     layout.minimumLineSpacing = 10
     layout.minimumInteritemSpacing = 10
@@ -35,12 +33,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
   }
 
   @objc func reload() {
-    let oldItems = items
-    items = DataSet.generateItems()
+    let oldItems = self.items
+    let items = DataSet.generateItems()
     let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
-      self.collectionView.reload(changes: changes, updateData: {})
+      self.collectionView.reload(changes: changes, updateData: {
+        self.items = items
+      })
     }
 
     if let exception = exception {

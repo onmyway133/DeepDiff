@@ -11,12 +11,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let tableController = TableViewController()
     tableController.tabBarItem.image = UIImage(named: "table")
+    tableController.title = "UITableView"
 
     let collectionController = CollectionViewController()
     collectionController.tabBarItem.image = UIImage(named: "collection")
+    collectionController.title = "UICollectionView"
 
     let textureController = TextureTableController()
     textureController.tabBarItem.image = UIImage(named: "table")
+    textureController.title = "ASTableNode"
 
     let tabController = UITabBarController()
 

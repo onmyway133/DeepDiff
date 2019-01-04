@@ -79,7 +79,7 @@ let oldItems = items
 items = DataSet.generateNewItems()
 let changes = diff(old: oldItems, new: items)
 
-collectionView.reload(changes: changes, section: 2, completion: { _ in })
+collectionView.reload(changes: changes, section: 2, updateData: { // update data source model  })
 ```
 
 Take a look at [Demo](https://github.com/onmyway133/DeepDiff/tree/master/Example/DeepDiffDemo) where changes are made via random number of items, and the items are shuffled.

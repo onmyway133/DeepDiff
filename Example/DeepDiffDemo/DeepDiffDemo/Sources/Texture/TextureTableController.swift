@@ -17,6 +17,7 @@ class TextureTableController: ASViewController<ASDisplayNode> {
   init() {
     super.init(node: rootNode)
     node.backgroundColor = .white
+    title = "ASTableNode"
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -28,7 +29,7 @@ class TextureTableController: ASViewController<ASDisplayNode> {
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       title: "Reload", style: .plain, target: self, action: #selector(reload)
     )
-    title = "ASTableNode"
+
     rootNode.tableNode.dataSource = self
     reload()
   }
