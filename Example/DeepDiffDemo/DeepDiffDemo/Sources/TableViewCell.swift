@@ -1,6 +1,5 @@
 import UIKit
 import Anchors
-import Hue
 
 class TableViewCell: UITableViewCell {
   let label = UILabel()

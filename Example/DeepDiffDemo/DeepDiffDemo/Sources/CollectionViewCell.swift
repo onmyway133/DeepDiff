@@ -1,6 +1,5 @@
 import UIKit
 import Anchors
-import Hue
 
 class CollectionViewCell: UICollectionViewCell {
   let label = UILabel()

@@ -1,6 +1,5 @@
 import UIKit
 import DeepDiff
-import Hue
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
