@@ -14,14 +14,39 @@ import Foundation
 ///   - old: Old collection
 ///   - new: New collection
 /// - Returns: A set of changes
-public func diff<T: Hashable>(
-  old: Array<T>,
-  new: Array<T>,
-  algorithm: DiffAware = Heckel()) -> [Change<T>] {
 
-  if let changes = algorithm.preprocess(old: old, new: new) {
+public typealias Diffing<T> = ([T], [T]) -> [Change<T>]
+public typealias Comparing<T> = (T, T) -> Bool
+
+public func diff<T>(
+  old: [T],
+  new: [T],
+  comparing: Comparing<T>,
+  diffing: Diffing<T>) -> [Change<T>] {
+
+  if let changes = preprocess(old: old, new: new) {
     return changes
   }
 
-  return algorithm.diff(old: old, new: new)
+  return diffing(old, new)
+}
+
+private func preprocess<T>(old: [T], new: [T]) -> [Change<T>]? {
+  switch (old.isEmpty, new.isEmpty) {
+  case (true, true):
+    // empty
+    return []
+  case (true, false):
+    // all .insert
+    return new.enumerated().map { index, item in
+      return .insert(Insert(item: item, index: index))
+    }
+  case (false, true):
+    // all .delete
+    return old.enumerated().map { index, item in
+      return .delete(Delete(item: item, index: index))
+    }
+  default:
+    return nil
+  }
 }

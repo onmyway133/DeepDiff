@@ -10,14 +10,16 @@ import Foundation
 
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
-public final class WagnerFischer: DiffAware {
+public final class WagnerFischer<T> {
   private let reduceMove: Bool
+  private let comparing: Comparing<T>
 
-  public init(reduceMove: Bool = false) {
+  public init(reduceMove: Bool = false, comparing: @escaping Comparing<T>) {
     self.reduceMove = reduceMove
+    self.comparing = comparing
   }
 
-  public func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  public func diff<T: Hashable>(old: [T], new: [T]) -> [Change<T>] {
     let previousRow = Row<T>()
     previousRow.seed(with: new)
     let currentRow = Row<T>()

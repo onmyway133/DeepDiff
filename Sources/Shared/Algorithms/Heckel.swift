@@ -10,7 +10,9 @@ import Foundation
 
 // https://gist.github.com/ndarville/3166060
 
-public final class Heckel: DiffAware {
+public final class Heckel {
+
+
 
   // OC and NC can assume three values: 1, 2, and many.
   enum Counter {
@@ -69,7 +71,7 @@ public final class Heckel: DiffAware {
 
   public init() {}
 
-  public func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  public func diff<T: Hashable>(old: [T], new: [T]) -> [Change<T>] {
     // The Symbol Table
     // Each line works as the key in the table look-up, i.e. as table[line].
     var table: [Int: TableEntry] = [:]
@@ -86,7 +88,7 @@ public final class Heckel: DiffAware {
   }
 
   private func perform1stPass<T: Hashable>(
-    new: Array<T>,
+    new: [T],
     table: inout [Int: TableEntry],
     newArray: inout [ArrayEntry]) {
 
@@ -108,7 +110,7 @@ public final class Heckel: DiffAware {
   }
 
   private func perform2ndPass<T: Hashable>(
-    old: Array<T>,
+    old: [T],
     table: inout [Int: TableEntry],
     oldArray: inout [ArrayEntry]) {
 
@@ -188,8 +190,8 @@ public final class Heckel: DiffAware {
   }
 
   private func perform6thPass<T: Hashable>(
-    new: Array<T>,
-    old: Array<T>,
+    new: [T],
+    old: [T],
     newArray: [ArrayEntry],
     oldArray: [ArrayEntry]) -> [Change<T>] {
 
