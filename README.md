@@ -68,6 +68,19 @@ let changes = diff(old: old, new: new)
 // Replace "Imagine City" with "Oslo" at index 1
 ```
 
+### DiffAware protocol
+
+Model must conform to `DiffAware` protoccol for DeepDiff to work. It needs `idProviding` to tell changes about insertions and deletions, and  `comparing` to tell if a model really changes for replacement and movement.
+
+```swift
+public protocol DiffAware {
+  var idProviding: Int { get }
+  static func comparing(_ a: Self, _ b: Self) -> Bool
+}
+```
+
+Some primitive types like `String`, `Int`, `Character` already conform to `DiffAware`
+
 ### Animate UITableView and UICollectionView
 
 Changes to `DataSource` can be animated by using batch update, as guided in [Batch Insertion, Deletion, and Reloading of Rows and Sections](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/TableView_iPhone/ManageInsertDeleteRow/ManageInsertDeleteRow.html#//apple_ref/doc/uid/TP40007451-CH10-SW9)
