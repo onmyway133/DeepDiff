@@ -34,7 +34,7 @@ public func diff<T>(
   return heckel.diff(old: old, new: new)
 }
 
-private func preprocess<T>(old: [T], new: [T]) -> [Change<T>]? {
+public func preprocess<T>(old: [T], new: [T]) -> [Change<T>]? {
   switch (old.isEmpty, new.isEmpty) {
   case (true, true):
     // empty
