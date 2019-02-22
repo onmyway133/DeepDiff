@@ -16,11 +16,13 @@ import Foundation
 /// - Returns: A set of changes
 
 public typealias Diffing<T> = ([T], [T]) -> [Change<T>]
+public typealias IdProviding<T> = (T) -> Int
 public typealias Comparing<T> = (T, T) -> Bool
 
 public func diff<T>(
   old: [T],
   new: [T],
+  idProviding: IdProviding<T>,
   comparing: Comparing<T>,
   diffing: Diffing<T>) -> [Change<T>] {
 
