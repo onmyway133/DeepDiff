@@ -24,6 +24,10 @@ public final class WagnerFischer<T> {
     previousRow.seed(with: new)
     let currentRow = Row<T>()
 
+    if let changes = DeepDiff.preprocess(old: old, new: new) {
+      return changes
+    }
+
     // row in matrix
     old.enumerated().forEach { indexInOld, oldItem in
       // reset current row

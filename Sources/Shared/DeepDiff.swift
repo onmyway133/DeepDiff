@@ -25,10 +25,6 @@ public func diff<T>(
   idProviding: @escaping IdProviding<T>,
   comparing: @escaping Comparing<T>) -> [Change<T>] {
 
-  if let changes = preprocess(old: old, new: new) {
-    return changes
-  }
-
   let heckel = Heckel(idProviding: idProviding, comparing: comparing)
   return heckel.diff(old: old, new: new)
 }
