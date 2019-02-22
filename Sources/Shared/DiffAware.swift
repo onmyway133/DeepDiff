@@ -35,3 +35,13 @@ extension Character: DiffAware {
     return a == b
   }
 }
+extension Int: DiffAware {
+  public var idProviding: Int {
+    return hashValue
+  }
+
+  public static func comparing(_ a: Int, _ b: Int) -> Bool {
+    return a == b
+  }
+}
+

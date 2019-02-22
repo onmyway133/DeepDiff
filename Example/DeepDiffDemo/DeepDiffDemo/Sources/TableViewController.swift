@@ -32,7 +32,7 @@ class TableViewController: UIViewController, UITableViewDataSource {
   @objc func reload() {
     let oldItems = self.items
     let items = DataSet.generateItems()
-    let changes = diff(old: oldItems, new: items, idProviding: { $0.hashValue }, comparing: { $0 == $1 })
+    let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
       self.tableView.reload(changes: changes, updateData: {

@@ -37,7 +37,7 @@ class TextureTableController: ASViewController<ASDisplayNode> {
   @objc func reload() {
     let oldItems = items
     items = DataSet.generateItems()
-    let changes = diff(old: oldItems, new: items, idProviding: { $0.hashValue }, comparing: { $0 == $1 })
+    let changes = diff(old: oldItems, new: items)
 
     let exception = tryBlock {
       self.rootNode.tableNode.reload(changes: changes, completion: { _ in
