@@ -9,7 +9,15 @@
 import Foundation
 
 struct MoveReducer<T> {
-  func reduce<T: Equatable>(changes: [Change<T>]) -> [Change<T>] {
+  func reduce(changes: [Change<T>], comparing: @escaping Comparing<T>) -> [Change<T>] {
+    let comparingWithOptional: (T?, T) -> Bool = { a, b in
+      guard let a = a else {
+        return false
+      }
+
+      return comparing(a, b)
+    }
+
     // Find pairs of .insert and .delete with same item
     let inserts = changes.compactMap({ $0.insert })
 
@@ -19,8 +27,8 @@ struct MoveReducer<T> {
 
     var changes = changes
     inserts.forEach { insert in
-      if let insertIndex = changes.index(where: { $0.insert?.item == insert.item }),
-        let deleteIndex = changes.index(where: { $0.delete?.item == insert.item }) {
+      if let insertIndex = changes.index(where: { return comparingWithOptional($0.insert?.item, insert.item) }),
+        let deleteIndex = changes.index(where: { return comparingWithOptional($0.delete?.item, insert.item) }) {
 
         let insertChange = changes[insertIndex].insert!
         let deleteChange = changes[deleteIndex].delete!

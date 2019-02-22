@@ -19,7 +19,7 @@ public final class WagnerFischer<T> {
     self.comparing = comparing
   }
 
-  public func diff<T: Hashable>(old: [T], new: [T]) -> [Change<T>] {
+  public func diff(old: [T], new: [T]) -> [Change<T>] {
     let previousRow = Row<T>()
     previousRow.seed(with: new)
     let currentRow = Row<T>()
@@ -54,7 +54,7 @@ public final class WagnerFischer<T> {
 
     let changes = currentRow.lastSlot()
     if reduceMove {
-      return MoveReducer<T>().reduce(changes: changes)
+      return MoveReducer<T>().reduce(changes: changes, comparing: comparing)
     } else {
       return changes
     }
@@ -62,14 +62,8 @@ public final class WagnerFischer<T> {
 
   // MARK: - Helper
 
-  private func isEqual<T: Hashable>(oldItem: T, newItem: T) -> Bool {
-    // Same items must have same hashValue
-    if oldItem.hashValue != newItem.hashValue {
-      return false
-    } else {
-      // Different hashValue does not always mean different items
-      return oldItem == newItem
-    }
+  private func isEqual(oldItem: T, newItem: T) -> Bool {
+    return comparing(oldItem, newItem)
   }
 }
 
