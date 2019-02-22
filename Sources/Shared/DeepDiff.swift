@@ -15,17 +15,8 @@ import Foundation
 ///   - new: New collection
 /// - Returns: A set of changes
 
-public typealias Diffing<T> = ([T], [T]) -> [Change<T>]
-public typealias IdProviding<T> = (T) -> Int
-public typealias Comparing<T> = (T, T) -> Bool
-
-public func diff<T>(
-  old: [T],
-  new: [T],
-  idProviding: @escaping IdProviding<T>,
-  comparing: @escaping Comparing<T>) -> [Change<T>] {
-
-  let heckel = Heckel(idProviding: idProviding, comparing: comparing)
+public func diff<T: DiffAware>(old: [T], new: [T]) -> [Change<T>] {
+  let heckel = Heckel<T>()
   return heckel.diff(old: old, new: new)
 }
 

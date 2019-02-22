@@ -6,10 +6,23 @@
 //  Copyright © 2018 Khoa Pham. All rights reserved.
 //
 
-import Foundation
+import DeepDiff
 
-struct Car: Equatable {
+struct Car {
   let id: Int
   let name: String
   let travelledMiles: Int
+}
+
+extension Car: DiffAware {
+  var idProviding: Int {
+    return name.hashValue
+  }
+
+  static func comparing(_ a: Car, _ b: Car) -> Bool {
+    return
+      a.id == b.id
+      && a.name == b.name
+      && a.travelledMiles == b.travelledMiles
+  }
 }

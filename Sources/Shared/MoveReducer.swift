@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct MoveReducer<T> {
-  func reduce(changes: [Change<T>], comparing: @escaping Comparing<T>) -> [Change<T>] {
+struct MoveReducer<T: DiffAware> {
+  func reduce(changes: [Change<T>]) -> [Change<T>] {
     let comparingWithOptional: (T?, T) -> Bool = { a, b in
       guard let a = a else {
         return false
       }
 
-      return comparing(a, b)
+      return T.comparing(a, b)
     }
 
     // Find pairs of .insert and .delete with same item

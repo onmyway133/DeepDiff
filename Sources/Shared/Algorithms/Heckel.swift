@@ -10,15 +10,7 @@ import Foundation
 
 // https://gist.github.com/ndarville/3166060
 
-public final class Heckel<T> {
-  private let comparing: Comparing<T>
-  private let idProviding: IdProviding<T>
-
-  public init(idProviding: @escaping IdProviding<T>, comparing: @escaping Comparing<T>) {
-    self.idProviding = idProviding
-    self.comparing = comparing
-  }
-
+public final class Heckel<T: DiffAware> {
   // OC and NC can assume three values: 1, 2, and many.
   enum Counter {
     case zero, one, many
@@ -99,7 +91,7 @@ public final class Heckel<T> {
     // a. Each line i of file N is read in sequence
     new.forEach { item in
       // b. An entry for each line i is created in the table, if it doesn't already exist
-      let entry = table[idProviding(item)] ?? TableEntry()
+      let entry = table[item.idProviding] ?? TableEntry()
 
       // c. NC for the line's table entry is incremented
       entry.newCounter = entry.newCounter.increment()
@@ -108,7 +100,7 @@ public final class Heckel<T> {
       newArray.append(.tableEntry(entry))
 
       //
-      table[idProviding(item)] = entry
+      table[item.idProviding] = entry
     }
   }
 
@@ -122,7 +114,7 @@ public final class Heckel<T> {
 
     old.enumerated().forEach { tuple in
       // old
-      let entry = table[idProviding(tuple.element)] ?? TableEntry()
+      let entry = table[tuple.element.idProviding] ?? TableEntry()
 
       // oldCounter
       entry.oldCounter = entry.oldCounter.increment()
@@ -134,7 +126,7 @@ public final class Heckel<T> {
       oldArray.append(.tableEntry(entry))
 
       //
-      table[idProviding(tuple.element)] = entry
+      table[tuple.element.idProviding] = entry
     }
   }
 
@@ -290,6 +282,6 @@ public final class Heckel<T> {
   }
 
   func isEqual(oldItem: T, newItem: T) -> Bool {
-    return comparing(oldItem, newItem)
+    return T.comparing(oldItem, newItem)
   }
 }

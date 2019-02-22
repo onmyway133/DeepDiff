@@ -26,6 +26,10 @@
 		D239E4191FAE2A420042E7BA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E4161FAE2A420042E7BA /* City.swift */; };
 		D239E4201FAE34740042E7BA /* IndexPathConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E41F1FAE34740042E7BA /* IndexPathConverter.swift */; };
 		D239E4211FAE34740042E7BA /* IndexPathConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D239E41F1FAE34740042E7BA /* IndexPathConverter.swift */; };
+		D279F23F2220009C00E1C28E /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279F23E2220009C00E1C28E /* DiffAware.swift */; };
+		D279F2402220009C00E1C28E /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279F23E2220009C00E1C28E /* DiffAware.swift */; };
+		D279F2412220009C00E1C28E /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279F23E2220009C00E1C28E /* DiffAware.swift */; };
+		D279F2422220009C00E1C28E /* DiffAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279F23E2220009C00E1C28E /* DiffAware.swift */; };
 		D284B1051F79038B00D94AF3 /* DeepDiff_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */; };
 		D284B1381F7906DB00D94AF3 /* Info-iOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B12F1F7906DA00D94AF3 /* Info-iOS-Tests.plist */; };
 		D284B1391F7906DB00D94AF3 /* Info-tvOS-Tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284B1301F7906DA00D94AF3 /* Info-tvOS-Tests.plist */; };
@@ -94,6 +98,7 @@
 		D23849211FA86DEF00316A21 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		D239E4161FAE2A420042E7BA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		D239E41F1FAE34740042E7BA /* IndexPathConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathConverter.swift; sourceTree = "<group>"; };
+		D279F23E2220009C00E1C28E /* DiffAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffAware.swift; sourceTree = "<group>"; };
 		D284B0FC1F79038B00D94AF3 /* DeepDiff_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1041F79038B00D94AF3 /* DeepDiff-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D284B1181F79039F00D94AF3 /* DeepDiff_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +210,7 @@
 				D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */,
 				D2B318FA1FA8CCFC00A0B637 /* Change.swift */,
 				D2A813661FAB731600A94BDE /* Array+Extensions.swift */,
+				D279F23E2220009C00E1C28E /* DiffAware.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -557,6 +563,7 @@
 				D239E4211FAE34740042E7BA /* IndexPathConverter.swift in Sources */,
 				D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */,
 				D21E6E321FFBC1EF0048AF75 /* Heckel.swift in Sources */,
+				D279F2412220009C00E1C28E /* DiffAware.swift in Sources */,
 				D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
 				D2A813691FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319091FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
@@ -586,6 +593,7 @@
 				D2B3190C1FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
 				D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */,
 				D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
+				D279F2422220009C00E1C28E /* DiffAware.swift in Sources */,
 				D21E6E2E1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
 				D2A8136A1FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D21E6E331FFBC1EF0048AF75 /* Heckel.swift in Sources */,
@@ -599,6 +607,7 @@
 				D239E4201FAE34740042E7BA /* IndexPathConverter.swift in Sources */,
 				D2B319021FA8CD1300A0B637 /* Change.swift in Sources */,
 				D21E6E301FFBC1EF0048AF75 /* Heckel.swift in Sources */,
+				D279F23F2220009C00E1C28E /* DiffAware.swift in Sources */,
 				D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
 				D2A813671FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D2B319011FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
@@ -628,6 +637,7 @@
 				D2B319041FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
 				D2B319061FA8CD1300A0B637 /* Change.swift in Sources */,
 				D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
+				D279F2402220009C00E1C28E /* DiffAware.swift in Sources */,
 				D21E6E2C1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
 				D2A813681FAB731600A94BDE /* Array+Extensions.swift in Sources */,
 				D21E6E311FFBC1EF0048AF75 /* Heckel.swift in Sources */,

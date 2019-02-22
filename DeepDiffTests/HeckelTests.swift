@@ -9,24 +9,18 @@
 import XCTest
 import DeepDiff
 
-let heckel = Heckel<Character>(idProviding: { $0.hashValue }, comparing: { $0 == $1 })
-let heckelString = Heckel<String>(idProviding: { $0.hashValue }, comparing: { $0 == $1 })
-let heckelCar = Heckel<Car>(idProviding: { $0.id }, comparing: { $0 == $1 })
-let heckelUser = Heckel<User>(idProviding: { $0.name.hashValue ^ $0.age.hashValue }, comparing: { $0 == $1 })
-let heckelCity = Heckel<City>(idProviding: { $0.name.hashValue }, comparing: { $0.name == $1.name })
-
 class HeckelTests: XCTestCase {
   func testEmpty() {
     let old: [String] = []
     let new: [String] = []
-    let changes = heckelString.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 0)
   }
 
   func testAllInsert() {
     let old = Array("")
     let new = Array("abc")
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].insert?.item, "a")
@@ -42,7 +36,7 @@ class HeckelTests: XCTestCase {
   func testAllDelete() {
     let old = Array("abc")
     let new = Array("")
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].delete?.item, "a")
@@ -59,7 +53,7 @@ class HeckelTests: XCTestCase {
     let old = Array("abc")
     let new = Array("aBc")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertNotNil(changes[0].delete)
@@ -77,7 +71,7 @@ class HeckelTests: XCTestCase {
       Car(id: 2, name: "Tesla", travelledMiles: 30)
     ]
 
-    let changes = heckelCar.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertNotNil(changes[0].replace)
@@ -87,7 +81,7 @@ class HeckelTests: XCTestCase {
     let old = Array("abc")
     let new = Array("ABC")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 6)
 
     XCTAssertNotNil(changes[0].delete)
@@ -102,7 +96,7 @@ class HeckelTests: XCTestCase {
   func testSamePrefix() {
     let old = Array("abc")
     let new = Array("aB")
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertNotNil(changes[0].delete)
@@ -113,7 +107,7 @@ class HeckelTests: XCTestCase {
   func testReversed() {
     let old = Array("abc")
     let new = Array("cba")
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertNotNil(changes[0].move)
@@ -123,7 +117,7 @@ class HeckelTests: XCTestCase {
   func testInsert() {
     let old = Array("a")
     let new = Array("ba")
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertNotNil(changes[0].insert)
@@ -132,7 +126,7 @@ class HeckelTests: XCTestCase {
   func testSmallChangesAtEdges() {
     let old = Array("sitting")
     let new = Array("kitten")
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 5)
 
     XCTAssertNotNil(changes[0].delete)
@@ -146,7 +140,7 @@ class HeckelTests: XCTestCase {
     let old = Array("abcdef")
     let new = Array("def")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].delete?.item, "a")
@@ -163,7 +157,7 @@ class HeckelTests: XCTestCase {
     let old = Array("abcd")
     let new = Array("cdef")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertEqual(changes[0].delete?.item, "a")
@@ -183,7 +177,7 @@ class HeckelTests: XCTestCase {
     let old = Array("abc")
     let new = Array("d")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].delete)
@@ -196,7 +190,7 @@ class HeckelTests: XCTestCase {
     let old = Array("a")
     let new = Array("b")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertNotNil(changes[0].delete)
@@ -215,7 +209,7 @@ class HeckelTests: XCTestCase {
       User(name: "c", age: 3)
     ]
 
-    let changes = heckelUser.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertNotNil(changes[0].delete)
@@ -234,9 +228,9 @@ class HeckelTests: XCTestCase {
       City(name: "New York"),
       City(name: "Oslo"),
       City(name: "London"),
-    ]
+      ]
 
-    let changes = heckelCity.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertNotNil(changes[0].delete)
@@ -247,7 +241,7 @@ class HeckelTests: XCTestCase {
     let old = Array("12345")
     let new = Array("15234")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].move)
@@ -260,7 +254,7 @@ class HeckelTests: XCTestCase {
     let old = Array("15234")
     let new = Array("12345")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].move)
@@ -273,7 +267,7 @@ class HeckelTests: XCTestCase {
     let old = Array("34152")
     let new = Array("51324")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 5)
 
     XCTAssertNotNil(changes[0].move)
@@ -287,7 +281,7 @@ class HeckelTests: XCTestCase {
     let old = Array("321")
     let new = Array("143")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].delete)
@@ -300,7 +294,7 @@ class HeckelTests: XCTestCase {
     let old = Array("abc")
     let new = Array("a")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertEqual(changes[0].delete?.item, "b")
@@ -314,7 +308,7 @@ class HeckelTests: XCTestCase {
     let old = Array("1302")
     let new = Array("0231")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].move)
@@ -327,7 +321,7 @@ class HeckelTests: XCTestCase {
     let old = Array("2013")
     let new = Array("1302")
 
-    let changes = heckel.diff(old: old, new: new)
+    let changes = diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].move)
@@ -336,4 +330,3 @@ class HeckelTests: XCTestCase {
     XCTAssertNotNil(changes[3].move)
   }
 }
-

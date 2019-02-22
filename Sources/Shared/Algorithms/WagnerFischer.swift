@@ -10,13 +10,11 @@ import Foundation
 
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
-public final class WagnerFischer<T> {
+public final class WagnerFischer<T: DiffAware> {
   private let reduceMove: Bool
-  private let comparing: Comparing<T>
 
-  public init(reduceMove: Bool = false, comparing: @escaping Comparing<T>) {
+  public init(reduceMove: Bool = false) {
     self.reduceMove = reduceMove
-    self.comparing = comparing
   }
 
   public func diff(old: [T], new: [T]) -> [Change<T>] {
@@ -58,7 +56,7 @@ public final class WagnerFischer<T> {
 
     let changes = currentRow.lastSlot()
     if reduceMove {
-      return MoveReducer<T>().reduce(changes: changes, comparing: comparing)
+      return MoveReducer<T>().reduce(changes: changes)
     } else {
       return changes
     }
@@ -67,7 +65,7 @@ public final class WagnerFischer<T> {
   // MARK: - Helper
 
   private func isEqual(oldItem: T, newItem: T) -> Bool {
-    return comparing(oldItem, newItem)
+    return T.comparing(oldItem, newItem)
   }
 }
 
