@@ -22,15 +22,16 @@ public typealias Comparing<T> = (T, T) -> Bool
 public func diff<T>(
   old: [T],
   new: [T],
-  idProviding: IdProviding<T>,
-  comparing: Comparing<T>,
+  idProviding: @escaping IdProviding<T>,
+  comparing: @escaping Comparing<T>,
   diffing: Diffing<T>) -> [Change<T>] {
 
   if let changes = preprocess(old: old, new: new) {
     return changes
   }
 
-  return diffing(old, new)
+  let heckel = Heckel(idProviding: idProviding, comparing: comparing)
+  return heckel.diff(old: old, new: new)
 }
 
 private func preprocess<T>(old: [T], new: [T]) -> [Change<T>]? {
