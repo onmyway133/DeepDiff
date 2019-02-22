@@ -9,18 +9,24 @@
 import XCTest
 import DeepDiff
 
+let fischer = WagnerFischer<Character>(comparing: { $0 == $1 })
+let fischerWithReducer = WagnerFischer<Character>(reduceMove: true, comparing: { $0 == $1 })
+let fischerString = WagnerFischer<String>(comparing: { $0 == $1 })
+let fischerUser = WagnerFischer<User>(comparing: { $0.name == $1.name && $0.age == $1.age })
+let fischerCity = WagnerFischer<City>(comparing: { $0.name == $1.name })
+
 class WagnerFischerTests: XCTestCase {
   func testEmpty() {
     let old: [String] = []
     let new: [String] = []
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischerString.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 0)
   }
 
   func testAllInsert() {
     let old = Array("")
     let new = Array("abc")
-    let changes = diff(old: old, new: new)
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].insert?.item, "a")
@@ -36,7 +42,7 @@ class WagnerFischerTests: XCTestCase {
   func testAllDelete() {
     let old = Array("abc")
     let new = Array("")
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].delete?.item, "a")
@@ -53,7 +59,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("abc")
     let new = Array("ABC")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].replace?.oldItem, "a")
@@ -72,7 +78,7 @@ class WagnerFischerTests: XCTestCase {
   func testSamePrefix() {
     let old = Array("abc")
     let new = Array("aB")
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertEqual(changes[0].replace?.oldItem, "b")
@@ -86,7 +92,7 @@ class WagnerFischerTests: XCTestCase {
   func testReversed() {
     let old = Array("abc")
     let new = Array("cba")
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertEqual(changes[0].replace?.oldItem, "a")
@@ -101,7 +107,7 @@ class WagnerFischerTests: XCTestCase {
   func testSmallChangesAtEdges() {
     let old = Array("sitting")
     let new = Array("kitten")
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].replace?.oldItem, "s")
@@ -120,7 +126,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("abcdef")
     let new = Array("def")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertEqual(changes[0].delete?.item, "a")
@@ -137,7 +143,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("kit")
     let new = Array("kat")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
   }
 
@@ -145,7 +151,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("abcd")
     let new = Array("cdef")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertEqual(changes[0].delete?.item, "a")
@@ -165,7 +171,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("abc")
     let new = Array("d")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
   }
 
@@ -173,7 +179,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("a")
     let new = Array("b")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertEqual(changes[0].replace?.oldItem, "a")
@@ -193,7 +199,7 @@ class WagnerFischerTests: XCTestCase {
       User(name: "c", age: 3)
     ]
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischerUser.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertEqual(changes[0].replace?.oldItem, User(name: "b", age: 2))
@@ -217,7 +223,7 @@ class WagnerFischerTests: XCTestCase {
       City(name: "London"),
     ]
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischerCity.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertNotNil(changes[0].replace)
@@ -227,7 +233,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("12345")
     let new = Array("15234")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer(reduceMove: true))
+    let changes = fischerWithReducer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertEqual(changes[0].move?.item, "5")
@@ -239,7 +245,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("15234")
     let new = Array("12345")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer(reduceMove: true))
+    let changes = fischerWithReducer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertEqual(changes[0].move?.item, "5")
@@ -251,7 +257,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("34152")
     let new = Array("51324")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer(reduceMove: true))
+    let changes = fischerWithReducer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertNotNil(changes[0].replace)
@@ -263,7 +269,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("321")
     let new = Array("143")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer(reduceMove: true))
+    let changes = fischerWithReducer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertNotNil(changes[0].replace)
@@ -275,7 +281,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("abc")
     let new = Array("a")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer(reduceMove: true))
+    let changes = fischerWithReducer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
     XCTAssertEqual(changes[0].delete?.item, "b")
@@ -289,7 +295,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("1302")
     let new = Array("0231")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer())
+    let changes = fischer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 4)
 
     XCTAssertNotNil(changes[0].replace)
@@ -302,7 +308,7 @@ class WagnerFischerTests: XCTestCase {
     let old = Array("2013")
     let new = Array("1302")
 
-    let changes = diff(old: old, new: new, algorithm: WagnerFischer(reduceMove: true))
+    let changes = fischerWithReducer.diff(old: old, new: new)
     XCTAssertEqual(changes.count, 3)
 
     XCTAssertNotNil(changes[0].replace)

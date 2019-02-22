@@ -14,7 +14,7 @@ class PerformanceTests: XCTestCase {
     let data = generate(count: 4, removeRange: 0..<2, addRange: 2..<4)
 
     measure {
-      let changes = diff(old: data.old, new: data.new)
+      let changes = heckelString.diff(old: data.old, new: data.new)
       XCTAssertEqual(changes.count, 4)
     }
   }
@@ -23,7 +23,7 @@ class PerformanceTests: XCTestCase {
     let data = generate(count: 100, removeRange: 0..<50, addRange: 50..<100)
 
     measure {
-      let changes = diff(old: data.old, new: data.new)
+      let changes = heckelString.diff(old: data.old, new: data.new)
       XCTAssertEqual(changes.count, 100)
     }
   }
@@ -32,7 +32,7 @@ class PerformanceTests: XCTestCase {
     let data = generate(count: 1000, removeRange: 100..<200, addRange: 799..<899)
 
     measure {
-      let changes = diff(old: data.old, new: data.new)
+      let changes = heckelString.diff(old: data.old, new: data.new)
       XCTAssertEqual(changes.count, 200)
     }
   }
@@ -41,7 +41,7 @@ class PerformanceTests: XCTestCase {
     let data = generate(count: 1000, removeRange: 100..<200)
 
     measure {
-      let changes = diff(old: data.old, new: data.new)
+      let changes = heckelString.diff(old: data.old, new: data.new)
       XCTAssertEqual(changes.count, 100)
     }
   }
@@ -50,7 +50,7 @@ class PerformanceTests: XCTestCase {
     let data = generate(count: 1000, addRange: 999..<1099)
 
     measure {
-      let changes = diff(old: data.old, new: data.new)
+      let changes = heckelString.diff(old: data.old, new: data.new)
       XCTAssertEqual(changes.count, 100)
     }
   }
@@ -59,7 +59,7 @@ class PerformanceTests: XCTestCase {
     let data = generate(count: 10000, removeRange: 1000..<2000)
 
     measure {
-      let changes = diff(old: data.old, new: data.new)
+      let changes = heckelString.diff(old: data.old, new: data.new)
       XCTAssertEqual(changes.count, 1000)
     }
   }
@@ -69,7 +69,7 @@ class PerformanceTests: XCTestCase {
     let new = Array(repeatElement(UUID().uuidString, count: 100000))
 
     measure {
-      let changes = diff(old: old, new: new)
+      let changes = heckelString.diff(old: old, new: new)
       XCTAssertEqual(changes.count, 100000)
     }
   }
@@ -79,7 +79,7 @@ class PerformanceTests: XCTestCase {
     let new = [String]()
 
     measure {
-      let changes = diff(old: old, new: new)
+      let changes = heckelString.diff(old: old, new: new)
       XCTAssertEqual(changes.count, 10000)
     }
   }

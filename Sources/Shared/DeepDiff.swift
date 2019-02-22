@@ -23,8 +23,7 @@ public func diff<T>(
   old: [T],
   new: [T],
   idProviding: @escaping IdProviding<T>,
-  comparing: @escaping Comparing<T>,
-  diffing: Diffing<T>) -> [Change<T>] {
+  comparing: @escaping Comparing<T>) -> [Change<T>] {
 
   if let changes = preprocess(old: old, new: new) {
     return changes
