@@ -14,11 +14,11 @@ struct City {
 }
 
 extension City: DiffAware {
-  var idProviding: Int {
+  var diffId: Int {
     return name.hashValue
   }
 
-  static func comparing(_ a: City, _ b: City) -> Bool {
+  static func compareContent(_ a: City, _ b: City) -> Bool {
     return a.name == b.name
   }
 }

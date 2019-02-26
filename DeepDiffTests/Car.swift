@@ -15,11 +15,11 @@ struct Car {
 }
 
 extension Car: DiffAware {
-  var idProviding: Int {
+  var diffId: Int {
     return name.hashValue
   }
 
-  static func comparing(_ a: Car, _ b: Car) -> Bool {
+  static func compareContent(_ a: Car, _ b: Car) -> Bool {
     return
       a.id == b.id
       && a.name == b.name

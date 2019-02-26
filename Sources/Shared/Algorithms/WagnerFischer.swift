@@ -65,7 +65,7 @@ public final class WagnerFischer<T: DiffAware> {
   // MARK: - Helper
 
   private func isEqual(oldItem: T, newItem: T) -> Bool {
-    return T.comparing(oldItem, newItem)
+    return T.compareContent(oldItem, newItem)
   }
 }
 

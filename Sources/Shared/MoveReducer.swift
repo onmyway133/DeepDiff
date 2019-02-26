@@ -10,12 +10,12 @@ import Foundation
 
 struct MoveReducer<T: DiffAware> {
   func reduce(changes: [Change<T>]) -> [Change<T>] {
-    let comparingWithOptional: (T?, T) -> Bool = { a, b in
+    let compareContentWithOptional: (T?, T) -> Bool = { a, b in
       guard let a = a else {
         return false
       }
 
-      return T.comparing(a, b)
+      return T.compareContent(a, b)
     }
 
     // Find pairs of .insert and .delete with same item
@@ -27,8 +27,8 @@ struct MoveReducer<T: DiffAware> {
 
     var changes = changes
     inserts.forEach { insert in
-      if let insertIndex = changes.index(where: { return comparingWithOptional($0.insert?.item, insert.item) }),
-        let deleteIndex = changes.index(where: { return comparingWithOptional($0.delete?.item, insert.item) }) {
+      if let insertIndex = changes.index(where: { return compareContentWithOptional($0.insert?.item, insert.item) }),
+        let deleteIndex = changes.index(where: { return compareContentWithOptional($0.delete?.item, insert.item) }) {
 
         let insertChange = changes[insertIndex].insert!
         let deleteChange = changes[deleteIndex].delete!

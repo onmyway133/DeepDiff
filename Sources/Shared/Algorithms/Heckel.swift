@@ -91,7 +91,7 @@ public final class Heckel<T: DiffAware> {
     // a. Each line i of file N is read in sequence
     new.forEach { item in
       // b. An entry for each line i is created in the table, if it doesn't already exist
-      let entry = table[item.idProviding] ?? TableEntry()
+      let entry = table[item.diffId] ?? TableEntry()
 
       // c. NC for the line's table entry is incremented
       entry.newCounter = entry.newCounter.increment()
@@ -100,7 +100,7 @@ public final class Heckel<T: DiffAware> {
       newArray.append(.tableEntry(entry))
 
       //
-      table[item.idProviding] = entry
+      table[item.diffId] = entry
     }
   }
 
@@ -114,7 +114,7 @@ public final class Heckel<T: DiffAware> {
 
     old.enumerated().forEach { tuple in
       // old
-      let entry = table[tuple.element.idProviding] ?? TableEntry()
+      let entry = table[tuple.element.diffId] ?? TableEntry()
 
       // oldCounter
       entry.oldCounter = entry.oldCounter.increment()
@@ -126,7 +126,7 @@ public final class Heckel<T: DiffAware> {
       oldArray.append(.tableEntry(entry))
 
       //
-      table[tuple.element.idProviding] = entry
+      table[tuple.element.diffId] = entry
     }
   }
 
@@ -282,6 +282,6 @@ public final class Heckel<T: DiffAware> {
   }
 
   func isEqual(oldItem: T, newItem: T) -> Bool {
-    return T.comparing(oldItem, newItem)
+    return T.compareContent(oldItem, newItem)
   }
 }
