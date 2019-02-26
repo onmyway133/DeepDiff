@@ -70,12 +70,14 @@ let changes = diff(old: old, new: new)
 
 ### DiffAware protocol
 
-Model must conform to `DiffAware` protoccol for DeepDiff to work. It needs `idProviding` to tell changes about insertions and deletions, and  `comparing` to tell if a model really changes for replacement and movement.
+Model must conform to `DiffAware` protocol for DeepDiff to work. An model needs to be uniquely identified via `diffId` to tell if there have been any insertions or deletions. In case of same `diffId`, `compareContent` is used to check if any properties have changed, this is for replacement changes. 
+
+It needs `diffId` to tell changes about insertions and deletions, and  `comparing` to tell if a model really changes for replacement and movement.
 
 ```swift
 public protocol DiffAware {
-  var idProviding: Int { get }
-  static func comparing(_ a: Self, _ b: Self) -> Bool
+  var diffId: Int { get }
+  static func compareContent(_ a: Self, _ b: Self) -> Bool
 }
 ```
 
