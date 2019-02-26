@@ -194,38 +194,38 @@ class WagnerFischerTests: XCTestCase {
 
   func testObject() {
     let old = [
-      User(name: "a", age: 1),
-      User(name: "b", age: 2)
+      User(id: 1, name: "a"),
+      User(id: 2, name: "b")
     ]
 
     let new = [
-      User(name: "a", age: 1),
-      User(name: "a", age: 2),
-      User(name: "c", age: 3)
+      User(id: 1, name: "a"),
+      User(id: 2, name: "a"),
+      User(id: 3, name: "c")
     ]
 
     let changes = diffWF(old: old, new: new)
     XCTAssertEqual(changes.count, 2)
 
-    XCTAssertEqual(changes[0].replace?.oldItem, User(name: "b", age: 2))
-    XCTAssertEqual(changes[0].replace?.newItem, User(name: "a", age: 2))
+    XCTAssertEqual(changes[0].replace?.oldItem, User(id: 2, name: "b"))
+    XCTAssertEqual(changes[0].replace?.newItem, User(id: 2, name: "a"))
     XCTAssertEqual(changes[0].replace?.index, 1)
 
-    XCTAssertEqual(changes[1].insert?.item, User(name: "c", age: 3))
+    XCTAssertEqual(changes[1].insert?.item, User(id: 3, name: "c"))
     XCTAssertEqual(changes[1].insert?.index, 2)
   }
 
   func testObjectReplace() {
     let old = [
-      User(name: "a", age: 1),
-      User(name: "b", age: 2),
-      User(name: "c", age: 3),
+      User(id: 1, name: "a"),
+      User(id: 2, name: "b"),
+      User(id: 3, name: "c"),
     ]
 
     let new = [
-      User(name: "a", age: 1),
-      User(name: "b", age: 4),
-      User(name: "c", age: 3),
+      User(id: 1, name: "a"),
+      User(id: 2, name: "b2"),
+      User(id: 3, name: "c"),
     ]
 
     let changes = diffWF(old: old, new: new)

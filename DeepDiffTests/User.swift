@@ -9,16 +9,16 @@
 import DeepDiff
 
 struct User: Equatable {
+  let id: Int
   let name: String
-  let age: Int
 }
 
 extension User: DiffAware {
   var diffId: Int {
-    return name.hashValue ^ age.hashValue
+    return id
   }
 
   static func compareContent(_ a: User, _ b: User) -> Bool {
-    return a.name == b.name && a.age == b.age
+    return a.name == b.name
   }
 }

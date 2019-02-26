@@ -62,16 +62,16 @@ class HeckelTests: XCTestCase {
 
   func testReplace2() {
     let old = [
-      User(name: "a", age: 1),
-      User(name: "b", age: 2),
-      User(name: "c", age: 3),
+      User(id: 1, name: "a"),
+      User(id: 2, name: "b"),
+      User(id: 3, name: "c"),
       ]
 
     let new = [
-      User(name: "a", age: 1),
-      User(name: "b", age: 4),
-      User(name: "c", age: 3),
-      ]
+      User(id: 1, name: "a"),
+      User(id: 2, name: "b2"),
+      User(id: 3, name: "c"),
+    ]
 
     let changes = diffWF(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
@@ -201,22 +201,21 @@ class HeckelTests: XCTestCase {
 
   func testObject() {
     let old = [
-      User(name: "a", age: 1),
-      User(name: "b", age: 2)
+      User(id: 1, name: "a"),
+      User(id: 2, name: "b")
     ]
 
     let new = [
-      User(name: "a", age: 1),
-      User(name: "a", age: 2),
-      User(name: "c", age: 3)
+      User(id: 1, name: "a"),
+      User(id: 2, name: "a"),
+      User(id: 3, name: "c")
     ]
 
     let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 3)
+    XCTAssertEqual(changes.count, 2)
 
-    XCTAssertNotNil(changes[0].delete)
+    XCTAssertNotNil(changes[0].replace)
     XCTAssertNotNil(changes[1].insert)
-    XCTAssertNotNil(changes[2].insert)
   }
 
   func testMoveWithInsertDelete() {
