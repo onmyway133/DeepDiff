@@ -217,16 +217,16 @@ class WagnerFischerTests: XCTestCase {
 
   func testObjectReplace() {
     let old = [
-      City(name: "New York"),
-      City(name: "Berlin"),
-      City(name: "London")
+      User(name: "a", age: 1),
+      User(name: "b", age: 2),
+      User(name: "c", age: 3),
     ]
 
     let new = [
-      City(name: "New York"),
-      City(name: "Oslo"),
-      City(name: "London"),
-      ]
+      User(name: "a", age: 1),
+      User(name: "b", age: 4),
+      User(name: "c", age: 3),
+    ]
 
     let changes = diffWF(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
