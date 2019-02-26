@@ -52,20 +52,20 @@ let changes = diff(old: old, new: new)
 
 ```swift
 let old = [
-  City(name: "New York"),
-  City(name: "Imagine City"),
-  City(name: "London")
+  User(id: 1, name: "Captain America"),
+  User(id: 2, name: "Captain Marvel"),
+  User(id: 3, name: "Thor"),
 ]
 
 let new = [
-  City(name: "New York"),
-  City(name: "Oslo"),
-  City(name: "London"),
+  User(id: 1, name: "Captain America"),
+  User(id: 2, name: "The Binary"),
+  User(id: 3, name: "Thor"),
 ]
 
 let changes = diff(old: old, new: new)
 
-// Replace "Imagine City" with "Oslo" at index 1
+// Replace user "Captain Marvel" with user "The Binary" at index 1
 ```
 
 ### DiffAware protocol

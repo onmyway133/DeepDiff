@@ -79,6 +79,25 @@ class HeckelTests: XCTestCase {
     XCTAssertNotNil(changes[0].replace)
   }
 
+  func testReplace3() {
+    let old = [
+      User(id: 1, name: "Captain America"),
+      User(id: 2, name: "Captain Marvel"),
+      User(id: 3, name: "Thor"),
+      ]
+
+    let new = [
+      User(id: 1, name: "Captain America"),
+      User(id: 2, name: "The Binary"),
+      User(id: 3, name: "Thor"),
+    ]
+
+    let changes = diffWF(old: old, new: new)
+    XCTAssertEqual(changes.count, 1)
+
+    XCTAssertNotNil(changes[0].replace)
+  }
+
   func testAllReplace() {
     let old = Array("abc")
     let new = Array("ABC")
