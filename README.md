@@ -9,9 +9,9 @@
 
 ![](Screenshots/Banner.png)
 
-**DeepDiff** tells the difference between 2 collections and the changes as edit steps. It works on any collection of `Equatable` and `Hashable` items.
+**DeepDiff** tells the difference between 2 collections and the changes as edit steps. It also supports [Texture](https://github.com/TextureGroup/Texture), see [Texture example](https://github.com/onmyway133/DeepDiff/tree/master/Example/DeepDiffTexture)
 
-- [A better way to update UICollectionView data in Swift with diff framework](https://medium.com/flawless-app-stories/a-better-way-to-update-uicollectionview-data-in-swift-with-diff-framework-924db158db86)
+- Read more [A better way to update UICollectionView data in Swift with diff framework](https://medium.com/flawless-app-stories/a-better-way-to-update-uicollectionview-data-in-swift-with-diff-framework-924db158db86)
 
 <div align = "center">
 <img src="Screenshots/table.gif" width="" height="400" />
@@ -114,7 +114,7 @@ Based on that, the first version of `DeepDiff` implements Wagner–Fischer, whic
 Some optimisations made
 
 - Check empty old or new collection to return early
-- Use `Hashable` to quickly check that 2 items are not equal
+- Use `diffId` to quickly check that 2 items are not equal
 - Follow "We can adapt the algorithm to use less space, O(m) instead of O(mn), since it only requires that the previous row and current row be stored at any one time." to use 2 rows, instead of matrix to reduce memory storage.
 
 The performance greatly depends on the number of items, the changes and the complexity of the `equal` function.
