@@ -72,8 +72,6 @@ let changes = diff(old: old, new: new)
 
 Model must conform to `DiffAware` protocol for DeepDiff to work. An model needs to be uniquely identified via `diffId` to tell if there have been any insertions or deletions. In case of same `diffId`, `compareContent` is used to check if any properties have changed, this is for replacement changes. 
 
-It needs `diffId` to tell changes about insertions and deletions, and  `comparing` to tell if a model really changes for replacement and movement.
-
 ```swift
 public protocol DiffAware {
   var diffId: Int { get }
