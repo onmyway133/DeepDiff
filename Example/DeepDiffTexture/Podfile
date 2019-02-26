@@ -2,8 +2,9 @@ use_frameworks!
 
 platform :ios, '9.0'
 
-target 'DeepDiffDemo' do
+target 'DeepDiffTexture' do
  pod 'DeepDiff', path: '../../'
  pod 'Anchors'
+ pod 'Texture'
 end
 

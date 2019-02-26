@@ -21,10 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2364C5712044053D000018AB /* ASTableNodeExtension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ASTableNodeExtension.swift; sourceTree = "<group>"; tabWidth = 2; };
-		2364C574204405A1000018AB /* TextureTableController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TextureTableController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		2364C576204405CC000018AB /* TableCellNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TableCellNode.swift; sourceTree = "<group>"; tabWidth = 2; };
-		2364C578204405DC000018AB /* RootNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RootNode.swift; sourceTree = "<group>"; tabWidth = 2; };
 		312A6379467401DAF6A566F0 /* Pods-DeepDiffDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.debug.xcconfig"; path = "Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5545A1921B324B7D402E3AB6 /* Pods_DeepDiffDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepDiffDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9381C3F3F924D4469B231A2E /* Pods-DeepDiffDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.release.xcconfig"; path = "Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,17 +52,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2364C57320440579000018AB /* Texture */ = {
-			isa = PBXGroup;
-			children = (
-				2364C5712044053D000018AB /* ASTableNodeExtension.swift */,
-				2364C574204405A1000018AB /* TextureTableController.swift */,
-				2364C576204405CC000018AB /* TableCellNode.swift */,
-				2364C578204405DC000018AB /* RootNode.swift */,
-			);
-			path = Texture;
-			sourceTree = "<group>";
-		};
 		7BCE04D5A9C7F9E9AFFB6967 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +117,6 @@
 		D5C7F7581C3BCA1E008CDDBA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2364C57320440579000018AB /* Texture */,
 				D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */,
 				D5C7F75A1C3BCA1E008CDDBA /* CollectionViewController.swift */,
 				D23B9F431FA92867008363A1 /* CollectionViewCell.swift */,
