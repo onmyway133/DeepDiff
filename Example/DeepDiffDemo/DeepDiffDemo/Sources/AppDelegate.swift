@@ -17,15 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     collectionController.tabBarItem.image = UIImage(named: "collection")
     collectionController.title = "UICollectionView"
 
-    let textureController = TextureTableController()
-    textureController.tabBarItem.image = UIImage(named: "table")
-    textureController.title = "ASTableNode"
-
     let tabController = UITabBarController()
 
     tabController.viewControllers = [
       UINavigationController(rootViewController: tableController),
-      UINavigationController(rootViewController: textureController),
       UINavigationController(rootViewController: collectionController)
     ]
 

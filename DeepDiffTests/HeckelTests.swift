@@ -62,16 +62,18 @@ class HeckelTests: XCTestCase {
 
   func testReplace2() {
     let old = [
-      Car(id: 1, name: "Volvo", travelledMiles: 10),
-      Car(id: 2, name: "Tesla", travelledMiles: 20)
-    ]
+      User(name: "a", age: 1),
+      User(name: "b", age: 2),
+      User(name: "c", age: 3),
+      ]
 
     let new = [
-      Car(id: 1, name: "Volvo", travelledMiles: 10),
-      Car(id: 2, name: "Tesla", travelledMiles: 30)
-    ]
+      User(name: "a", age: 1),
+      User(name: "b", age: 4),
+      User(name: "c", age: 3),
+      ]
 
-    let changes = diff(old: old, new: new)
+    let changes = diffWF(old: old, new: new)
     XCTAssertEqual(changes.count, 1)
 
     XCTAssertNotNil(changes[0].replace)
@@ -217,26 +219,6 @@ class HeckelTests: XCTestCase {
     XCTAssertNotNil(changes[2].insert)
   }
 
-  func testObjectReplace() {
-    let old = [
-      City(name: "New York"),
-      City(name: "Berlin"),
-      City(name: "London")
-    ]
-
-    let new = [
-      City(name: "New York"),
-      City(name: "Oslo"),
-      City(name: "London"),
-    ]
-
-    let changes = diff(old: old, new: new)
-    XCTAssertEqual(changes.count, 2)
-
-    XCTAssertNotNil(changes[0].delete)
-    XCTAssertNotNil(changes[1].insert)
-  }
-
   func testMoveWithInsertDelete() {
     let old = Array("12345")
     let new = Array("15234")
@@ -330,4 +312,3 @@ class HeckelTests: XCTestCase {
     XCTAssertNotNil(changes[3].move)
   }
 }
-

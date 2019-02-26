@@ -6,18 +6,19 @@
 //  Copyright © 2018 Khoa Pham. All rights reserved.
 //
 
-import Foundation
+import DeepDiff
 
-struct User: Hashable {
+struct User: Equatable {
   let name: String
   let age: Int
-
-  var hashValue: Int {
-    return name.hashValue & age.hashValue
-  }
 }
 
-func == (left: User, right: User) -> Bool {
-  return left.name == right.name
-    && left.age == right.age
+extension User: DiffAware {
+  var diffId: Int {
+    return name.hashValue ^ age.hashValue
+  }
+
+  static func compareContent(_ a: User, _ b: User) -> Bool {
+    return a.name == b.name && a.age == b.age
+  }
 }

@@ -10,17 +10,21 @@ import Foundation
 
 // https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 
-public final class WagnerFischer: DiffAware {
+public final class WagnerFischer<T: DiffAware> {
   private let reduceMove: Bool
 
   public init(reduceMove: Bool = false) {
     self.reduceMove = reduceMove
   }
 
-  public func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  public func diff(old: [T], new: [T]) -> [Change<T>] {
     let previousRow = Row<T>()
     previousRow.seed(with: new)
     let currentRow = Row<T>()
+
+    if let changes = DeepDiff.preprocess(old: old, new: new) {
+      return changes
+    }
 
     // row in matrix
     old.enumerated().forEach { indexInOld, oldItem in
@@ -60,14 +64,8 @@ public final class WagnerFischer: DiffAware {
 
   // MARK: - Helper
 
-  private func isEqual<T: Hashable>(oldItem: T, newItem: T) -> Bool {
-    // Same items must have same hashValue
-    if oldItem.hashValue != newItem.hashValue {
-      return false
-    } else {
-      // Different hashValue does not always mean different items
-      return oldItem == newItem
-    }
+  private func isEqual(oldItem: T, newItem: T) -> Bool {
+    return T.compareContent(oldItem, newItem)
   }
 }
 

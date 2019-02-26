@@ -10,8 +10,7 @@ import Foundation
 
 // https://gist.github.com/ndarville/3166060
 
-public final class Heckel: DiffAware {
-
+public final class Heckel<T: DiffAware> {
   // OC and NC can assume three values: 1, 2, and many.
   enum Counter {
     case zero, one, many
@@ -67,9 +66,7 @@ public final class Heckel: DiffAware {
     }
   }
 
-  public init() {}
-
-  public func diff<T: Hashable>(old: Array<T>, new: Array<T>) -> [Change<T>] {
+  public func diff(old: [T], new: [T]) -> [Change<T>] {
     // The Symbol Table
     // Each line works as the key in the table look-up, i.e. as table[line].
     var table: [Int: TableEntry] = [:]
@@ -85,8 +82,8 @@ public final class Heckel: DiffAware {
     return changes
   }
 
-  private func perform1stPass<T: Hashable>(
-    new: Array<T>,
+  private func perform1stPass(
+    new: [T],
     table: inout [Int: TableEntry],
     newArray: inout [ArrayEntry]) {
 
@@ -94,7 +91,7 @@ public final class Heckel: DiffAware {
     // a. Each line i of file N is read in sequence
     new.forEach { item in
       // b. An entry for each line i is created in the table, if it doesn't already exist
-      let entry = table[item.hashValue] ?? TableEntry()
+      let entry = table[item.diffId] ?? TableEntry()
 
       // c. NC for the line's table entry is incremented
       entry.newCounter = entry.newCounter.increment()
@@ -103,12 +100,12 @@ public final class Heckel: DiffAware {
       newArray.append(.tableEntry(entry))
 
       //
-      table[item.hashValue] = entry
+      table[item.diffId] = entry
     }
   }
 
-  private func perform2ndPass<T: Hashable>(
-    old: Array<T>,
+  private func perform2ndPass(
+    old: [T],
     table: inout [Int: TableEntry],
     oldArray: inout [ArrayEntry]) {
 
@@ -117,7 +114,7 @@ public final class Heckel: DiffAware {
 
     old.enumerated().forEach { tuple in
       // old
-      let entry = table[tuple.element.hashValue] ?? TableEntry()
+      let entry = table[tuple.element.diffId] ?? TableEntry()
 
       // oldCounter
       entry.oldCounter = entry.oldCounter.increment()
@@ -129,7 +126,7 @@ public final class Heckel: DiffAware {
       oldArray.append(.tableEntry(entry))
 
       //
-      table[tuple.element.hashValue] = entry
+      table[tuple.element.diffId] = entry
     }
   }
 
@@ -187,9 +184,9 @@ public final class Heckel: DiffAware {
     }
   }
 
-  private func perform6thPass<T: Hashable>(
-    new: Array<T>,
-    old: Array<T>,
+  private func perform6thPass(
+    new: [T],
+    old: [T],
     newArray: [ArrayEntry],
     oldArray: [ArrayEntry]) -> [Change<T>] {
 
@@ -260,7 +257,7 @@ public final class Heckel: DiffAware {
             index: newTuple.offset
           )))
         case .indexInOther(let oldIndex):
-          if old[oldIndex] != new[newTuple.offset] {
+          if !isEqual(oldItem: old[oldIndex], newItem: new[newTuple.offset]) {
             changes.append(.replace(Replace(
               oldItem: old[oldIndex],
               newItem: new[newTuple.offset],
@@ -282,5 +279,9 @@ public final class Heckel: DiffAware {
     }
 
     return changes
+  }
+
+  func isEqual(oldItem: T, newItem: T) -> Bool {
+    return T.compareContent(oldItem, newItem)
   }
 }

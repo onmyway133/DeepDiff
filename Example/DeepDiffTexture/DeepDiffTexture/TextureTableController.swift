@@ -39,19 +39,7 @@ class TextureTableController: ASViewController<ASDisplayNode> {
     items = DataSet.generateItems()
     let changes = diff(old: oldItems, new: items)
 
-    let exception = tryBlock {
-      self.rootNode.tableNode.reload(changes: changes, completion: { _ in
-
-      })
-    }
-
-    if let exception = exception {
-      print(exception as Any)
-      print(oldItems)
-      print(items)
-      print(changes)
-    }
-
+    self.rootNode.tableNode.reload(changes: changes, completion: { _ in })
   }
 }
 

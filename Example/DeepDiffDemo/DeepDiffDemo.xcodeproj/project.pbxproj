@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2364C5722044053D000018AB /* ASTableNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C5712044053D000018AB /* ASTableNodeExtension.swift */; };
-		2364C575204405A1000018AB /* TextureTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C574204405A1000018AB /* TextureTableController.swift */; };
-		2364C577204405CC000018AB /* TableCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C576204405CC000018AB /* TableCellNode.swift */; };
-		2364C579204405DC000018AB /* RootNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2364C578204405DC000018AB /* RootNode.swift */; };
-		7394660C78BAEBC72FA11E3E /* Pods_DeepDiffDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A95FD443E68DDA3D38B925B /* Pods_DeepDiffDemo.framework */; };
 		D23B9F441FA92867008363A1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F431FA92867008363A1 /* CollectionViewCell.swift */; };
 		D23B9F461FA92ACB008363A1 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */; };
 		D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B9F471FA9315F008363A1 /* TableViewController.swift */; };
@@ -22,16 +17,13 @@
 		D5C7F75B1C3BCA1E008CDDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C7F7571C3BCA1E008CDDBA /* Assets.xcassets */; };
 		D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */; };
 		D5C7F75D1C3BCA1E008CDDBA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C7F75A1C3BCA1E008CDDBA /* CollectionViewController.swift */; };
+		E6843D82FA3B5B3C9561C7A7 /* Pods_DeepDiffDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5545A1921B324B7D402E3AB6 /* Pods_DeepDiffDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2364C5712044053D000018AB /* ASTableNodeExtension.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ASTableNodeExtension.swift; sourceTree = "<group>"; tabWidth = 2; };
-		2364C574204405A1000018AB /* TextureTableController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TextureTableController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		2364C576204405CC000018AB /* TableCellNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TableCellNode.swift; sourceTree = "<group>"; tabWidth = 2; };
-		2364C578204405DC000018AB /* RootNode.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RootNode.swift; sourceTree = "<group>"; tabWidth = 2; };
-		31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.release.xcconfig"; sourceTree = "<group>"; };
-		7A95FD443E68DDA3D38B925B /* Pods_DeepDiffDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepDiffDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		312A6379467401DAF6A566F0 /* Pods-DeepDiffDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.debug.xcconfig"; path = "Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5545A1921B324B7D402E3AB6 /* Pods_DeepDiffDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepDiffDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9381C3F3F924D4469B231A2E /* Pods-DeepDiffDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepDiffDemo.release.xcconfig"; path = "Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D23B9F431FA92867008363A1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D23B9F451FA92ACB008363A1 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		D23B9F471FA9315F008363A1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -53,39 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7394660C78BAEBC72FA11E3E /* Pods_DeepDiffDemo.framework in Frameworks */,
+				E6843D82FA3B5B3C9561C7A7 /* Pods_DeepDiffDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2364C57320440579000018AB /* Texture */ = {
+		7BCE04D5A9C7F9E9AFFB6967 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2364C5712044053D000018AB /* ASTableNodeExtension.swift */,
-				2364C574204405A1000018AB /* TextureTableController.swift */,
-				2364C576204405CC000018AB /* TableCellNode.swift */,
-				2364C578204405DC000018AB /* RootNode.swift */,
-			);
-			path = Texture;
-			sourceTree = "<group>";
-		};
-		3A227F10A798EEE5D13C24A5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */,
-				31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		4E7732D9CA659D074E0F5976 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7A95FD443E68DDA3D38B925B /* Pods_DeepDiffDemo.framework */,
+				5545A1921B324B7D402E3AB6 /* Pods_DeepDiffDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A26320D0FD94FE94FDF8EA48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				312A6379467401DAF6A566F0 /* Pods-DeepDiffDemo.debug.xcconfig */,
+				9381C3F3F924D4469B231A2E /* Pods-DeepDiffDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		D5C7F7371C3BC9CE008CDDBA = {
@@ -93,8 +74,8 @@
 			children = (
 				D5C7F7421C3BC9CE008CDDBA /* DeepDiffDemo */,
 				D5C7F7411C3BC9CE008CDDBA /* Products */,
-				3A227F10A798EEE5D13C24A5 /* Pods */,
-				4E7732D9CA659D074E0F5976 /* Frameworks */,
+				A26320D0FD94FE94FDF8EA48 /* Pods */,
+				7BCE04D5A9C7F9E9AFFB6967 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,7 +117,6 @@
 		D5C7F7581C3BCA1E008CDDBA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2364C57320440579000018AB /* Texture */,
 				D5C7F7591C3BCA1E008CDDBA /* AppDelegate.swift */,
 				D5C7F75A1C3BCA1E008CDDBA /* CollectionViewController.swift */,
 				D23B9F431FA92867008363A1 /* CollectionViewCell.swift */,
@@ -158,11 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5C7F7521C3BC9CE008CDDBA /* Build configuration list for PBXNativeTarget "DeepDiffDemo" */;
 			buildPhases = (
-				97FB05B06011C9EFA7FDDF89 /* [CP] Check Pods Manifest.lock */,
+				FF987F507328544E7F0C917E /* [CP] Check Pods Manifest.lock */,
 				D5C7F73C1C3BC9CE008CDDBA /* Sources */,
 				D5C7F73D1C3BC9CE008CDDBA /* Frameworks */,
 				D5C7F73E1C3BC9CE008CDDBA /* Resources */,
-				E5B175587D90824418631905 /* [CP] Embed Pods Frameworks */,
+				0F65FCA70DF2D90D4E9B8953 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,50 +201,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		97FB05B06011C9EFA7FDDF89 /* [CP] Check Pods Manifest.lock */ = {
+		0F65FCA70DF2D90D4E9B8953 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Anchors/Anchors.framework",
+				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF987F507328544E7F0C917E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DeepDiffDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5B175587D90824418631905 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Anchors/Anchors.framework",
-				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
-				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchors.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeepDiffDemo/Pods-DeepDiffDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -276,12 +256,8 @@
 			files = (
 				D5C7F75D1C3BCA1E008CDDBA /* CollectionViewController.swift in Sources */,
 				D23B9F461FA92ACB008363A1 /* Collection+Extensions.swift in Sources */,
-				2364C577204405CC000018AB /* TableCellNode.swift in Sources */,
 				D5C7F75C1C3BCA1E008CDDBA /* AppDelegate.swift in Sources */,
 				D23B9F4A1FA93199008363A1 /* TableViewCell.swift in Sources */,
-				2364C5722044053D000018AB /* ASTableNodeExtension.swift in Sources */,
-				2364C575204405A1000018AB /* TextureTableController.swift in Sources */,
-				2364C579204405DC000018AB /* RootNode.swift in Sources */,
 				D23B9F481FA9315F008363A1 /* TableViewController.swift in Sources */,
 				D2E33C861FAB4DC000BCE1E2 /* DataSet.swift in Sources */,
 				D23B9F441FA92867008363A1 /* CollectionViewCell.swift in Sources */,
@@ -409,7 +385,7 @@
 		};
 		D5C7F7531C3BC9CE008CDDBA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF7B6B8DD269E0F188AF1D96 /* Pods-DeepDiffDemo.debug.xcconfig */;
+			baseConfigurationReference = 312A6379467401DAF6A566F0 /* Pods-DeepDiffDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 456T4LX972;
@@ -423,7 +399,7 @@
 		};
 		D5C7F7541C3BC9CE008CDDBA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31C39DFBB642A6312B41AEA0 /* Pods-DeepDiffDemo.release.xcconfig */;
+			baseConfigurationReference = 9381C3F3F924D4469B231A2E /* Pods-DeepDiffDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 456T4LX972;

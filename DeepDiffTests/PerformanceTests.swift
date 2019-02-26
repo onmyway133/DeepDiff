@@ -5,7 +5,6 @@
 //  Created by Khoa Pham.
 //  Copyright © 2018 Khoa Pham. All rights reserved.
 //
-
 import XCTest
 import DeepDiff
 
@@ -85,7 +84,6 @@ class PerformanceTests: XCTestCase {
   }
 
   // MARK: - Helper
-
   func _testCompareManyStrings() {
     let old = Array(0..<10000).map { _ in
       return UUID().uuidString
@@ -136,20 +134,20 @@ class PerformanceTests: XCTestCase {
   func generate(count: Int, removeRange: Range<Int>? = nil, addRange: Range<Int>? = nil)
     -> (old: Array<String>, new: Array<String>) {
 
-    let old = Array(repeating: UUID().uuidString, count: count)
-    var new = old
+      let old = Array(repeating: UUID().uuidString, count: count)
+      var new = old
 
-    if let removeRange = removeRange {
-      new.removeSubrange(removeRange)
-    }
+      if let removeRange = removeRange {
+        new.removeSubrange(removeRange)
+      }
 
-    if let addRange = addRange {
-      new.insert(
-        contentsOf: Array(repeating: UUID().uuidString, count: addRange.count),
-        at: addRange.lowerBound
-      )
-    }
+      if let addRange = addRange {
+        new.insert(
+          contentsOf: Array(repeating: UUID().uuidString, count: addRange.count),
+          at: addRange.lowerBound
+        )
+      }
 
-    return (old: old, new: new)
+      return (old: old, new: new)
   }
 }

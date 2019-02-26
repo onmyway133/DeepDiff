@@ -9,9 +9,9 @@
 
 ![](Screenshots/Banner.png)
 
-**DeepDiff** tells the difference between 2 collections and the changes as edit steps. It works on any collection of `Equatable` and `Hashable` items.
+**DeepDiff** tells the difference between 2 collections and the changes as edit steps. It also supports [Texture](https://github.com/TextureGroup/Texture), see [Texture example](https://github.com/onmyway133/DeepDiff/tree/master/Example/DeepDiffTexture)
 
-- [A better way to update UICollectionView data in Swift with diff framework](https://medium.com/flawless-app-stories/a-better-way-to-update-uicollectionview-data-in-swift-with-diff-framework-924db158db86)
+- Read more [A better way to update UICollectionView data in Swift with diff framework](https://medium.com/flawless-app-stories/a-better-way-to-update-uicollectionview-data-in-swift-with-diff-framework-924db158db86)
 
 <div align = "center">
 <img src="Screenshots/table.gif" width="" height="400" />
@@ -68,6 +68,21 @@ let changes = diff(old: old, new: new)
 // Replace "Imagine City" with "Oslo" at index 1
 ```
 
+### DiffAware protocol
+
+Model must conform to `DiffAware` protocol for DeepDiff to work. An model needs to be uniquely identified via `diffId` to tell if there have been any insertions or deletions. In case of same `diffId`, `compareContent` is used to check if any properties have changed, this is for replacement changes. 
+
+It needs `diffId` to tell changes about insertions and deletions, and  `comparing` to tell if a model really changes for replacement and movement.
+
+```swift
+public protocol DiffAware {
+  var diffId: Int { get }
+  static func compareContent(_ a: Self, _ b: Self) -> Bool
+}
+```
+
+Some primitive types like `String`, `Int`, `Character` already conform to `DiffAware`
+
 ### Animate UITableView and UICollectionView
 
 Changes to `DataSource` can be animated by using batch update, as guided in [Batch Insertion, Deletion, and Reloading of Rows and Sections](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/TableView_iPhone/ManageInsertDeleteRow/ManageInsertDeleteRow.html#//apple_ref/doc/uid/TP40007451-CH10-SW9)
@@ -99,7 +114,7 @@ Based on that, the first version of `DeepDiff` implements Wagner–Fischer, whic
 Some optimisations made
 
 - Check empty old or new collection to return early
-- Use `Hashable` to quickly check that 2 items are not equal
+- Use `diffId` to quickly check that 2 items are not equal
 - Follow "We can adapt the algorithm to use less space, O(m) instead of O(mn), since it only requires that the previous row and current row be stored at any one time." to use 2 rows, instead of matrix to reduce memory storage.
 
 The performance greatly depends on the number of items, the changes and the complexity of the `equal` function.
