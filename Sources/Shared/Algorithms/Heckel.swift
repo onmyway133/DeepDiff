@@ -69,7 +69,7 @@ public final class Heckel<T: DiffAware> {
   public func diff(old: [T], new: [T]) -> [Change<T>] {
     // The Symbol Table
     // Each line works as the key in the table look-up, i.e. as table[line].
-    var table: [Int: TableEntry] = [:]
+    var table: [T.DiffId: TableEntry] = [:]
 
     // The arrays OA and NA have one entry for each line in their respective files, O and N
     var oldArray = [ArrayEntry]()
@@ -84,7 +84,7 @@ public final class Heckel<T: DiffAware> {
 
   private func perform1stPass(
     new: [T],
-    table: inout [Int: TableEntry],
+    table: inout [T.DiffId: TableEntry],
     newArray: inout [ArrayEntry]) {
 
     // 1st pass
@@ -106,7 +106,7 @@ public final class Heckel<T: DiffAware> {
 
   private func perform2ndPass(
     old: [T],
-    table: inout [Int: TableEntry],
+    table: inout [T.DiffId: TableEntry],
     oldArray: inout [ArrayEntry]) {
 
     // 2nd pass
