@@ -27,8 +27,8 @@ struct MoveReducer<T: DiffAware> {
 
     var changes = changes
     inserts.forEach { insert in
-      if let insertIndex = changes.index(where: { return compareContentWithOptional($0.insert?.item, insert.item) }),
-        let deleteIndex = changes.index(where: { return compareContentWithOptional($0.delete?.item, insert.item) }) {
+        if let insertIndex = changes.firstIndex(where: { return compareContentWithOptional($0.insert?.item, insert.item) }),
+        let deleteIndex = changes.firstIndex(where: { return compareContentWithOptional($0.delete?.item, insert.item) }) {
 
         let insertChange = changes[insertIndex].insert!
         let deleteChange = changes[deleteIndex].delete!

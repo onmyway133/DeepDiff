@@ -17,7 +17,7 @@ public extension UICollectionView {
   ///   - section: The section that all calculated IndexPath belong
   ///   - updateData: Update your data source model
   ///   - completion: Called when operation completes
-  public func reload<T: DiffAware>(
+  func reload<T: DiffAware>(
     changes: [Change<T>],
     section: Int = 0,
     updateData: () -> Void,

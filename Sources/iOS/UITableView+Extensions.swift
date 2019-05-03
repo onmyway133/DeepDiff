@@ -20,7 +20,7 @@ public extension UITableView {
   ///   - replacementAnimation: The animation for reload rows
   ///   - updateData: Update your data source model
   ///   - completion: Called when operation completes
-  public func reload<T: DiffAware>(
+  func reload<T: DiffAware>(
     changes: [Change<T>],
     section: Int = 0,
     insertionAnimation: UITableView.RowAnimation = .automatic,
