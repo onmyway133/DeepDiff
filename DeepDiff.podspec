@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "DeepDiff"
-  s.summary          = "Diff in Swift"
-  s.version          = "2.0.0"
+  s.summary          = "Amazingly incredible extraordinary lightning fast diffing in Swift"
+  s.version          = "2.2.0"
   s.homepage         = "https://github.com/onmyway133/DeepDiff"
   s.license          = 'MIT'
   s.author           = { "Khoa Pham" => "onmyway133@gmail.com" }
@@ -24,6 +24,5 @@ Pod::Spec.new do |s|
   s.watchos.source_files = 'Sources/Shared/**/*'
 
   s.ios.framework  = "UIKit"
-
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  s.swift_version = '5.0'
 end
