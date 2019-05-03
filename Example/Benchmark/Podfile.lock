@@ -1,6 +1,6 @@
 PODS:
   - Changeset (3.0)
-  - DeepDiff (2.0.0)
+  - DeepDiff (2.2.0)
   - Differ (1.0.3)
   - Dwifft (0.8)
   - ListDiff (0.1.0)
@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Changeset: cbb84a74639049a7b96fc64851e8a9cfcc3c9989
-  DeepDiff: a3e7589c6b0b26fd042254a5aa7c4e1102151bdb
+  DeepDiff: e329bc46dd14ca788d8ec08d34420799ba1d77f2
   Differ: 0c220ac75542f5f17f91b1303b85bf07d871ecd7
   Dwifft: 463e61d07322fdf83b32ee6975ca1b20708db746
   ListDiff: 8a29c2ae3c8370cc989b6d6d50bb40d58c4e9ede
 
 PODFILE CHECKSUM: 59723220655512645b381c37f63e9627012758a1
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0.beta.3

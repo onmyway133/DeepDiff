@@ -1,6 +1,6 @@
 PODS:
-  - Anchors (2.4.0)
-  - DeepDiff (2.0.0)
+  - Anchors (2.5.0)
+  - DeepDiff (2.2.0)
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
     - PINCache/Core (= 3.0.1-beta.6)
@@ -42,8 +42,8 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Anchors: 75614cac462e063b395386e31eb593a856d831a8
-  DeepDiff: a3e7589c6b0b26fd042254a5aa7c4e1102151bdb
+  Anchors: c039992ebab2fa53deccac429031a46debfbdc5a
+  DeepDiff: e329bc46dd14ca788d8ec08d34420799ba1d77f2
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
@@ -51,4 +51,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 317e16bd2e833f10896dad1c9e447a82a97b0e37
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0.beta.3
