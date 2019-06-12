@@ -6,6 +6,7 @@
 //  Copyright © 2018 Khoa Pham. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
 import Foundation
 
 public struct ChangeWithIndexPath {
@@ -58,3 +59,4 @@ extension Int {
     return IndexPath(item: self, section: section)
   }
 }
+#endif
