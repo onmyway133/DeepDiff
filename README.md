@@ -238,7 +238,7 @@ github "onmyway133/DeepDiff"
 Add the following to your Package.swift file
 
 ```swift
-.package(url: "https://github.com/onmyway133/DeepDiff.git", from: "2.3.0")
+.package(url: "https://github.com/onmyway133/DeepDiff.git", .upToNextMajor(from: "2.3.0"))
 ```
 
 **DeepDiff** can also be installed manually. Just download and drop `Sources` folders in your project.
