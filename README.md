@@ -218,18 +218,27 @@ Are you sure?
 
 ## Installation
 
-**DeepDiff** is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### CocoaPods
+
+Add the following to your Podfile
 
 ```ruby
 pod 'DeepDiff'
 ```
 
-**DeepDiff** is also available through [Carthage](https://github.com/Carthage/Carthage).
-To install just write into your Cartfile:
+### Carthage
+
+Add the following to your Cartfile
 
 ```ruby
 github "onmyway133/DeepDiff"
+```
+
+### Swift Package Manager
+Add the following to your Package.swift file
+
+```swift
+.package(url: "https://github.com/onmyway133/DeepDiff.git", from: "2.3.0")
 ```
 
 **DeepDiff** can also be installed manually. Just download and drop `Sources` folders in your project.
