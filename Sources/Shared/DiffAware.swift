@@ -18,32 +18,18 @@ public protocol DiffAware {
   static func compareContent(_ a: Self, _ b: Self) -> Bool
 }
 
-extension String: DiffAware {
-  public var diffId: Int {
-    return hashValue
-  }
+public extension DiffAware where Self: Hashable {
+    var diffId: Self {
+        return self
+    }
 
-  public static func compareContent(_ a: String, _ b: String) -> Bool {
-    return a == b
-  }
+    static func compareContent(_ a: Self, _ b: Self) -> Bool {
+        return a == b
+    }
 }
 
-extension Character: DiffAware {
-  public var diffId: Int {
-    return hashValue
-  }
-
-  public static func compareContent(_ a: Character, _ b: Character) -> Bool {
-    return a == b
-  }
-}
-extension Int: DiffAware {
-  public var diffId: Int {
-    return hashValue
-  }
-
-  public static func compareContent(_ a: Int, _ b: Int) -> Bool {
-    return a == b
-  }
-}
+extension Int: DiffAware {}
+extension String: DiffAware {}
+extension Character: DiffAware {}
+extension UUID: DiffAware {}
 

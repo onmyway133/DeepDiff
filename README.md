@@ -74,7 +74,9 @@ Model must conform to `DiffAware` protocol for DeepDiff to work. An model needs 
 
 ```swift
 public protocol DiffAware {
-  var diffId: Int { get }
+  associatedtype DiffId: Hashable
+
+  var diffId: DiffId { get }
   static func compareContent(_ a: Self, _ b: Self) -> Bool
 }
 ```
