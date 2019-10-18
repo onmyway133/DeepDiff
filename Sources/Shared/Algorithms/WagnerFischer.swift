@@ -22,7 +22,7 @@ public final class WagnerFischer<T: DiffAware> {
     previousRow.seed(with: new)
     let currentRow = Row<T>()
 
-    if let changes = DeepDiff.preprocess(old: old, new: new) {
+    if let changes = preprocess(old: old, new: new) {
       return changes
     }
 
