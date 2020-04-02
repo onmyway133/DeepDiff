@@ -5,10 +5,11 @@
 - [Push Hero - pure Swift native macOS application to test push notifications](https://www.producthunt.com/posts/push-hero-2)
 - [PastePal - Pasteboard, note and shortcut manager](https://www.producthunt.com/posts/pastepal)
 - [Frame recorder - Recorder gif and video with frame](https://www.producthunt.com/posts/frame-recorder)
-- [Alias - Save and manage app and file shortcuts](https://www.producthunt.com/posts/alias-shortcut-manager)
+- [Alias - App and file shortcut manager](https://www.producthunt.com/posts/alias-shortcut-manager)
 - [Other apps](https://onmyway133.github.io/projects/)
 
 ❤️❤️😇😍🤘❤️❤️
+
 
 [![CI Status](https://img.shields.io/circleci/project/github/onmyway133/DeepDiff.svg)](https://circleci.com/gh/onmyway133/DeepDiff)
 [![Version](https://img.shields.io/cocoapods/v/DeepDiff.svg?style=flat)](http://cocoadocs.org/docsets/DeepDiff)
