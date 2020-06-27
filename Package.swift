@@ -6,7 +6,6 @@ let package = Package(
     name: "DeepDiff",
     platforms: [
         .macOS(.v10_11),
-        .iOS(.v8),
         .tvOS(.v11),
         .watchOS(.v3)
     ],
