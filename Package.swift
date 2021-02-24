@@ -5,9 +5,9 @@ import PackageDescription
 let package = Package(
     name: "DeepDiff",
     platforms: [
-        .macOS(.v10_11),
+        .macOS(.v10_10),
         .iOS(.v9),
-        .tvOS(.v11),
+        .tvOS(.v9),
         .watchOS(.v3)
     ],
     products: [
