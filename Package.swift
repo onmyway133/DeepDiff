@@ -8,7 +8,7 @@ let package = Package(
         .macOS(.v10_11),
         .iOS(.v9),
         .tvOS(.v11),
-        .watchOS(.v3)
+        .watchOS(.v6)
     ],
     products: [
         .library(name: "DeepDiff", targets: ["DeepDiff"]),

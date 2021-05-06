@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/onmyway133'
 
   s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.9'
+  s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.2'
-  s.watchos.deployment_target = "3.0"
+  s.watchos.deployment_target = "6.0"
 
   s.requires_arc = true
   
