@@ -59,6 +59,10 @@
 		D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3190F1FA8CD2200A0B637 /* UICollectionView+Extensions.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* DeepDiff.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* DeepDiff.framework */; };
+		F643B3B12229D2B00042DA56 /* Change+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F643B3B02229D2B00042DA56 /* Change+Map.swift */; };
+		F643B3B22229D2B00042DA56 /* Change+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F643B3B02229D2B00042DA56 /* Change+Map.swift */; };
+		F643B3B32229D2B00042DA56 /* Change+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F643B3B02229D2B00042DA56 /* Change+Map.swift */; };
+		F643B3B42229D2B00042DA56 /* Change+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F643B3B02229D2B00042DA56 /* Change+Map.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,7 @@
 		D5B2E8A91C3A780C00C0327D /* DeepDiff-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* DeepDiff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeepDiff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629491C3A7FAA007F7B7C /* DeepDiff-macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeepDiff-macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F643B3B02229D2B00042DA56 /* Change+Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Change+Map.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +205,7 @@
 				D2B318F81FA8CCFC00A0B637 /* DeepDiff.swift */,
 				D2B318F91FA8CCFC00A0B637 /* MoveReducer.swift */,
 				D2B318FA1FA8CCFC00A0B637 /* Change.swift */,
+				F643B3B02229D2B00042DA56 /* Change+Map.swift */,
 				D2A813661FAB731600A94BDE /* Array+Extensions.swift */,
 				D279F23E2220009C00E1C28E /* DiffAware.swift */,
 			);
@@ -551,6 +557,7 @@
 			files = (
 				D239E4211FAE34740042E7BA /* IndexPathConverter.swift in Sources */,
 				D2B3190A1FA8CD1400A0B637 /* Change.swift in Sources */,
+				F643B3B32229D2B00042DA56 /* Change+Map.swift in Sources */,
 				D21E6E321FFBC1EF0048AF75 /* Heckel.swift in Sources */,
 				D279F2412220009C00E1C28E /* DiffAware.swift in Sources */,
 				D2B319111FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
@@ -579,6 +586,7 @@
 			files = (
 				D2B3190C1FA8CD1400A0B637 /* DeepDiff.swift in Sources */,
 				D2B3190E1FA8CD1400A0B637 /* Change.swift in Sources */,
+				F643B3B42229D2B00042DA56 /* Change+Map.swift in Sources */,
 				D2B3190D1FA8CD1400A0B637 /* MoveReducer.swift in Sources */,
 				D279F2422220009C00E1C28E /* DiffAware.swift in Sources */,
 				D21E6E2E1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
@@ -593,6 +601,7 @@
 			files = (
 				D239E4201FAE34740042E7BA /* IndexPathConverter.swift in Sources */,
 				D2B319021FA8CD1300A0B637 /* Change.swift in Sources */,
+				F643B3B12229D2B00042DA56 /* Change+Map.swift in Sources */,
 				D21E6E301FFBC1EF0048AF75 /* Heckel.swift in Sources */,
 				D279F23F2220009C00E1C28E /* DiffAware.swift in Sources */,
 				D2B319101FA8CD2200A0B637 /* UICollectionView+Extensions.swift in Sources */,
@@ -621,6 +630,7 @@
 			files = (
 				D2B319041FA8CD1300A0B637 /* DeepDiff.swift in Sources */,
 				D2B319061FA8CD1300A0B637 /* Change.swift in Sources */,
+				F643B3B22229D2B00042DA56 /* Change+Map.swift in Sources */,
 				D2B319051FA8CD1300A0B637 /* MoveReducer.swift in Sources */,
 				D279F2402220009C00E1C28E /* DiffAware.swift in Sources */,
 				D21E6E2C1FFBC1E20048AF75 /* WagnerFischer.swift in Sources */,
