@@ -113,6 +113,44 @@ collectionView.reload(changes: changes, section: 2, updateData: {
 })
 ```
 
+## API Pagination
+
+```swift 
+
+    var itemsList: [Video] = []
+    var deepDiffRefreshVideoList: [Video] = [] {
+        willSet {
+        
+            let oldVideos = deepDiffRefreshVideoList
+            let changes = diff(old: oldVideos, new: newValue)
+
+            let exception = tryBlock {
+                self.collectionView.reload(changes: changes, section: 0, updateData: {
+                    self.itemsList = newValue
+                }, completion: nil)
+            }
+            if let exception = exception {
+                print(exception as Any)
+            }
+
+        }
+    }
+    
+    
+    // in your pagination api callback / simply set the above list
+    
+     func fetchMainFeedTrending() {
+           Video.getMostLikeFeed(currentPage).subscribe(
+            onNext: { [weak self] videos in
+            
+              self?.itemsList.append(contentsOf: videos)
+              if let arr = self?.itemsList {
+                  self?.deepDiffRefreshVideoList = arr
+              }
+            }
+      }
+```
+
 Take a look at [Demo](https://github.com/onmyway133/DeepDiff/tree/master/Example/DeepDiffDemo) where changes are made via random number of items, and the items are shuffled.
 
 ## How does it work
